@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\
+C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\
 eStud
 none
 false
 DEBUG;TRACE
-C:\Users\Melida\source\repos\eStud\eStud\App.xaml
-51403205213
+C:\Users\Melida\source\repos\eSTUD\eStud\App.xaml
+8855876760
 11580343117
-17855057455
-15123746858
-LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;StudentWin.xaml;StudentWindow.xaml;
+19-490578957
+15-214761987
+AdminWindow.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;ReferentPodaci.xaml;Simple Styles.xaml;StudentPrijavljeniIspit.xaml;StudentWindow.xaml;
 
-False
+True
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\
 eStud
 none
 false
 DEBUG;TRACE
-C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\App.xaml
-51403205213
+C:\Users\Melida\source\repos\eStud\eStud\App.xaml
+7-778525152
 11580343117
-13-717315152
-15-657244318
-LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;StudentWin.xaml;StudentWindow.xaml;
+15-2062951564
+15123746858
+AdminWindow.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;ReferentPodaci.xaml;StudentPrijavljeniIspit.xaml;StudentWindow.xaml;
 
 False
 

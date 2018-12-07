@@ -57,7 +57,12 @@ namespace eStud
             LicniPodaci lp = new LicniPodaci(k); 
             GlavniPanel.Children.Add(lp);   //Dodajemo ono sto smo napravili u Licnipodaci.xaml prozoru
         }
-
+        private void btnPrijavljeniIspiti_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            StudentPrijavljeniIspit spi = new StudentPrijavljeniIspit(k);
+            GlavniPanel.Children.Add(spi);
+        }
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();

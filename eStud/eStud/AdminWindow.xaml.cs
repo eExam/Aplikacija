@@ -10,19 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace eStud
 {
     /// <summary>
-    /// Interaction logic for StudentWin.xaml
+    /// Interaction logic for AdminWindow.xaml
     /// </summary>
-    public partial class StudentWin : UserControl
+    public partial class AdminWindow : Window
     {
-        public StudentWin()
+        public AdminWindow(Model.Korisnik rezultatUpita)
         {
             InitializeComponent();
+        }
+        private void btnReferenti_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            ReferentPodaci rp = new ReferentPodaci();
+            GlavniPanel.Children.Add(rp);
         }
     }
 }

@@ -48,6 +48,17 @@ namespace eStud
                 }
                 catch (Exception es) { MessageBox.Show(es.Message); }
             }
+            else if(rezultatUpita.getUserType()=="admin")
+            {
+                try
+                {
+                    this.Hide();
+                    AdminWindow sf = new AdminWindow(rezultatUpita);
+                    sf.ShowDialog();
+                }
+                catch (Exception es) { MessageBox.Show(es.Message); }
+            }
+
 
         }
 

@@ -21,8 +21,6 @@ C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\MainWindow.g.cs
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentWindow.g.cs
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\MainWindow.baml
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentWindow.baml
-C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentWin.g.cs
-C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentWin.baml
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\MojiPredmeti.g.cs
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\MojiPredmeti.baml
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\LicniPodaci.g.cs
@@ -60,3 +58,9 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\bin\Debug\eSTUD.accdb
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\eStud_Content.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\eStud_Content.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\bin\Debug\eSTUD.accdb
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\AdminWindow.g.cs
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentPodaci.g.cs
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\AdminWindow.baml
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentPodaci.baml
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\StudentPrijavljeniIspit.g.cs
+C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\StudentPrijavljeniIspit.baml
