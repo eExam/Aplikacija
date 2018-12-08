@@ -5,9 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="white">
-        <DataGrid x:Name="TabelaReferenti" HorizontalAlignment="Left" Height="248.17" Margin="178.147,201.83,0,0" VerticalAlignment="Top" Width="429.519"/>
+             d:DesignHeight="757" Width="1005">
+    <Grid Background="white" Width="1006" HorizontalAlignment="Left" Margin="0,0,-206,0">
+        <DataGrid x:Name="TabelaReferenti" HorizontalAlignment="Left" Height="757" VerticalAlignment="Top" Width="769"/>
+        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" Margin="921,197.061,0,0" VerticalAlignment="Top" Width="75" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="#FF6A5493"/>
+        <Button x:Name="btnPrikazi" Content="Prikazi" HorizontalAlignment="Left" Margin="828.956,197.061,0,0" VerticalAlignment="Top" Width="75" Click="btnPrikazi_Click" Background="#FF31B6A4"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="828.956,18.631,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

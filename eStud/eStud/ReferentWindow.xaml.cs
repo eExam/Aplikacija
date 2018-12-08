@@ -16,21 +16,15 @@ using System.Windows.Shapes;
 namespace eStud
 {
     /// <summary>
-    /// Interaction logic for AdminWindow.xaml
+    /// Interaction logic for ReferentWindow.xaml
     /// </summary>
-    public partial class AdminWindow : Window
+    public partial class ReferentWindow : Window
     {
-       
-        public AdminWindow(Model.Korisnik rezultatUpit)
+        private Referent r;
+        public ReferentWindow(Korisnik k)
         {
-           
+            this.r = new Referent(k);
             InitializeComponent();
-        }
-        private void btnReferenti_Click(object sender, RoutedEventArgs e)
-        {
-            GlavniPanel.Children.Clear();
-            ReferentPodaci rp = new ReferentPodaci();
-            GlavniPanel.Children.Add(rp);
         }
     }
 }

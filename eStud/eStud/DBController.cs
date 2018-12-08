@@ -18,6 +18,7 @@ namespace eStud.Model
             connect.Open();
 
         }
+       
 
         public void IzvrsiUpit(string upit)
         {
@@ -35,24 +36,39 @@ namespace eStud.Model
                 connect.Close();
             }
         }
+       
+        public DataTable rezultatiUpita(string upit)
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = connect;
+            string query = upit;
+            cmd.CommandText = query;
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+      
+        public void IzbrisiIzBaze(string upit)
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = connect;
+                IzvrsiUpit(upit);
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+        
+        
         public Korisnik ImaUBazi(string username, string password)
         {
             try
             {
-
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = connect;
-                string query;
-                query = "Select * from users where username='" + username + "' and password='" + password + "'";
-                cmd.CommandText = query;
-                // dt ce da cuva rezultate upita
-
                 DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                da.Fill(dt);
-
-
-
+                dt = rezultatiUpita("Select * from users where username='" + username + "' and password='" + password + "'");
                 // dt.Rows oznacava broj javljanja osobe u tabeli Korisnici
                 // Ovde se takodje vrsi i poredjenje lozinke sa enkriptovanom lozinkom u bazi
                 if (dt.Rows.Count == 1)
@@ -68,26 +84,12 @@ namespace eStud.Model
 
         }
         public DataTable StudentPredmeti(string username)
-        {
-            
+        { 
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-
-                cmd.Connection = connect;
-                string query;
-                query = "Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN SlusaPredmet ON Predmeti.Sifra_predmeta=SlusaPredmet.sifra_predmeta) ON Users.username=Profesor.username WHERE SlusaPredmet.username_student='" + username + "'";
-                
-                cmd.CommandText = query;
-
                 DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                da.Fill(dt);
-
-                    return dt;
-
-                
-              
+                dt = rezultatiUpita("Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN SlusaPredmet ON Predmeti.Sifra_predmeta=SlusaPredmet.sifra_predmeta) ON Users.username=Profesor.username WHERE SlusaPredmet.username_student='" + username + "'");
+                return dt;
             }
             catch (Exception ex)
             {
@@ -99,23 +101,9 @@ namespace eStud.Model
         {
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-
-                cmd.Connection = connect;
-                string query;
-                query = " SELECT Predmeti.Naziv_predmeta, Predmeti.Semestar, Predmeti.ESPB,Users.ime, Users.prezime, PrijavljeniIspiti.broj_prijava FROM Users INNER JOIN((Profesor INNER JOIN Predmeti ON Profesor.username = Predmeti.username_profesora) INNER JOIN PrijavljeniIspiti ON Predmeti.Sifra_predmeta = PrijavljeniIspiti.Sifra_predmeta) ON Users.username = Profesor.username WHERE PrijavljeniIspiti.username_studenta ='" + username + "'";
-
-
-                cmd.CommandText = query;
-
                 DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                da.Fill(dt);
-
+                dt = rezultatiUpita(" SELECT Predmeti.Naziv_predmeta, Predmeti.Semestar, Predmeti.ESPB,Users.ime, Users.prezime, PrijavljeniIspiti.broj_prijava FROM Users INNER JOIN((Profesor INNER JOIN Predmeti ON Profesor.username = Predmeti.username_profesora) INNER JOIN PrijavljeniIspiti ON Predmeti.Sifra_predmeta = PrijavljeniIspiti.Sifra_predmeta) ON Users.username = Profesor.username WHERE PrijavljeniIspiti.username_studenta ='" + username + "'");
                 return dt;
-
-
-
             }
             catch (Exception ex)
             {
@@ -123,21 +111,32 @@ namespace eStud.Model
             }
         }
         public DataTable PodaciReferent()
-        {
-            OleDbCommand cmd = new OleDbCommand();
-
-            cmd.Connection = connect;
-            string query;
-            query = "Select Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username";
-
-            cmd.CommandText = query;
-
+        { 
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            da.Fill(dt);
+            dt = rezultatiUpita("Select Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
+          
             return dt;
         }
+      
+        public void izbrisiRef(string username)
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = connect;
+                string query = "delete from Users where Users.username='" + username + "'";
+                //  IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+              
+                
+            }
+            catch(Exception ex)
+            {
 
+            }
+        }
+       
         public static string CreateMD5(string input)
         {
             // Use input string to calculate MD5 hash

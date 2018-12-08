@@ -71,8 +71,12 @@
       <DependentUpon>MojiPredmeti.xaml</DependentUpon>
     </Compile>
     <Compile Include="Predmeti.cs" />
+    <Compile Include="Referent.cs" />
     <Compile Include="ReferentPodaci.xaml.cs">
       <DependentUpon>ReferentPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReferentWindow.xaml.cs">
+      <DependentUpon>ReferentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentPrijavljeniIspit.xaml.cs">
       <DependentUpon>StudentPrijavljeniIspit.xaml</DependentUpon>
@@ -107,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReferentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReferentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

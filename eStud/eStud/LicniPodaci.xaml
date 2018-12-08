@@ -6,16 +6,30 @@
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
              d:DesignHeight="979" Width="1207.084">
-    <Grid x:Name="GlavniPanel" Background="white" Height="979" >
-        <Label FontSize="25" Content="Ime" HorizontalAlignment="Left" Margin="99,126,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="25" Content="Prezime" HorizontalAlignment="Left" Margin="99,206,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="25" Content="Datum rodjenja" HorizontalAlignment="Left" Margin="99,289,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="25" Content="Pol" HorizontalAlignment="Left" Margin="110,379,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="25" Content="Username" HorizontalAlignment="Left" Margin="99,51,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblUsername" FontSize="25" Content="-" HorizontalAlignment="Left" Margin="542,51,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblIme" FontSize="25" Content="-" HorizontalAlignment="Left" Margin="542,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblPrezime" FontSize="25" Content="-" HorizontalAlignment="Left" Margin="542,206,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblDatumRodjenja" FontSize="25" Content="-" HorizontalAlignment="Left" Margin="542,289,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492"/>
-        <Label x:Name="lblPol" FontSize="25" Content="-" HorizontalAlignment="Left" Margin="542,379,0,0" VerticalAlignment="Top"/>
+    <Grid x:Name="GlavniPanel" Height="979" Background="#FFE1EEE3" >
+        <Label HorizontalAlignment="Left" Margin="154,506,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="257.385" VerticalAlignment="Top" Width="1207.084" RenderTransformOrigin="0.5,0.5">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.331"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.744"/>
+                </TransformGroup>
+            </ListView.RenderTransform>
+            <ListView.View>
+                <GridView x:Name="GridView" >
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="200"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Content}" ></GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <Label x:Name="Username" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="61.997"/>
+            <Label x:Name="Ime" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997"/>
+            <Label x:Name="Prezime" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420.497"/>
+            <Label x:Name="DatumRodjenja" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="381.497"/>
+            <Label x:Name="Pol" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497"/>
+            <Label x:Name="Depatman" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </ListView>
+
     </Grid>
 </UserControl>

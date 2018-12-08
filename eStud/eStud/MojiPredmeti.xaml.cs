@@ -22,16 +22,16 @@ namespace eStud
     /// </summary>
     public partial class MojiPredmeti : UserControl
     {
-        private Korisnik k;
+        private Student trenutniKor;
         public MojiPredmeti(Korisnik k)
         {
-            this.k = k;
+            this.trenutniKor = new Student(k);
             InitializeComponent();
             popuniTabelu();
         }
         private void popuniTabelu()
         {
-            DataTable rezultati = new DBController().StudentPredmeti(k.getUserName());
+            DataTable rezultati = new DBController().StudentPredmeti(trenutniKor.getUserName());
             TabelaPredmeti.ItemsSource = rezultati.DefaultView;
         }
 

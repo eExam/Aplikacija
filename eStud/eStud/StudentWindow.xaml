@@ -17,7 +17,7 @@
         Title="StudentWindow" Height="850" Width="1200" WindowStyle="ThreeDBorderWindow">
     <Grid Margin="0,0,2,-21">
         <Grid Background="#FF24A4A4" Height="60" VerticalAlignment="Top" Width="1190">
-            <Button HorizontalAlignment="left" VerticalAlignment="Center" Height="60" Width="105" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Button x:Name="btnMenu" HorizontalAlignment="left" VerticalAlignment="Center" Height="60" Width="105" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnMenu_Click">
                 <Image Source="Slike/MenuIcon.png"/>
             </Button>
             <Label x:Name="ime" FontSize="20" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="162" Margin="0,12,905,0"/>
@@ -25,7 +25,7 @@
             <Button x:Name="btnOdjava" Content="Odjava" Background="{x:Null}" HorizontalAlignment="Right" BorderThickness="0" Click="btnOdjava_Click" Margin="0,5.8,10,4.2" Height="Auto" Width="92.66" BorderBrush="{x:Null}"/>
 
         </Grid>
-        <StackPanel Background="LightGray" HorizontalAlignment="Left" Margin="0,60,0,23" Width="206">
+        <StackPanel x:Name="pnlLeft" Background="LightGray" HorizontalAlignment="Left" Margin="0,60,0,23" Width="206">
             <Button x:Name="btnPodaci" Background="#FF1B6E7C" BorderBrush="White" Content="Moji podaci" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Height="47" Click="btnPodaci_Click" />
             <Button Background="#FF1B6E7C" BorderBrush="White" x:Name="btnMojiPredmeti" Content="Moji predmeti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Click="btnMojiPredmeti_Click" Height="49"/>
             <Button Background="#FF1B6E7C" BorderBrush="White" x:Name="btnPrijavljeniIspiti" Content="Prijavljeni ispiti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Click="btnPrijavljeniIspiti_Click" Height="49"/>

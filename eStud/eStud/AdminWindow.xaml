@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="850" Width="1200">
     <Grid>
-        <Button x:Name="btnReferenti" Content="Referenti" HorizontalAlignment="Left" Click="btnReferenti_Click"/>
-        <StackPanel Background="red" x:Name="GlavniPanel" HorizontalAlignment="Left" Height="752"  Margin="213,67,0,0" VerticalAlignment="Top" Width="979"/>
+        <StackPanel x:Name="GlavniPanel" Height="757.5"  Margin="181,61.5,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Left" Height="61.5" VerticalAlignment="Top" Width="1192" Background="#FF31B6A4">
+            <Button  HorizontalAlignment="Left" Height="62" Width="85.193" Background="#FF31B6A4" BorderBrush="#FF31B6A4">
+                <Image Source="Slike/MenuIcon.png"/>
+            </Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="167.5" Margin="0,61.5,0,0" VerticalAlignment="Top" Width="181">
+            <Button x:Name="btnReferenti" FontSize="27" Content="Referenti" HorizontalAlignment="Left" Click="btnReferenti_Click" Height="50" Width="181" Background="#FF31B6A4" BorderBrush="{x:Null}"/>
+            <Button FontSize="27" Content="Studenti" Height="45.5" Background="#FF31B6A4" BorderBrush="{x:Null}"/>
+        </StackPanel>
     </Grid>
 </Window>

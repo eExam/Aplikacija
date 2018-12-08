@@ -5,12 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="GlavniPanel" Background="White">
-        <DataGrid x:Name="TabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="163.244" Margin="10,61.486,0,0" VerticalAlignment="Top" Width="768.919"/>
-        <StackPanel HorizontalAlignment="Left" Height="46.486" Margin="10,10,0,0" VerticalAlignment="Top" Width="780">
-            <Label Content="Prijavljeni Ispiti" FontSize="25" Background="#FFB087A6"/>
+             d:DesignHeight="450" Width="969">
+    <Grid x:Name="GlavniPanel" Background="White" Width="979" Height="752" Margin="0,0,-10,-302" VerticalAlignment="Top">
+        <DataGrid x:Name="TabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="334.244" Margin="0,46.486,0,0" VerticalAlignment="Top" Width="979" Background="{x:Null}"/>
+        <StackPanel HorizontalAlignment="Left" Height="46.486" VerticalAlignment="Top" Width="979">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB95888" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Label FontSize="25" Content="Uspesno prijavljeni ispiti" HorizontalAlignment="Left" Foreground="#DDD"/>
         </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="46.486" Margin="0,380.73,0,0" VerticalAlignment="Top" Width="979">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB67796" Offset="1"/>
+                    <GradientStop Color="#FFB95888" Offset="0.797"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Label FontSize="25" Foreground="white" Content="Neuspesno prijavljeni ispiti" HorizontalAlignment="left"/>
+        </StackPanel>
+        <DataGrid HorizontalAlignment="Left" Height="324.784" Margin="0,427.216,0,0" VerticalAlignment="Top" Width="979"/>
+
 
     </Grid>
 </UserControl>

@@ -8,17 +8,23 @@ namespace eStud.Model
         private string studijski_program;
         private int semestar;
         private string broj_indeksa;
+      
 
-        public Student(string username, string usertype, string ime, string prezime, string datumRodjenja, string pol,string departman, string studijski_program,int semestar, string broj_indeksa) : base(username, usertype, ime, prezime, datumRodjenja, pol)
+        public Student(string username, string usertype, string ime, string prezime, string datumRodjenja, string pol, string departman, string studijski_program, int semestar, string broj_indeksa):base(username,usertype,ime,prezime,datumRodjenja,pol)
         {
-
+           
             this.departman = departman;
             this.studijski_program = studijski_program;
             this.broj_indeksa = broj_indeksa;
             this.semestar = semestar;
         }
 
-        
+      public Student(Korisnik k):base(k.getUserName(),k.getUserType(),k.getIme(),k.getPrezime(),k.getDatumRodjenja(),k.getPol())
+        {
+            
+
+        }
+
         public string getDepartman()
         {
             return departman;

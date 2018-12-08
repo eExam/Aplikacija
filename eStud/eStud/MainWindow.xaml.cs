@@ -22,29 +22,23 @@ namespace eStud
     /// </summary>
     public partial class MainWindow : Window
     {
-        Model.DBController dbc = new Model.DBController();
-        Model.Korisnik kor;
-
+        DBController dbc = new DBController();
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        public Korisnik Korisnik { get => Korisnik; set => Korisnik = value; }
-
         private void BtnLogin(object sender, RoutedEventArgs e)
         {
             Korisnik rezultatUpita = dbc.ImaUBazi(txtUser.Text,txtPass.Text);
             
              
             if (rezultatUpita.getUserType() == "student")
-
             {
                 try
                 {
                     this.Hide();
-                    StudentWindow sf = new StudentWindow(rezultatUpita);
-                    sf.ShowDialog();
+                    StudentWindow sw = new StudentWindow(new Student(rezultatUpita));
+                    sw.ShowDialog();
                 }
                 catch (Exception es) { MessageBox.Show(es.Message); }
             }
@@ -53,10 +47,23 @@ namespace eStud
                 try
                 {
                     this.Hide();
-                    AdminWindow sf = new AdminWindow(rezultatUpita);
-                    sf.ShowDialog();
+                    AdminWindow aw = new AdminWindow(rezultatUpita);
+                    aw.ShowDialog();
                 }
                 catch (Exception es) { MessageBox.Show(es.Message); }
+            }
+            else if(rezultatUpita.getUserType()=="referent")
+            {
+                try
+                {
+                    this.Hide();
+                    ReferentWindow rw = new ReferentWindow(new Referent(rezultatUpita));
+                    rw.ShowDialog();
+                }
+                catch(Exception es)
+                {
+                    MessageBox.Show(es.Message);
+                }
             }
 
 

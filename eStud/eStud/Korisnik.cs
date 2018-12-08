@@ -11,12 +11,12 @@ namespace eStud.Model
 
     public class Korisnik 
     {
-        private string username;
-        private string usertype;
-        private string ime;
-        private string prezime;
-        private string datumRodjenja;
-        private string pol;
+        protected string username;
+        protected string usertype;
+        protected string ime;
+        protected string prezime;
+        protected string datumRodjenja;
+        protected string pol;
         public Korisnik(string username,string usertype,string ime,string prezime,string datumRodjenja,string pol)
         {
             this.username = username;
@@ -28,57 +28,58 @@ namespace eStud.Model
 
 
         }
-        public void setUserType(String usertype)
+
+        public void setUserType(string usertype)
         {
             this.usertype = usertype;
           
         }
-        public void setUserName(String username)
+        public void setUserName(string username)
         {
             this.username = username;
             
         }
-        public void setIme(String ime)
+        public void setIme(string ime)
         {
             this.ime = ime;
            
         }
-        public void setPrezime(String prezime)
+        public void setPrezime(string prezime)
         {
             this.prezime = prezime;
         
         }
-        public void setDatumRodjenja(String datumRodjenja)
+        public void setDatumRodjenja(string datumRodjenja)
         {
             this.datumRodjenja = datumRodjenja;
      
         }
-        public void setPol(String pol)
+        public void setPol(string pol)
         {
             this.pol = pol;
             
         }
-        public String getUserType()
+        public string getUserType()
         {
             return usertype;
         }
-        public String getUserName()
+        public string getUserName()
         {
             return username;
         }
-        public String getIme()
+        public string getIme()
         {
             return ime;
         }
-        public String getPrezime()
+        public string getPrezime()
         {
             return prezime;
         }
-        public String getDatumRodjenja()
+        public string getDatumRodjenja()
         {
             return datumRodjenja;
         }
-        public String getPol()
+        public string getPol()
         {
             return pol;
         }

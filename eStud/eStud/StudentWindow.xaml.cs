@@ -22,45 +22,58 @@ namespace eStud
     /// </summary>
     public partial class StudentWindow : Window
     {
-      
-        private DBController dbc;
-        private Korisnik k;
-        private Predmeti p;
-        
+
        
+        private Student student;
 
         public StudentWindow(Korisnik k)
         {
-            this.k = k;
-          
+            this.student = new Student(k);
             InitializeComponent();
-            this.ime.Content = k.getIme() + " " + k.getPrezime();
+           
+            this.ime.Content =this.student.getIme()+ " " + this.student.getPrezime();
+           
+            this.pnlLeft.Visibility = Visibility.Hidden;
 
         }
+
        
+
+
+
         //Klikom na button Moji predmeti student dobija spisak predmeta
         private void btnMojiPredmeti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
-            MojiPredmeti mp = new MojiPredmeti(k);
-            GlavniPanel.Children.Add(mp);
+            MojiPredmeti mp = new MojiPredmeti(this.student);
             
-
-           
-
+            GlavniPanel.Children.Add(mp);
+        }
+        //Klikom na button menu prikazuje se opadajuci meni
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.pnlLeft.IsVisible)
+            {
+                this.pnlLeft.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                this.pnlLeft.Visibility = Visibility.Visible;
+            }
         }
         //klikom na button podaci student vidi svoje podatke
+
 
         private void btnPodaci_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear(); //brisemo ono sto se nalazi u panelu
-            LicniPodaci lp = new LicniPodaci(k); 
+            LicniPodaci lp = new LicniPodaci(student); 
             GlavniPanel.Children.Add(lp);   //Dodajemo ono sto smo napravili u Licnipodaci.xaml prozoru
         }
         private void btnPrijavljeniIspiti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
-            StudentPrijavljeniIspit spi = new StudentPrijavljeniIspit(k);
+            StudentPrijavljeniIspit spi = new StudentPrijavljeniIspit(student);
             GlavniPanel.Children.Add(spi);
         }
         private void btnOdjava_Click(object sender, RoutedEventArgs e)

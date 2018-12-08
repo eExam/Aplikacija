@@ -22,17 +22,30 @@ namespace eStud
     /// </summary>
     public partial class ReferentPodaci : UserControl
     {
-        
+        private DBController dbc; 
         public ReferentPodaci()
-        {
-            
+        { 
+           
             InitializeComponent();
             popuniTabelu();
+
         }
             private void popuniTabelu()
             {
                 DataTable rezultati = new DBController().PodaciReferent();
                 TabelaReferenti.ItemsSource = rezultati.DefaultView;
             }
+
+        private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
+        {
+           
+            popuniTabelu();
         }
+       
+
+        private void btnPrikazi_Click(object sender, RoutedEventArgs e)
+        {  
+            popuniTabelu();
+        }
+    }
     }

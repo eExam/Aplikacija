@@ -21,21 +21,23 @@ namespace eStud
     /// </summary>
     public partial class LicniPodaci : UserControl
     {
-       private Korisnik k;
+        private Student k;
         public LicniPodaci(Korisnik k)
         {
-            this.k = k;
+            this.k = new Student(k);
             InitializeComponent();
-            popuniLabele();
             
+            popuniLabele();
+        
         }
         private void popuniLabele()
         {
-            lblUsername.Content = k.getUserName();
-            lblIme.Content = k.getIme();
-            lblPrezime.Content = k.getPrezime();
-            lblDatumRodjenja.Content = k.getDatumRodjenja();
-            lblPol.Content = k.getPol();
+            Username.Content = k.getUserName();
+            Ime.Content = k.getIme();
+            Prezime.Content = k.getPrezime();
+            DatumRodjenja.Content = k.getDatumRodjenja();
+            Pol.Content = k.getPol();
+            Depatman.Content = k.getDepartman();
 
         }
     }
