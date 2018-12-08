@@ -78,6 +78,9 @@
     <Compile Include="ReferentWindow.xaml.cs">
       <DependentUpon>ReferentWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentPodaci.xaml.cs">
+      <DependentUpon>StudentPodaci.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentPrijavljeniIspit.xaml.cs">
       <DependentUpon>StudentPrijavljeniIspit.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentPrijavljeniIspit.xaml">
       <SubType>Designer</SubType>

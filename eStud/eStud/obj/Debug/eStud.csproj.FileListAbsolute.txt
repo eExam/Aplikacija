@@ -67,3 +67,5 @@ C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\StudentPrijavljeniIspit.baml
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\Simple Styles.baml
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentWindow.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentWindow.baml
+C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentPodaci.g.cs
+C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentPodaci.baml

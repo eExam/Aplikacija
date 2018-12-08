@@ -25,12 +25,32 @@ namespace eStud
         {
            
             InitializeComponent();
+            this.pnlMenu.Visibility = Visibility.Hidden;
         }
         private void btnReferenti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
             ReferentPodaci rp = new ReferentPodaci();
             GlavniPanel.Children.Add(rp);
+        }
+
+        private void btnStudenti_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            StudentPodaci sp = new StudentPodaci();
+            GlavniPanel.Children.Add(sp);
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.pnlMenu.Visibility==Visibility.Hidden)
+            {
+                this.pnlMenu.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.pnlMenu.Visibility = Visibility.Hidden;
+            }
         }
     }
 }
