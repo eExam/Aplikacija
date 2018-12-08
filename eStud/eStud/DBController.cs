@@ -14,7 +14,7 @@ namespace eStud.Model
         OleDbConnection connect = new OleDbConnection();
         public DBController()
         {
-            connect.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=eSTUD.accdb; Persist Security Info = False;";
+            connect.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\Melida\source\repos\eSTUD\eStud\eSTUD.accdb; Persist Security Info = False;";
             connect.Open();
 
         }
@@ -59,6 +59,7 @@ namespace eStud.Model
             }
             catch(Exception ex)
             {
+                
             }
         }
         
@@ -125,22 +126,8 @@ namespace eStud.Model
 
         }
         public void izbrisiRef(string username)
-        {
-            try
-            {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = connect;
-                string query = "delete from Users where Users.username='" + username + "'";
-                //  IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
-                cmd.CommandText = query;
-                cmd.ExecuteNonQuery();
-              
-                
-            }
-            catch(Exception ex)
-            {
-
-            }
+        {                
+            IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
         }
        
         public static string CreateMD5(string input)

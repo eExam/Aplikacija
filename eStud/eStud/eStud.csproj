@@ -64,6 +64,11 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="eSTUDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eSTUDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LicniPodaci.xaml.cs">
       <DependentUpon>LicniPodaci.xaml</DependentUpon>
     </Compile>
@@ -157,6 +162,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="eSTUDDataSet.xsc">
+      <DependentUpon>eSTUDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eSTUDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eSTUDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eSTUDDataSet.xss">
+      <DependentUpon>eSTUDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -169,10 +185,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Slike\MenuIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="eSTUD.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Slike\MenuIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

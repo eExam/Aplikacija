@@ -56,8 +56,6 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\eStud.exe
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\eStud.pdb
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\bin\Debug\eSTUD.accdb
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\eStud_Content.g.cs
-C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\eStud_Content.g.cs
-C:\Users\Melida\source\repos\eStud\eStud\bin\Debug\eSTUD.accdb
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\AdminWindow.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentPodaci.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\AdminWindow.baml
@@ -69,3 +67,5 @@ C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentWindow.g.cs
 C:\Users\Melida\source\repos\eStud\eStud\obj\Debug\ReferentWindow.baml
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentPodaci.g.cs
 C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\StudentPodaci.baml
+C:\Users\Melida\source\repos\eSTUD\eStud\bin\Debug\eSTUD.accdb
+C:\Users\Melida\source\repos\eSTUD\eStud\obj\Debug\eStud_Content.g.cs

@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using eStud.Model;
 namespace eStud
 {
     /// <summary>
@@ -22,26 +22,29 @@ namespace eStud
     /// </summary>
     public partial class ReferentPodaci : UserControl
     {
-        private DBController dbc; 
+        private DBController db=new DBController();
         public ReferentPodaci()
-        { 
+        {
            
             InitializeComponent();
             popuniTabelu();
 
         }
-            private void popuniTabelu()
-            {
+         private void popuniTabelu()
+          {
                 DataTable rezultati = new DBController().PodaciReferent();
                 TabelaReferenti.ItemsSource = rezultati.DefaultView;
-            }
+          }
 
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
-           
-            popuniTabelu();
+            db.izbrisiRef(txtUsername.Text);
+            DataTable rezultati = new DBController().PodaciReferent();
+            TabelaReferenti.ItemsSource = rezultati.DefaultView;
         }
        
+
+        
 
         private void btnPrikazi_Click(object sender, RoutedEventArgs e)
         {  
