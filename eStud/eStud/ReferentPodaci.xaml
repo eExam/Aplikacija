@@ -6,11 +6,12 @@
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
              d:DesignHeight="757" Width="1005">
-    <Grid Background="white" Width="1006" HorizontalAlignment="Left" Margin="0,0,-206,0">
-        <DataGrid x:Name="TabelaReferenti" HorizontalAlignment="Left" Height="757" VerticalAlignment="Top" Width="769"/>
+    <Grid x:Name="GlavniPanel" Background="white" Width="1006" HorizontalAlignment="Left" Margin="0,0,-206,0">
+        <DataGrid x:Name="TabelaReferenti" HorizontalAlignment="Left" Height="518.719" VerticalAlignment="Top" Width="769"/>
         <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" Margin="814,84,0,0" VerticalAlignment="Top" Width="120" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="#FF6A5493"/>
-        <Button x:Name="btnPrikazi" Content="Prikazi" HorizontalAlignment="Left" Margin="828.956,197.061,0,0" VerticalAlignment="Top" Width="75" Click="btnPrikazi_Click" Background="#FF31B6A4"/>
+        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" Margin="269.912,653.461,0,0" VerticalAlignment="Top" Width="75" Click="btnPrikazi_Click" Background="#FF31B6A4"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="814,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="23" Margin="483.893,544.38,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

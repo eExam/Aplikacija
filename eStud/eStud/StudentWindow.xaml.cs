@@ -25,16 +25,18 @@ namespace eStud
 
        
         private Student student;
+       
 
+        
         public StudentWindow(Korisnik k)
         {
             this.student = new Student(k);
             InitializeComponent();
-           
+            
             this.ime.Content =this.student.getIme()+ " " + this.student.getPrezime();
-           
-            this.pnlLeft.Visibility = Visibility.Hidden;
 
+            this.lblNavigacija.Content = "Pocetna strana";
+           
         }
 
        
@@ -42,25 +44,18 @@ namespace eStud
 
 
         //Klikom na button Moji predmeti student dobija spisak predmeta
-        private void btnMojiPredmeti_Click(object sender, RoutedEventArgs e)
+        
+        private void btnPredmeti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
             MojiPredmeti mp = new MojiPredmeti(this.student);
-            
+
             GlavniPanel.Children.Add(mp);
+            this.lblNavigacija.Content = "Predmeti";
+
         }
         //Klikom na button menu prikazuje se opadajuci meni
-        private void btnMenu_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.pnlLeft.IsVisible)
-            {
-                this.pnlLeft.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                this.pnlLeft.Visibility = Visibility.Visible;
-            }
-        }
+      
         //klikom na button podaci student vidi svoje podatke
 
 
@@ -69,12 +64,14 @@ namespace eStud
             GlavniPanel.Children.Clear(); //brisemo ono sto se nalazi u panelu
             LicniPodaci lp = new LicniPodaci(student); 
             GlavniPanel.Children.Add(lp);   //Dodajemo ono sto smo napravili u Licnipodaci.xaml prozoru
+            this.lblNavigacija.Content = "Licni podaci";
         }
         private void btnPrijavljeniIspiti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
             StudentPrijavljeniIspit spi = new StudentPrijavljeniIspit(student);
             GlavniPanel.Children.Add(spi);
+            this.lblNavigacija.Content = "Ispiti";
         }
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {

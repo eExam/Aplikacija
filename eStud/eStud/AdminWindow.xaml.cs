@@ -20,7 +20,7 @@ namespace eStud
     /// </summary>
     public partial class AdminWindow : Window
     {
-       
+   
         public AdminWindow(Model.Korisnik rezultatUpit)
         {
            

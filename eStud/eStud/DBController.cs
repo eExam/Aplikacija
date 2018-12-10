@@ -11,21 +11,39 @@ namespace eStud.Model
 
     class DBController
     {
-        OleDbConnection connect = new OleDbConnection();
-        public DBController()
-        {
-            connect.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\Melida\source\repos\eSTUD\eStud\eSTUD.accdb; Persist Security Info = False;";
-            connect.Open();
-
-        }
+        
+        private static string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\eSTUD.accdb; Persist Security Info = False;";
+        private static OleDbConnection connect = new OleDbConnection(connectionString);
        
-
-        public void IzvrsiUpit(string upit)
+       
+        public static void UbaciUBazi(string username,string password,string usertype,string ime,string prezime,string datum_rodjenja,string pol)
+        {
+            try
+            { 
+                OleDbCommand cmd = connect.CreateCommand();
+                cmd.CommandText = "Insert into Users values('"+username+"', '"+password+"','"+usertype+"','"+ime+"','"+prezime+"','"+datum_rodjenja+"','"+pol+"')";
+                connect.Open();
+                cmd.ExecuteNonQuery();
+                connect.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        public static void DodajRef(string username,string Departman,string StudijskiProgram)
+        {
+            string upit="Insert into Referent Values('"+username+"','"+Departman+"','"+StudijskiProgram+"')";
+            IzvrsiUpit(upit);
+        }
+        public static void IzvrsiUpit(string upit)
         {
             try
             {
                 connect.Open();
+
                 new OleDbCommand(upit, connect).ExecuteNonQuery();
+                
             }
             catch (Exception ex)
             {
@@ -35,6 +53,7 @@ namespace eStud.Model
             {
                 connect.Close();
             }
+            
         }
        
         public DataTable rezultatiUpita(string upit)
@@ -49,10 +68,11 @@ namespace eStud.Model
             return dt;
         }
       
-        public void IzbrisiIzBaze(string upit)
+        public static void IzbrisiIzBaze(string upit)
         {
             try
             {
+                
                 OleDbCommand cmd = new OleDbCommand();
                 cmd.Connection = connect;
                 IzvrsiUpit(upit);
@@ -125,7 +145,7 @@ namespace eStud.Model
             return dt;
 
         }
-        public void izbrisiRef(string username)
+        public static void izbrisiRef(string username)
         {                
             IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
         }

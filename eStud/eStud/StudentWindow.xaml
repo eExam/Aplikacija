@@ -14,23 +14,55 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="StudentWindow" Height="850" Width="1200" WindowStyle="ThreeDBorderWindow">
+        Title="StudentWindow" Height="850" Width="1600.5" WindowStyle="ThreeDBorderWindow">
     <Grid Margin="0,0,2,-21">
-        <Grid Background="#FF24A4A4" Height="60" VerticalAlignment="Top" Width="1190">
-            <Button x:Name="btnMenu" HorizontalAlignment="left" VerticalAlignment="Center" Height="60" Width="105" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnMenu_Click">
-                <Image Source="Slike/MenuIcon.png"/>
+        <Grid Background="#FF2A9C9C" Height="60" VerticalAlignment="Top" Margin="335,0,0,0">
+            <Image Source="Slike/logo.png" Width="60" Margin="1164.5,0,31,0" OpacityMask="Black"/>
+            <Label x:Name="lblNavigacija" Content="Label" HorizontalAlignment="Left" Margin="10,6.8,0,0" VerticalAlignment="Top" Width="257.827" FontSize="36" Foreground="#DDF9F9F9"/>
+            <Label Content="DUNP" HorizontalAlignment="Left" Margin="1026,6.8,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="114.07"/>
+        </Grid>
+        <StackPanel x:Name="GlavniPanel" HorizontalAlignment="Right" Height="757" Margin="0,60,283,0" VerticalAlignment="Top" Width="967.5"/>
+        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="817" VerticalAlignment="Top" Width="335" Background="#FF112929">
+            <Button x:Name="btnOdjava" Background="{x:Null}" HorizontalAlignment="Right" BorderThickness="0" Click="btnOdjava_Click" Margin="0,737.5,10,10" Height="Auto" Width="109.16" BorderBrush="{x:Null}">
+                <Image Source="Slike/LogOutIcon.png" Width="55.5" Height="49.5" />
             </Button>
-            <Label x:Name="ime" FontSize="20" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="162" Margin="0,12,905,0"/>
+            <Label x:Name="ime" FontSize="20" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="162" Margin="0,154.5,81.5,0" Background="{x:Null}" FontWeight="Bold"/>
+            <Button  HorizontalAlignment="Left" Margin="0,737.5,0,0" VerticalAlignment="Top" Width="102" Height="75.5" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="Slike/SettingsIcon.png" Width="55.5" Height="49.5" />
+            </Button>
+            <Button HorizontalAlignment="Right" Height="74" Margin="0,219.5,25,0" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
 
-            <Button x:Name="btnOdjava" Content="Odjava" Background="{x:Null}" HorizontalAlignment="Right" BorderThickness="0" Click="btnOdjava_Click" Margin="0,5.8,10,4.2" Height="Auto" Width="92.66" BorderBrush="{x:Null}"/>
+                <Grid HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="268.5">
+                    <Image Source="Slike/HomeIcon.png" Height="46" VerticalAlignment="Center" Margin="0,10,146,0"/>
+                    <Label Content="Pocetna
+                           " HorizontalAlignment="Left" Margin="111.75,16,0,0" VerticalAlignment="Top" Width="120.327" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btnPredmeti" HorizontalAlignment="Left" Margin="10,298.5,0,0" VerticalAlignment="Top" Width="300" Height="66.5" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnPredmeti_Click">
+                <Grid HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="213">
+                    <Image Source="Slike/PredmetiIcon.png" Width="46" Margin="10,10,157,8" Height="46" VerticalAlignment="Center"/>
+                    <Label Content="Predmeti" HorizontalAlignment="Left" Margin="78.75,10,0,0" VerticalAlignment="Top" Width="124.25" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btnPodaci" Background="#FF24A4A4" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177.5" Height="120.5" Click="btnPodaci_Click" Margin="76,29,0,0" >
+                <Image Source="Slike/AccountIcon.png" Height="79" Width="80.5"/>
+            </Button>
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" x:Name="btnPrijavljeniIspiti" VerticalAlignment="Top" Click="btnPrijavljeniIspiti_Click" Height="74.5" HorizontalAlignment="Left" Width="263.5" Margin="39.5,449,0,0">
+                <Grid HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="212">
+                    <Image Source="Slike/PrijavljeniIspiti.png" Height="46" Width="46" Margin="0,10,166,20"/>
+                    <Label Content="Ispiti" HorizontalAlignment="Left" Margin="75.75,10,0,0" VerticalAlignment="Top" Width="96.327" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9"/>
+                </Grid>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="39.5,370,0,0" VerticalAlignment="Top" Width="285.5" Height="79" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="256">
+                    <Image Source="Slike/ObavestenjaIcon.png" Width="46" Height="46" HorizontalAlignment="Left" Margin="10,14,0,10"/>
+                    <Label Content="Obavestenja" HorizontalAlignment="Left" Margin="78.75,10,0,0" VerticalAlignment="Top" Width="167.25" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>
+                </Grid>
+            </Button>
 
         </Grid>
-        <StackPanel x:Name="pnlLeft" Background="LightGray" HorizontalAlignment="Left" Margin="0,60,0,23" Width="206">
-            <Button x:Name="btnPodaci" Background="#FF1B6E7C" BorderBrush="White" Content="Moji podaci" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Height="47" Click="btnPodaci_Click" />
-            <Button Background="#FF1B6E7C" BorderBrush="White" x:Name="btnMojiPredmeti" Content="Moji predmeti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Click="btnMojiPredmeti_Click" Height="49"/>
-            <Button Background="#FF1B6E7C" BorderBrush="White" x:Name="btnPrijavljeniIspiti" Content="Prijavljeni ispiti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Click="btnPrijavljeniIspiti_Click" Height="49"/>
-        </StackPanel>
-        <StackPanel x:Name="GlavniPanel" HorizontalAlignment="Left" Height="752" Margin="211,65,0,0" VerticalAlignment="Top" Width="979"/>
+
+
 
     </Grid>
 </Window>
