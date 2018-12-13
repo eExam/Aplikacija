@@ -21,6 +21,8 @@ namespace eStud
     /// </summary>
     public partial class DodajReferenta : UserControl
     {
+
+
         public DodajReferenta()
         {
             InitializeComponent();
@@ -29,21 +31,46 @@ namespace eStud
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SacuvajPodatke();
+        
+
         }
         private void SacuvajPodatke()
         {
             try
             {
+                if (ImaPraznoPolje())
+                  throw new Exception("Popunite sva polja!");
+                if (DBController.ImaUBazi(txtUsername.Text, txtPassword.Text) != null)
+                    throw new Exception("Korisnicko ime je zauzeto");
+
                 DBController.UbaciUBazi(this.txtUsername.Text, this.txtPassword.Text, this.txtUsertype.Text, this.txtIme.Text, this.txtPrezime.Text, this.txtDatumRodj.Text, this.txtPol.Text);
-                DBController.DodajRef(this.txtUsername.Text, this.txtDepartman.Text, this.txtStudijskiProgram.Text);
-                MessageBox.Show("Bravo");
+                    DBController.DodajRef(this.txtUsername.Text, this.txtDepartman.Text, this.txtStudijskiProgram.Text);
+                    MessageBox.Show("Uspesno ste dodali Korisnika");
+
+               
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                MessageBox.Show("Greska");
+
+                MessageBox.Show("Niste popunili sva polja");
             }
+
+
         }
-            
+        private bool ImaPraznoPolje()
+        {
+            return txtUsername.Text == ""
+                || txtPassword.Text == ""
+                || txtUsertype.Text == ""
+                || txtIme.Text == ""
+                || txtPrezime.Text == ""
+                || txtDatumRodj.Text == ""
+                || txtPol.Text == ""
+                || txtDepartman.Text == ""
+                || txtStudijskiProgram.Text == "";
+        }
     }
 }
+            
+    
+

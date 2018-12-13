@@ -29,33 +29,41 @@ namespace eStud
         public ReferentPodaci()
         {
             InitializeComponent();
-            popuniTabelu();
-
+            PopuniTabelu();
+            
+            
         }
-         private void popuniTabelu()
-          {
-                DataTable rezultati = new DBController().PodaciReferent();
-                TabelaReferenti.ItemsSource = rezultati.DefaultView;
-          }
+       
+        private void PopuniTabelu()
+        {
+            DataTable rezultati = DBController.PodaciReferent();
+            rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
+            rezultati.Columns["departman"].ColumnName = "Departman";
+            rezultati.Columns["pol"].ColumnName = "POl";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["username"].ColumnName = "Username";
+            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
+            TabelaReferenti.ItemsSource = rezultati.DefaultView;
+           
+           
+            
+            
+        }
 
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
             
             DBController.izbrisiRef(txtUsername.Text);
-            DataTable rezultati = new DBController().PodaciReferent();
-            TabelaReferenti.ItemsSource = rezultati.DefaultView;
-        }
-       
-
-        
-
-        private void btnPrikazi_Click(object sender, RoutedEventArgs e)
-        {
-            GlavniPanel.Children.Clear();
-            DodajReferenta df = new DodajReferenta();
-
-            GlavniPanel.Children.Add(df);
+            DataTable rezultati = DBController.PodaciReferent();
             
         }
+
+        private void btnDodajRef_Click(object sender, RoutedEventArgs e)
+        {
+            pnlRight.Children.Clear();
+            DodajReferenta df = new DodajReferenta();
+            pnlRight.Children.Add(df);
+        }
     }
-    }
+ }

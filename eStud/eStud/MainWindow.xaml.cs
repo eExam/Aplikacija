@@ -22,14 +22,14 @@ namespace eStud
     /// </summary>
     public partial class MainWindow : Window
     {
-        DBController dbc = new DBController();
+        
         public MainWindow()
         {
             InitializeComponent();
         }
         private void BtnLogin(object sender, RoutedEventArgs e)
         {
-            Korisnik rezultatUpita = dbc.ImaUBazi(txtUser.Text,txtPass.Text);
+            Korisnik rezultatUpita = DBController.ImaUBazi(txtUser.Text,txtPass.Text);
             
              
             if (rezultatUpita.getUserType() == "student")
@@ -69,9 +69,5 @@ namespace eStud
 
         }
 
-        private Student korisnik(string v1, object v2, object v3, object v4)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

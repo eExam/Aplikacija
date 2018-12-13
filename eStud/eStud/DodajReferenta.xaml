@@ -5,27 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Label Content="username" HorizontalAlignment="Left" Margin="99,73,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="195,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="password&#xD;&#xA;" HorizontalAlignment="Left" Margin="99,99,0,0" VerticalAlignment="Top" Height="28"/>
-        <Label Content="usertype" HorizontalAlignment="Left" Margin="95,132,0,0" VerticalAlignment="Top"/>
-        <Label Content="ime" HorizontalAlignment="Left" Margin="99,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="prezime" HorizontalAlignment="Left" Margin="95,196,0,0" VerticalAlignment="Top"/>
-        <Label Content="datum rodjenja" HorizontalAlignment="Left" Margin="95,227,0,0" VerticalAlignment="Top"/>
-        <Label Content="pol" HorizontalAlignment="Left" Margin="99,258,0,0" VerticalAlignment="Top"/>
-        <Label Content="departman" HorizontalAlignment="Left" Margin="95,289,0,0" VerticalAlignment="Top"/>
-        <Label Content="studijski program&#xD;&#xA;" HorizontalAlignment="Left" Margin="95,320,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPassword"  HorizontalAlignment="Left" Height="23" Margin="195,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtUsertype" HorizontalAlignment="Left" Height="23" Margin="195,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="23" Margin="195,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="23" Margin="195,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDatumRodj" HorizontalAlignment="Left" Height="23" Margin="195,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPol" HorizontalAlignment="Left" Height="23" Margin="195,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDepartman" HorizontalAlignment="Left" Height="23" Margin="195,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtStudijskiProgram" HorizontalAlignment="Left" Height="23" Margin="202,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="458,237,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" RenderTransformOrigin="0.2,0.438"/>
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}" Width="260" Height="492">
+    <Grid Background="#FF112929" Margin="-1,-6,0,0">
+        <StackPanel HorizontalAlignment="Left" Height="470.5" Margin="43,10,0,0" VerticalAlignment="Top" Width="180">
+            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
+            <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
+            <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Referent" />
+            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
+            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtDatumRodj" materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
+            <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" Height="41.6" FontFamily="Segoe UI Light"/>
+            <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Click="Button_Click"  Margin="0,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}">
+
+
+            </Button>
+        </StackPanel>
 
     </Grid>
 </UserControl>

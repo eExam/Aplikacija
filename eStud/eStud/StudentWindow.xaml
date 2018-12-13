@@ -17,9 +17,9 @@
         Title="StudentWindow" Height="850" Width="1600.5" WindowStyle="ThreeDBorderWindow">
     <Grid Margin="0,0,2,-21">
         <Grid Background="#FF2A9C9C" Height="60" VerticalAlignment="Top" Margin="335,0,0,0">
-            <Image Source="Slike/logo.png" Width="60" Margin="1164.5,0,31,0" OpacityMask="Black"/>
-            <Label x:Name="lblNavigacija" Content="Label" HorizontalAlignment="Left" Margin="10,6.8,0,0" VerticalAlignment="Top" Width="257.827" FontSize="36" Foreground="#DDF9F9F9"/>
-            <Label Content="DUNP" HorizontalAlignment="Left" Margin="1026,6.8,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="114.07"/>
+            <Image Source="Slike/logo.png" Width="60" Margin="1140.07,0,55.43,0" OpacityMask="Black" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Label x:Name="lblNavigacija" Content="Label" Margin="10,6.8,1001.173,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDF9F9F9"/>
+            <Label Content="DUNP" HorizontalAlignment="Right" Margin="0,6.8,147,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="108.07"/>
         </Grid>
         <StackPanel x:Name="GlavniPanel" HorizontalAlignment="Right" Height="757" Margin="0,60,283,0" VerticalAlignment="Top" Width="967.5"/>
         <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="817" VerticalAlignment="Top" Width="335" Background="#FF112929">

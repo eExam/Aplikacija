@@ -20,37 +20,36 @@ namespace eStud
     /// </summary>
     public partial class AdminWindow : Window
     {
-   
+
         public AdminWindow(Model.Korisnik rezultatUpit)
         {
-           
-            InitializeComponent();
-            this.pnlMenu.Visibility = Visibility.Hidden;
-        }
-        private void btnReferenti_Click(object sender, RoutedEventArgs e)
-        {
-            GlavniPanel.Children.Clear();
-            ReferentPodaci rp = new ReferentPodaci();
-            GlavniPanel.Children.Add(rp);
-        }
 
-        private void btnStudenti_Click(object sender, RoutedEventArgs e)
+            InitializeComponent();
+        }
+       
+
+       
+       
+
+        private void btnStud_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
             StudentPodaci sp = new StudentPodaci();
             GlavniPanel.Children.Add(sp);
         }
 
-        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        private void btnRef_Click(object sender, RoutedEventArgs e)
         {
-            if(this.pnlMenu.Visibility==Visibility.Hidden)
-            {
-                this.pnlMenu.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                this.pnlMenu.Visibility = Visibility.Hidden;
-            }
+            GlavniPanel.Children.Clear();
+            ReferentPodaci rp = new ReferentPodaci();
+            GlavniPanel.Children.Add(rp);
+        }
+
+        private void btnOdjava_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow mw = new MainWindow();
+            mw.ShowDialog();
         }
     }
 }

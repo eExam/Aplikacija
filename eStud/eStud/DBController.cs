@@ -56,7 +56,7 @@ namespace eStud.Model
             
         }
        
-        public DataTable rezultatiUpita(string upit)
+        public static DataTable rezultatiUpita(string upit)
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = connect;
@@ -84,7 +84,7 @@ namespace eStud.Model
         }
         
         
-        public Korisnik ImaUBazi(string username, string password)
+        public static Korisnik ImaUBazi(string username, string password)
         {
             try
             {
@@ -131,10 +131,10 @@ namespace eStud.Model
                 throw ex;
             }
         }
-        public DataTable PodaciReferent()
+        public static DataTable PodaciReferent()
         { 
             DataTable dt = new DataTable();
-            dt = rezultatiUpita("Select Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
+            dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
           
             return dt;
         }
