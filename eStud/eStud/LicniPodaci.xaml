@@ -8,8 +8,8 @@
              d:DesignHeight="979" Width="1207.084">
     <Grid x:Name="GlavniPanel" Height="979" Background="#FFFBFBFB" >
         <Label HorizontalAlignment="Left" Margin="154,506,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="311.385" VerticalAlignment="Top" Width="577.477" RenderTransformOrigin="0.5,0.5" Margin="129.852,58.5,0,0" BorderBrush="{x:Null}" Background="Black">
-           
+        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="306" VerticalAlignment="Top" Width="1207" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="Black">
+
             <ListView.View>
                 <GridView x:Name="GridView" >
                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="200"></GridViewColumn>

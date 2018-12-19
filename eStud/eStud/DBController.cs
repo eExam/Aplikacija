@@ -141,11 +141,12 @@ namespace eStud.Model
        public DataTable PodaciStudent()
         {
             DataTable dt = new DataTable();
-            dt = rezultatiUpita("Select Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Student.departman,Student.studijski_program FROM Student,Users WHERE Users.username=Student.username");
+            dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Student.departman,Student.studijski_program FROM Student,Users WHERE Users.username=Student.username");
             return dt;
 
         }
-        public static void izbrisiRef(string username)
+       
+        public static void izbrisiKorisnika(string username)
         {                
             IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
         }

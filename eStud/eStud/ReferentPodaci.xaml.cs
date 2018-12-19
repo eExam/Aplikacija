@@ -24,7 +24,7 @@ namespace eStud
     /// </summary>
     public partial class ReferentPodaci : UserControl
     {
-       
+        public DataTable rezultati;
         //private DBController db=new DBController();
         public ReferentPodaci()
         {
@@ -32,14 +32,15 @@ namespace eStud
             PopuniTabelu();
             
             
+            
         }
        
         private void PopuniTabelu()
         {
-            DataTable rezultati = DBController.PodaciReferent();
+            rezultati = DBController.PodaciReferent();
             rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
             rezultati.Columns["departman"].ColumnName = "Departman";
-            rezultati.Columns["pol"].ColumnName = "POl";
+            rezultati.Columns["pol"].ColumnName = "Pol";
             rezultati.Columns["prezime"].ColumnName = "Prezime";
             rezultati.Columns["ime"].ColumnName = "Ime";
             rezultati.Columns["username"].ColumnName = "Username";
@@ -53,16 +54,22 @@ namespace eStud
 
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
+
+           
             
-            DBController.izbrisiRef(txtUsername.Text);
-            DataTable rezultati = DBController.PodaciReferent();
-            
+            //TabelaReferenti.SelectedItem;
+            TabelaReferenti.CanUserDeleteRows = true;
+            DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
+            DBController.izbrisiKorisnika(row["username"].ToString());
+                rezultati.Rows.Remove(row.Row);
+          //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
+            //PopuniTabelu();
         }
 
         private void btnDodajRef_Click(object sender, RoutedEventArgs e)
         {
             pnlRight.Children.Clear();
-            DodajReferenta df = new DodajReferenta();
+            DodajReferenta df = new DodajReferenta(TabelaReferenti);
             pnlRight.Children.Add(df);
         }
     }

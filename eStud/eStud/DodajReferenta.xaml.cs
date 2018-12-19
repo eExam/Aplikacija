@@ -1,6 +1,7 @@
 ﻿using eStud.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,19 +22,30 @@ namespace eStud
     /// </summary>
     public partial class DodajReferenta : UserControl
     {
+        public DataGrid mojGrid;
 
-
-        public DodajReferenta()
+        public DodajReferenta(DataGrid tabelaReferenti)
         {
             InitializeComponent();
+            mojGrid = tabelaReferenti;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SacuvajPodatke();
-        
+            DataTable rezultati = DBController.PodaciReferent();
+            rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
+            rezultati.Columns["departman"].ColumnName = "Departman";
+            rezultati.Columns["pol"].ColumnName = "Pol";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["username"].ColumnName = "Username";
+            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
+            mojGrid.ItemsSource = rezultati.DefaultView;
+
 
         }
+       
         private void SacuvajPodatke()
         {
             try

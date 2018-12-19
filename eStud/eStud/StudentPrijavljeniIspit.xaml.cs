@@ -32,6 +32,10 @@ namespace eStud
         private void popuniTabelu()
         {
             DataTable rezultati = new DBController().StudentPrijavljeniIspiti(k.getUserName());
+            rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["broj_prijava"].ColumnName = "Broj Prijave";
             TabelaPrijavljeniIspiti.ItemsSource = rezultati.DefaultView;
         }
     }

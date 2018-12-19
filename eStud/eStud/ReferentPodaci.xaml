@@ -15,22 +15,20 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="757" Width="1252.5"
              >
-    
+
 
     <Grid x:Name="GlavniPanel" Width="1252.5" HorizontalAlignment="Left" Background="White">
-        
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="24" Margin="418,503,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Width="120"/>
-        <StackPanel x:Name="pnlRight" Height="518.719" Margin="977,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="275.5"/>
-        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Click="btnDodajRef_Click" Background="#FF21A896" Height="36.5" BorderBrush="{x:Null}" Margin="734.5,10,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5">
-            
+        <StackPanel x:Name="pnlRight" Height="692.5" Margin="821.5,64.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="343.5"/>
+        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btnDodajRef_Click" Background="#FF21A896" Height="36" BorderBrush="{x:Null}" Margin="10,10,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5">
+
         </Button>
-        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="734.5,74.5,0,0" Height="36.5"/>
-        <Button x:Name="btnIzbrisi_Copy" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="734.5,136,0,0" Height="37"/>
-        <DataGrid x:Name="TabelaReferenti" Margin="0,0,572.98,294" HorizontalAlignment="Center" Width="679.52"  >
+        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="220.5,9,0,0" Height="37"/>
+        <Button x:Name="btnIzbrisi_Copy" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="435,10,0,0" Height="37"/>
+        <DataGrid x:Name="TabelaReferenti" Margin="0,64.5,518.5,0" HorizontalAlignment="Center" Width="734"  >
 
 
 
         </DataGrid>
-        
+
     </Grid>
 </UserControl>

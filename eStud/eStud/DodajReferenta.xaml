@@ -12,9 +12,9 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}" Width="260" Height="492">
-    <Grid Background="#FF112929" Margin="-1,-6,0,0">
-        <StackPanel HorizontalAlignment="Left" Height="470.5" Margin="43,10,0,0" VerticalAlignment="Top" Width="180">
+     FontFamily="{DynamicResource MaterialDesignFont}" Width="342.5" Height="549">
+    <Grid Background="#FF5F3D64" Margin="-1,-6,0,0">
+        <StackPanel HorizontalAlignment="Left" Height="491.5" Margin="43,10,0,0" VerticalAlignment="Top" Width="253.5">
             <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
             <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
             <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Referent" />
@@ -24,7 +24,7 @@
             <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
             <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
             <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" Height="41.6" FontFamily="Segoe UI Light"/>
-            <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Click="Button_Click"  Margin="0,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}">
+            <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="253.5" Click="Button_Click"  Margin="0,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}">
 
 
             </Button>
