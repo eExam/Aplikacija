@@ -8,38 +8,32 @@
         Title="AdminWindow" Height="850" Width="1600.5">
     <Grid>
         <StackPanel x:Name="GlavniPanel" Height="757.5"  Margin="340,61.5,0,0" VerticalAlignment="Top"/>
-        <StackPanel HorizontalAlignment="Left" Height="61.5" VerticalAlignment="Top" Width="1247.5" Background="#FFA45496" Margin="335,0,0,0"/>
-        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="817" VerticalAlignment="Top" Width="335">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFA45496" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        <StackPanel HorizontalAlignment="Left" Height="61.5" VerticalAlignment="Top" Width="1257.5" Margin="335,0,0,0" Background="#FFC1D39F" OpacityMask="#7F182C13"/>
+        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="817" VerticalAlignment="Top" Width="335" Background="#FF7CBB00" OpacityMask="#B28CBB81">
             <Button x:Name="btnOdjava" Background="{x:Null}" HorizontalAlignment="Right" BorderThickness="0" Click="btnOdjava_Click" Margin="0,737.5,10,10" Height="Auto" Width="109.16" BorderBrush="{x:Null}">
                 <Image Source="Slike/LogOutIcon.png" Width="55.5" Height="49.5" />
             </Button>
-            <Label x:Name="ime" FontSize="20" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="162" Margin="0,154.5,81.5,0" Background="{x:Null}" FontWeight="Bold"/>
+            <Label x:Name="ime" FontSize="20" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="162" Margin="0,201,81.5,0" Background="{x:Null}" FontWeight="Bold"/>
             <Button  HorizontalAlignment="Left" Margin="0,737.5,0,0" VerticalAlignment="Top" Width="102" Height="75.5" Background="{x:Null}" BorderBrush="{x:Null}">
                 <Image Source="Slike/SettingsIcon.png" Width="55.5" Height="49.5" />
             </Button>
-            <Button HorizontalAlignment="Left" Height="60" Margin="10,248,0,0" VerticalAlignment="Top" Width="315" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
+            <Button HorizontalAlignment="Left" Height="60" Margin="0,294.5,0,0" VerticalAlignment="Top" Width="315" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
 
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="300">
                     <Image Source="Slike/HomeIcon.png" Height="46" VerticalAlignment="Center" Margin="39,10,215,4" Width="46"/>
                     <Label Content="Pocetna                            " HorizontalAlignment="Left" Margin="111.75,10,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>
                 </Grid>
             </Button>
-            <Button x:Name="btnRef" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" Width="315" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnRef_Click">
+            <Button x:Name="btnRef" HorizontalAlignment="Left" Margin="10,359.5,0,0" VerticalAlignment="Top" Width="315" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnRef_Click">
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="300">
                     <Image Source="Slike/PredmetiIcon.png" Width="46" Margin="32.75,10,221.25,4" Height="46" VerticalAlignment="Center"/>
                     <Label Content="Referenti" HorizontalAlignment="Left" Margin="102.75,10,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>
                 </Grid>
             </Button>
-            <Button x:Name="btnPodaci" Background="#FFA45496" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177.5" Height="120.5" Margin="76,29,0,0" >
+            <Button x:Name="btnPodaci" Background="#FFC1D39F" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177.5" Height="120.5" Margin="76,62,0,0" >
                 <Image Source="Slike/AccountIcon.png" Height="79" Width="80.5"/>
             </Button>
-            <Button x:Name="btnStud" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="315" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnStud_Click">
+            <Button x:Name="btnStud" HorizontalAlignment="Left" Margin="10,424.5,0,0" VerticalAlignment="Top" Width="315" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnStud_Click">
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="300">
                     <Image Source="Slike/ObavestenjaIcon.png" Width="46" Height="46" HorizontalAlignment="Left" Margin="34,10,0,4"/>
                     <Label Content="Studenti" HorizontalAlignment="Left" Margin="105.75,10,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.344,0.664" Height="46" FontSize="27" FontWeight="Bold" Foreground="#DDF9F9F9" Background="{x:Null}"/>

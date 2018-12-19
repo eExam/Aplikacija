@@ -18,13 +18,13 @@
 
 
     <Grid x:Name="GlavniPanel" Width="1252.5" HorizontalAlignment="Left" Background="White">
-        <StackPanel x:Name="pnlRight" Height="692.5" Margin="821.5,64.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="343.5"/>
-        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btnDodajRef_Click" Background="#FF21A896" Height="36" BorderBrush="{x:Null}" Margin="10,10,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="pnlRight" Height="678.5" Margin="846,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="406.5"/>
+        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btnDodajRef_Click" Background="#FF21A896" Height="36" BorderBrush="{x:Null}" Margin="10,580,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5">
 
         </Button>
-        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="220.5,9,0,0" Height="37"/>
-        <Button x:Name="btnIzbrisi_Copy" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="435,10,0,0" Height="37"/>
-        <DataGrid x:Name="TabelaReferenti" Margin="0,64.5,518.5,0" HorizontalAlignment="Center" Width="734"  >
+        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="205.5,580,0,0" Height="37"/>
+        <Button x:Name="btnIzbrisi_Copy" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="394.5,579,0,0" Height="37"/>
+        <DataGrid x:Name="TabelaReferenti" Margin="0,0,406.5,183" HorizontalAlignment="Center" Width="846" Background="White" BorderBrush="{x:Null}"  >
 
 
 

@@ -13,7 +13,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}" Width="342.5" Height="549">
-    <Grid Background="#FF5F3D64" Margin="-1,-6,0,0">
+    <Grid Background="#FF7CBB00" Margin="-1,-6,0,0">
         <StackPanel HorizontalAlignment="Left" Height="491.5" Margin="43,10,0,0" VerticalAlignment="Top" Width="253.5">
             <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
             <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
