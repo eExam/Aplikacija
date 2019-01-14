@@ -35,7 +35,7 @@ namespace eStud
             
             this.ime.Content =this.student.getIme()+ " " + this.student.getPrezime();
 
-            this.lblNavigacija.Content = "Pocetna strana";
+            
            
         }
 
@@ -51,7 +51,7 @@ namespace eStud
             MojiPredmeti mp = new MojiPredmeti(this.student);
 
             GlavniPanel.Children.Add(mp);
-            this.lblNavigacija.Content = "Predmeti";
+            
 
         }
         //Klikom na button menu prikazuje se opadajuci meni
@@ -64,14 +64,14 @@ namespace eStud
             GlavniPanel.Children.Clear(); //brisemo ono sto se nalazi u panelu
             LicniPodaci lp = new LicniPodaci(student); 
             GlavniPanel.Children.Add(lp);   //Dodajemo ono sto smo napravili u Licnipodaci.xaml prozoru
-            this.lblNavigacija.Content = "Licni podaci";
+            
         }
         private void btnPrijavljeniIspiti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
             StudentPrijavljeniIspit spi = new StudentPrijavljeniIspit(student);
             GlavniPanel.Children.Add(spi);
-            this.lblNavigacija.Content = "Ispiti";
+          
         }
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
         {
