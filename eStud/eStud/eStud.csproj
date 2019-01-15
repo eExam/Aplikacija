@@ -67,6 +67,9 @@
     <Compile Include="DodajReferenta.xaml.cs">
       <DependentUpon>DodajReferenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzborniPredmeti.xaml.cs">
+      <DependentUpon>IzborniPredmeti.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LicniPodaci.xaml.cs">
       <DependentUpon>LicniPodaci.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,9 @@
       <DependentUpon>MojiPredmeti.xaml</DependentUpon>
     </Compile>
     <Compile Include="Predmeti.cs" />
+    <Compile Include="PromenaLozinke.xaml.cs">
+      <DependentUpon>PromenaLozinke.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Referent.cs" />
     <Compile Include="ReferentPodaci.xaml.cs">
       <DependentUpon>ReferentPodaci.xaml</DependentUpon>
@@ -98,6 +104,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzborniPredmeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LicniPodaci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +127,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MojiPredmeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PromenaLozinke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -80,3 +80,7 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentPodaci.
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentPrijavljeniIspit.baml
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajReferenta.g.cs
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajReferenta.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\IzborniPredmeti.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\IzborniPredmeti.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PromenaLozinke.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PromenaLozinke.baml

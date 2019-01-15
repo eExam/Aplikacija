@@ -36,8 +36,8 @@
             <Button x:Name="btnESPB" HorizontalAlignment="Left" Margin="34.258,452.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Osvojeni ESPB " HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22"/>
             <Button x:Name="btnStatus" HorizontalAlignment="Left" Margin="35.008,502.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Status" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22"/>
             <Button x:Name="btnIspitniRokovi" HorizontalAlignment="Left" Margin="34.258,552.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Ispitni rokovi" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22"/>
-            <Button x:Name="btnIzborniPredmeti" HorizontalAlignment="Left" Margin="89.008,402.5,0,0" VerticalAlignment="Top" Width="206" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Izborni predmeti" BorderThickness="0,0,0,0.3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="20"/>
-            <Button x:Name="btnPromenaLozinke" HorizontalAlignment="Left" Margin="34.258,685,0,0" VerticalAlignment="Top" Width="260" Height="60.5" Background="{x:Null}" BorderBrush="#FFF56C2D"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0"/>
+            <Button x:Name="btnIzborniPredmeti" HorizontalAlignment="Left" Margin="89.008,402.5,0,0" VerticalAlignment="Top" Width="206" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Izborni predmeti" BorderThickness="0,0,0,0.3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="20" Click="btnIzborniPredmeti_Click"/>
+            <Button x:Name="btnPromenaLozinke" HorizontalAlignment="Left" Margin="34.258,685,0,0" VerticalAlignment="Top" Width="260" Height="60.5" Background="{x:Null}" BorderBrush="#FFF56C2D"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0" Click="btnPromenaLozinke_Click"/>
             <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Elephant"/>
             <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5" Grid.ColumnSpan="2"/>
 
@@ -47,3 +47,5 @@
 
     </Grid>
 </Window>
+
+    

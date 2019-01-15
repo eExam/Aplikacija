@@ -79,5 +79,18 @@ namespace eStud
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
         }
+
+        private void btnIzborniPredmeti_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            IzborniPredmeti ip = new IzborniPredmeti();
+            GlavniPanel.Children.Add(ip);
+        }
+        private void btnPromenaLozinke_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PromenaLozinke pl = new PromenaLozinke();
+            GlavniPanel.Children.Add(pl);
+        }
     }
 }
