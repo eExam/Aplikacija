@@ -5,15 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="979" Width="1207.084">
-    <Grid x:Name="GlavniPanel" Height="979" Background="#FFF7F6F6" >
+             d:DesignHeight="979" Width="1591" Height="1017.5">
+    <Grid x:Name="GlavniPanel" Height="1017.5" Background="#FFF7F6F6" Width="1591" >
+        <Rectangle Height="516" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="529" Fill="#FFFDF9F6" VerticalAlignment="Bottom" Margin="395,0,514,239.5" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
         <Label HorizontalAlignment="Left" Margin="154,506,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="306" VerticalAlignment="Top" Width="1207" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="Black" Margin="0,339,0,0">
+        <ListView x:Name="ListView" Height="412.5" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="449.5,248.5,578.5,0" FontSize="23" Foreground="#DD9C9797">
 
             <ListView.View>
                 <GridView x:Name="GridView" >
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="200"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Content}" ></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Content}" />
                 </GridView>
             </ListView.View>
             <Label x:Name="Username" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="61.997"/>
@@ -25,8 +41,6 @@
             <Label x:Name="Smer" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label x:Name="Indeks" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </ListView>
-        <StackPanel HorizontalAlignment="Left" Height="339" VerticalAlignment="Top" Width="1207.084" Background="#FF6D7C87"/>
-        <StackPanel HorizontalAlignment="Left" Height="329" VerticalAlignment="Top" Width="1207.084" Background="#FF6D7C87" Margin="0,650,0,0"/>
 
     </Grid>
 </UserControl>

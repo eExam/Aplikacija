@@ -36,6 +36,11 @@ namespace eStud
             rezultati.Columns["ime"].ColumnName = "Ime";
             rezultati.Columns["prezime"].ColumnName = "Prezime";
             rezultati.Columns["broj_prijava"].ColumnName = "Broj Prijave";
+            DataGridTextColumn dt = new DataGridTextColumn();
+           
+     
+    
+
             TabelaPrijavljeniIspiti.ItemsSource = rezultati.DefaultView;
         }
     }

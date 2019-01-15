@@ -16,12 +16,11 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
         Title="StudentWindow" Height="1050" Width="1930" WindowStyle="ThreeDBorderWindow" WindowState="Maximized">
     <Grid Margin="0,0,2,1.5">
-        <Grid Background="#FFF56C2D" Height="60" VerticalAlignment="Top" Margin="327.5,0,0,0">
-            <Button HorizontalAlignment="Right" Height="60" Margin="0,0,1498.34,0" VerticalAlignment="Top" Width="94.16" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="GlavniPanel" Height="1017.5" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1591" Background="#FFCBCBCB">
+            <Button HorizontalAlignment="Right" Height="60" Margin="0,0,1496.84,0" VerticalAlignment="Top" Width="94.16" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
                 <Image Source="Slike/HomeIcon.png" Height="46" VerticalAlignment="Center" Width="67"/>
             </Button>
-        </Grid>
-        <StackPanel x:Name="GlavniPanel" Height="957.5" Margin="0,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1591" Background="#FFCBCBCB"/>
+        </StackPanel>
         <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1017.5" VerticalAlignment="Top" Width="327.5" Background="#FF1E262C">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="317*"/>
@@ -43,7 +42,6 @@
             <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5" Grid.ColumnSpan="2"/>
 
         </Grid>
-        <Separator HorizontalAlignment="Left" Height="5" Margin="329,60,0,0" VerticalAlignment="Top" Width="1591" Background="#FFF0EAEA"/>
 
 
 
