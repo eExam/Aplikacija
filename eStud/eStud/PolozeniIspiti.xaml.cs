@@ -18,26 +18,22 @@ using System.Windows.Shapes;
 namespace eStud
 {
     /// <summary>
-    /// Interaction logic for IzborniPredmeti.xaml
+    /// Interaction logic for PolozeniIspiti.xaml
     /// </summary>
-    public partial class IzborniPredmeti : UserControl
+    public partial class PolozeniIspiti : UserControl
     {
         Student trenutniKorisnik;
-        public IzborniPredmeti(Student tk)
+        public PolozeniIspiti(Student tk)
         {
             trenutniKorisnik = tk;
             InitializeComponent();
-            popuniIzbornePredmete();
+            popuniTabelu();
         }
-        public void popuniIzbornePredmete()
+        public void popuniTabelu()
+
         {
-            DataTable rezultati = DBController.StudentIzborniPredmeti(trenutniKorisnik.getUserName());
-
-            rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
-            rezultati.Columns["Studijski_program"].ColumnName = "Studijski program";
-
-            tabelaIzborniPredmeti.ItemsSource = rezultati.DefaultView;
-            
+            DataTable rezultati= DBController.StudentPolozeniIspiti(trenutniKorisnik.getUserName());
+            tabelaPolozeniIspiti.ItemsSource = rezultati.DefaultView;
 
         }
     }

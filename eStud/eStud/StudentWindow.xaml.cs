@@ -83,14 +83,32 @@ namespace eStud
         private void btnIzborniPredmeti_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
-            IzborniPredmeti ip = new IzborniPredmeti();
+            IzborniPredmeti ip = new IzborniPredmeti(student);
             GlavniPanel.Children.Add(ip);
         }
         private void btnPromenaLozinke_Click(object sender, RoutedEventArgs e)
         {
             GlavniPanel.Children.Clear();
-            PromenaLozinke pl = new PromenaLozinke();
+            PromenaLozinke pl = new PromenaLozinke(student);
             GlavniPanel.Children.Add(pl);
+        }
+        private void btnPrijaviIspit_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            StudentPrijaviIspit spi = new StudentPrijaviIspit(student);
+            GlavniPanel.Children.Add(spi);
+
+        }
+        private void btnPolozeniIspiti_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PolozeniIspiti pi = new PolozeniIspiti(student);
+            GlavniPanel.Children.Add(pi);
+        }
+        private void btnStatus_Click(object sender, RoutedEventArgs e)
+        {
+            StatusObavestenje so = new StatusObavestenje(student);
+            so.ShowDialog();
         }
     }
 }

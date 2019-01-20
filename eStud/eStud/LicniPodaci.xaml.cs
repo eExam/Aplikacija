@@ -37,7 +37,10 @@ namespace eStud
             Prezime.Content = k.getPrezime();
             DatumRodjenja.Content = k.getDatumRodjenja();
             Pol.Content = k.getPol();
-            Depatman.Content = k.getDepartman();
+            Depatman.Content = DBController.getDepartman(k.getUserName());
+            Smer.Content = DBController.getSmer(k.getUserName());
+            Semestar.Content = DBController.getSemestar(k.getUserName());
+            Indeks.Content = DBController.getBrIndeksa(k.getUserName());
 
         }
     }

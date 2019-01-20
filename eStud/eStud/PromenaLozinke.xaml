@@ -32,9 +32,9 @@
             </Rectangle.Effect>
         </Rectangle>
 
-        <TextBox   materialDesign:HintAssist.Hint="Stara lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left" Height="42" Margin="496.5,452,0,0"  VerticalAlignment="Top" Width="444"/>
-        <TextBox  materialDesign:HintAssist.Hint="Nova lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  HorizontalAlignment="Left" Height="40" Margin="496.5,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
-        <TextBox materialDesign:HintAssist.Hint="Nova lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  HorizontalAlignment="Left" Height="42.5" Margin="496.5,534,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
-        <Button Content="Sacuvaj" HorizontalAlignment="Left" Margin="592.5,638.2,0,0" VerticalAlignment="Top" Width="226.5" Background="#FF5CB73A" BorderBrush="{x:Null}" Height="55.5" FontSize="18"/>
+        <TextBox x:Name="txtStaraLozinka"   materialDesign:HintAssist.Hint="Stara lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left" Height="42" Margin="496.5,452,0,0"  VerticalAlignment="Top" Width="444"/>
+        <TextBox x:Name="txtNovaLozinka"  materialDesign:HintAssist.Hint="Nova lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  HorizontalAlignment="Left" Height="40" Margin="496.5,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
+        <TextBox x:Name="txtNovaLozinka2" materialDesign:HintAssist.Hint="Nova lozinka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  HorizontalAlignment="Left" Height="42.5" Margin="496.5,534,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
+        <Button x:Name="btnPromeniLozinku" Content="Sacuvaj" HorizontalAlignment="Left" Margin="592.5,638.2,0,0" VerticalAlignment="Top" Width="226.5" Background="#FF5CB73A" BorderBrush="{x:Null}" Height="55.5" FontSize="18" Click="btnPromeniLozinku_Click"/>
     </Grid>
 </UserControl>

@@ -67,6 +67,7 @@
     <Compile Include="DodajReferenta.xaml.cs">
       <DependentUpon>DodajReferenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzborniPredmeti.cs" />
     <Compile Include="IzborniPredmeti.xaml.cs">
       <DependentUpon>IzborniPredmeti.xaml</DependentUpon>
     </Compile>
@@ -75,6 +76,9 @@
     </Compile>
     <Compile Include="MojiPredmeti.xaml.cs">
       <DependentUpon>MojiPredmeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PolozeniIspiti.xaml.cs">
+      <DependentUpon>PolozeniIspiti.xaml</DependentUpon>
     </Compile>
     <Compile Include="Predmeti.cs" />
     <Compile Include="PromenaLozinke.xaml.cs">
@@ -87,8 +91,14 @@
     <Compile Include="ReferentWindow.xaml.cs">
       <DependentUpon>ReferentWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatusObavestenje.xaml.cs">
+      <DependentUpon>StatusObavestenje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentPodaci.xaml.cs">
       <DependentUpon>StudentPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPrijaviIspit.xaml.cs">
+      <DependentUpon>StudentPrijaviIspit.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentPrijavljeniIspit.xaml.cs">
       <DependentUpon>StudentPrijavljeniIspit.xaml</DependentUpon>
@@ -130,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PolozeniIspiti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PromenaLozinke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,7 +160,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="StatusObavestenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentPrijaviIspit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +218,7 @@
     <Content Include="eSTUD.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Slike\NotificationIcon.png" />
     <Resource Include="Slike\logo.png" />
     <Resource Include="Slike\PrijavljeniIspiti.png" />
     <Resource Include="Slike\ObavestenjaIcon.png" />

@@ -11,31 +11,28 @@ namespace eStud.Model
 
     class DBController
     {
-        
+        //Konekcija sa bazom
         private static string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\eSTUD.accdb; Persist Security Info = False;";
         private static OleDbConnection connect = new OleDbConnection(connectionString);
-       
-       
-        public static void UbaciUBazi(string username,string password,string usertype,string ime,string prezime,string datum_rodjenja,string pol)
+
+        //Dodavanje novih korisnika u bazu
+        public static void UbaciUBazi(string username, string password, string usertype, string ime, string prezime, string datum_rodjenja, string pol)
         {
             try
-            { 
+            {
                 OleDbCommand cmd = connect.CreateCommand();
-                cmd.CommandText = "Insert into Users values('"+username+"', '"+password+"','"+usertype+"','"+ime+"','"+prezime+"','"+datum_rodjenja+"','"+pol+"')";
+                cmd.CommandText = "Insert into Users values('" + username + "', '" + password + "','" + usertype + "','" + ime + "','" + prezime + "','" + datum_rodjenja + "','" + pol + "')";
                 connect.Open();
                 cmd.ExecuteNonQuery();
                 connect.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
         }
-        public static void DodajRef(string username,string Departman,string StudijskiProgram)
-        {
-            string upit="Insert into Referent Values('"+username+"','"+Departman+"','"+StudijskiProgram+"')";
-            IzvrsiUpit(upit);
-        }
+        
+        //Izvrsavanje upita
         public static void IzvrsiUpit(string upit)
         {
             try
@@ -43,7 +40,7 @@ namespace eStud.Model
                 connect.Open();
 
                 new OleDbCommand(upit, connect).ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
@@ -53,9 +50,9 @@ namespace eStud.Model
             {
                 connect.Close();
             }
-            
+
         }
-       
+        //Uzimanje rezultata upita
         public static DataTable rezultatiUpita(string upit)
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -67,23 +64,29 @@ namespace eStud.Model
             da.Fill(dt);
             return dt;
         }
-      
+
         public static void IzbrisiIzBaze(string upit)
         {
             try
             {
-                
+
                 OleDbCommand cmd = new OleDbCommand();
                 cmd.Connection = connect;
                 IzvrsiUpit(upit);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
             }
         }
-        
-        
+        //Dodavanje referenta
+        public static void DodajRef(string username, string Departman, string StudijskiProgram)
+        {
+            string upit = "Insert into Referent Values('" + username + "','" + Departman + "','" + StudijskiProgram + "')";
+            IzvrsiUpit(upit);
+        }
+
+        //Omogucavanje logina
         public static Korisnik ImaUBazi(string username, string password)
         {
             try
@@ -104,8 +107,9 @@ namespace eStud.Model
             }
 
         }
+        //Popunjavanje tabele za predmete koje student slusa
         public DataTable StudentPredmeti(string username)
-        { 
+        {
             try
             {
                 DataTable dt = new DataTable();
@@ -118,6 +122,25 @@ namespace eStud.Model
             }
 
         }
+        //Popunjavanje tabele za biranje izbornih predmeta
+        public static DataTable StudentIzborniPredmeti(string username)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                int sem = getSemestar(username);
+                
+                dt = rezultatiUpita("Select IzborniPredmeti.Naziv_predmeta, IzborniPredmeti.Departman,IzborniPredmeti.Studijski_program,IzborniPredmeti.Semestar,IzborniPredmeti.ESPB FROM IzborniPredmeti Where IzborniPredmeti.Semestar=" + sem+"");
+                
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        
         public DataTable StudentPrijavljeniIspiti(string username)
         {
             try
@@ -131,26 +154,163 @@ namespace eStud.Model
                 throw ex;
             }
         }
+        public static DataTable StudentPolozeniIspiti(string username)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                 dt = rezultatiUpita("Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime,PolozeniIspiti.Ocena FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN PolozeniIspiti ON Predmeti.Sifra_predmeta=PolozeniIspiti.Sifra_predmeta) ON Users.username=Profesor.username WHERE PolozeniIspiti.Username_studenta='" + username + "'");
+                return dt;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
         public static DataTable PodaciReferent()
-        { 
+        {
             DataTable dt = new DataTable();
             dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
-          
+
             return dt;
         }
-       public DataTable PodaciStudent()
+        //Licni podaci o studentu
+        public DataTable PodaciStudent()
         {
             DataTable dt = new DataTable();
             dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Student.departman,Student.studijski_program FROM Student,Users WHERE Users.username=Student.username");
             return dt;
 
         }
-       
+
         public static void izbrisiKorisnika(string username)
-        {                
+        {
             IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
         }
-       
+        //Promena lozinke
+        public static void postaviNovuLozinku(string username, string staraLozinka, string NovaLozinka)
+        {
+            try
+            {
+                connect.Open();
+                OleDbCommand cmd = new OleDbCommand();
+
+                cmd.Connection = connect;
+                string upit = "UPDATE [Users] SET [password]='" + NovaLozinka + "' WHERE [username]='" + username + "';";
+
+                cmd.CommandText = upit;
+
+
+                cmd.ExecuteNonQuery();
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("NECE TI" + ex);
+            }
+            finally
+            {
+                connect.Close();
+            }
+
+        }
+        //Uzimanje podatka o trenutnom semestru u kojem je student
+        public static int getSemestar(string username)
+        {
+            string upit = "Select semestar FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+            try
+            {
+
+                return int.Parse(dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return 0;
+
+
+        }
+        //Na kojem je departmanu student
+        public static string getDepartman(string username)
+        {
+            string upit = "Select departman FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+            try
+            {
+
+                return (dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
+        }
+        //Na kojem je smeru student
+        public static string getSmer(string username)
+        {
+            string upit = "Select studijski_program FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+            try
+            {
+
+                return (dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
+        }
+        //Broj indeksa studenta
+        public static string getBrIndeksa(string username)
+        {
+            string upit = "Select broj_indeksa FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+            try
+            {
+
+                return (dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
+        }
+        public static string getStatus(string username)
+        {
+
+            string upit = "Select status FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+            try
+            {
+
+                return (dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
+
+        }
+        
+        
+        //Hashiranje lozinke
         public static string CreateMD5(string input)
         {
             // Use input string to calculate MD5 hash

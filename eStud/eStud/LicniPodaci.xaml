@@ -23,8 +23,8 @@
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
-        
-        <ListView x:Name="ListView" Height="412.5" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="449.5,248.5,578.5,0" FontSize="23" Foreground="#DD9C9797">
+
+        <ListView x:Name="ListView" Height="467" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="450,248,579,0" FontSize="23" Foreground="#DD9C9797">
 
             <ListView.View>
                 <GridView x:Name="GridView" >
@@ -40,6 +40,7 @@
             <Label x:Name="Depatman" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label x:Name="Smer" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label x:Name="Indeks" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="Semestar" Content="-"/>
         </ListView>
 
     </Grid>
