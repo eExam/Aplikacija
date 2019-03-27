@@ -40,10 +40,17 @@ namespace eStud
         }
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
-            TabelaStudenti.CanUserDeleteRows = true;
-            DataRowView row = (DataRowView)TabelaStudenti.SelectedItems[0];
-            DBController.izbrisiKorisnika(row["username"].ToString());
-            rezultati.Rows.Remove(row.Row);
+            try
+            {
+                TabelaStudenti.CanUserDeleteRows = true;
+                DataRowView row = (DataRowView)TabelaStudenti.SelectedItems[0];
+                DBController.izbrisiKorisnika(row["username"].ToString());
+                rezultati.Rows.Remove(row.Row);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Niste izabrali");
+            }
         }
         private void btnIzmeni_Click(object sender, RoutedEventArgs e)
         {

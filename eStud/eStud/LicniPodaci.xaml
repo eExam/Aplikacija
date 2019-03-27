@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
              d:DesignHeight="979" Width="1591" Height="1017.5">
-    <Grid x:Name="GlavniPanel" Height="1017.5" Background="#FFF7F6F6" Width="1591" >
-        <Rectangle Height="516" VerticalAlignment="Top" >
+    <Grid x:Name="GlavniPanel" Height="1017.5" Background="White" Width="1591" >
+        <Rectangle Height="471" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
@@ -18,13 +18,13 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <Rectangle Height="529" Fill="#FFFDF9F6" VerticalAlignment="Bottom" Margin="395,0,514,239.5" RadiusX="15" RadiusY="15">
+        <Rectangle Height="501" Fill="#FFFDF9F6" VerticalAlignment="Bottom" Margin="491,0,568,267.5" RadiusX="15" RadiusY="15">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
 
-        <ListView x:Name="ListView" Height="467" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="450,248,579,0" FontSize="23" Foreground="#DD9C9797">
+        <ListView x:Name="ListView" Height="467" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="521,249,600,0" FontSize="23" Foreground="#DD9C9797">
 
             <ListView.View>
                 <GridView x:Name="GridView" >

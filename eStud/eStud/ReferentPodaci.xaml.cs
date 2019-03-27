@@ -55,15 +55,21 @@ namespace eStud
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
 
-           
-            
-            //TabelaReferenti.SelectedItem;
-            TabelaReferenti.CanUserDeleteRows = true;
-            DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
-            DBController.izbrisiKorisnika(row["username"].ToString());
+
+            try
+            {
+                //TabelaReferenti.SelectedItem;
+                TabelaReferenti.CanUserDeleteRows = true;
+                DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
+                DBController.izbrisiKorisnika(row["username"].ToString());
                 rezultati.Rows.Remove(row.Row);
-          //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
-            //PopuniTabelu();
+                //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
+                //PopuniTabelu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NIste izabrali ");
+            }
         }
 
         private void btnDodajRef_Click(object sender, RoutedEventArgs e)

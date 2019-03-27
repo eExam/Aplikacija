@@ -36,6 +36,8 @@ namespace eStud
             GlavniPanel.Children.Clear();
             StudentPodaci sp = new StudentPodaci();
             GlavniPanel.Children.Add(sp);
+            this.btnStud.Background = Brushes.DimGray;
+            this.btnRef.Background = Brushes.Transparent;
         }
 
         private void btnRef_Click(object sender, RoutedEventArgs e)
@@ -43,6 +45,9 @@ namespace eStud
             GlavniPanel.Children.Clear();
             ReferentPodaci rp = new ReferentPodaci();
             GlavniPanel.Children.Add(rp);
+            
+            this.btnRef.Background = Brushes.DimGray;
+            this.btnStud.Background = Brushes.Transparent;
         }
 
         private void btnOdjava_Click(object sender, RoutedEventArgs e)
@@ -51,5 +56,32 @@ namespace eStud
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
         }
+
+        private void btn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+           // HoverButtonEnter((Button)sender);
+               
+        }
+
+        private void btn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button b = (Button)sender;
+           
+
+          HoverButtonLeave(b);
+            
+        }
+        public void HoverButtonEnter(Button b)
+        {
+            
+            b.Background = Brushes.DimGray;
+        }
+        public void HoverButtonLeave(Button b)
+        {
+            b.Background = Brushes.Transparent;
+        }
+
+       
     }
 }
