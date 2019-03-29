@@ -38,5 +38,16 @@ namespace eStud
             this.txtStudijskiProgram.Text = DBController.getSmer(trenutniKorisnik.getUserName());
            
         }
+
+      
+
+        private void btnPrijavi_Click(object sender, RoutedEventArgs e)
+        {
+            string sifra=DBController.getSifraPredmeta(txtNazivPredmeta.Text);
+            string ispitnirok = "januar";
+           
+            DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra,ispitnirok,txtProfesor.Text);
+
+        }
     }
 }

@@ -90,3 +90,7 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PolozeniIspiti
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PolozeniIspiti.baml
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StatusObavestenje.g.cs
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StatusObavestenje.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajStudenta.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajStudenta.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentZahteviPrijava.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentZahteviPrijava.baml

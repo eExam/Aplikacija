@@ -18,13 +18,13 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <Rectangle Height="501" Fill="#FFFDF9F6" VerticalAlignment="Bottom" Margin="491,0,568,267.5" RadiusX="15" RadiusY="15">
+        <Rectangle Height="588" Fill="White" VerticalAlignment="Bottom" Margin="457,0,332,246.5" RadiusX="15" RadiusY="15" Opacity="0.3">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
 
-        <ListView x:Name="ListView" Height="467" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF6A0D0D" Margin="521,249,600,0" FontSize="23" Foreground="#DD9C9797">
+        <ListView x:Name="ListView" Height="528" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF1F7C2B" Margin="525,207.5,400,0" FontSize="23" Foreground="#DD000000">
 
             <ListView.View>
                 <GridView x:Name="GridView" >
@@ -32,14 +32,14 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Content}" />
                 </GridView>
             </ListView.View>
-            <Label x:Name="Username" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="61.997"/>
-            <Label x:Name="Ime" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997"/>
-            <Label x:Name="Prezime" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420.497"/>
-            <Label x:Name="DatumRodjenja" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="381.497"/>
-            <Label x:Name="Pol" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497"/>
-            <Label x:Name="Depatman" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label x:Name="Smer" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label x:Name="Indeks" FontSize="25" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="Username" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="61.997"/>
+            <Label x:Name="Ime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997"/>
+            <Label x:Name="Prezime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420.497"/>
+            <Label x:Name="DatumRodjenja" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="381.497"/>
+            <Label x:Name="Pol" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497"/>
+            <Label x:Name="Depatman" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="Smer" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="Indeks" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label x:Name="Semestar" Content="-"/>
         </ListView>
 

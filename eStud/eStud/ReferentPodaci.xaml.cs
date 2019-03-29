@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using eStud.Model;
 using System.Data.OleDb;
 
+
 namespace eStud
 {
     /// <summary>
@@ -25,6 +26,7 @@ namespace eStud
     public partial class ReferentPodaci : UserControl
     {
         public DataTable rezultati;
+        bool state = false;
         //private DBController db=new DBController();
         public ReferentPodaci()
         {
@@ -51,6 +53,7 @@ namespace eStud
             
             
         }
+        
 
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
@@ -58,25 +61,43 @@ namespace eStud
 
             try
             {
-                //TabelaReferenti.SelectedItem;
-                TabelaReferenti.CanUserDeleteRows = true;
-                DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
-                DBController.izbrisiKorisnika(row["username"].ToString());
-                rezultati.Rows.Remove(row.Row);
-                //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
-                //PopuniTabelu();
+                MessageBoxResult result = MessageBox.Show("Da li ste sigurni", "Confirmation", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    //TabelaReferenti.SelectedItem;
+                    TabelaReferenti.CanUserDeleteRows = true;
+                    
+                    DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
+                    DBController.izbrisiKorisnika(row["username"].ToString());
+                    rezultati.Rows.Remove(row.Row);
+                    //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
+                    //PopuniTabelu();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("NIste izabrali ");
+               
             }
         }
+       
 
         private void btnDodajRef_Click(object sender, RoutedEventArgs e)
         {
-            pnlRight.Children.Clear();
-            DodajReferenta df = new DodajReferenta(TabelaReferenti);
-            pnlRight.Children.Add(df);
+           // state = 0;
+            if (state==true)
+            {
+                pnlRight.Children.Clear();
+               
+                state = false;               
+            }
+            
+            else
+            {
+                pnlRight.Children.Clear();
+                DodajReferenta df = new DodajReferenta(TabelaReferenti);
+                pnlRight.Children.Add(df);
+                state = true;
+            }
         }
     }
  }

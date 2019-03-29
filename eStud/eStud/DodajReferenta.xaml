@@ -12,22 +12,19 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}" Width="342.5" Height="549">
-    <Grid Background="#FF7CBB00" Margin="-1,-6,0,0">
-        <StackPanel HorizontalAlignment="Left" Height="491.5" Margin="43,10,0,0" VerticalAlignment="Top" Width="253.5">
-            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
-            <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
-            <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Referent" />
-            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
-            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
-            <TextBox x:Name="txtDatumRodj" materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" />
-            <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
-            <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light"/>
-            <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF7EDED" Foreground="#DDF9F1F1" FontWeight="Bold" FontSize="18" Height="41.6" FontFamily="Segoe UI Light"/>
-            <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="253.5" Click="Button_Click"  Margin="0,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}">
-
-
-            </Button>
+     FontFamily="{DynamicResource MaterialDesignFont}" Width="522.5" Height="550.5">
+    <Grid Background="#FFF7F3F3" Margin="-1,-6,0,0">
+        <StackPanel HorizontalAlignment="Left" Height="490" Margin="58,34,0,0" VerticalAlignment="Top" Width="398">
+            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Referent" IsEnabled="False" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Height="45.44" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <TextBox x:Name="txtDatumRodj" materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Click="Button_Click"  Margin="80,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}" Height="50"/>
         </StackPanel>
 
     </Grid>

@@ -35,7 +35,7 @@
             <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="TOP" Margin="5" Foreground="Gray" FontSize="20"/>
             <StackPanel VerticalAlignment="Center">
                 <TextBox x:Name="txtUser" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10"/>
-                <TextBox x:Name="txtPass" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,10,10" HorizontalAlignment="Right" Width="260"/>
+                <PasswordBox x:Name="txtPass" PasswordChar="*" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,10,10,10" HorizontalAlignment="Right" Width="260" PreviewKeyDown="txtPass_PreviewKeyDown"/>
             </StackPanel>
         </Grid>
     

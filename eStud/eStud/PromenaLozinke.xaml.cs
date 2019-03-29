@@ -28,38 +28,97 @@ namespace eStud
             InitializeComponent();
         }
 
-        private void btnPromeniLozinku_Click(object sender, RoutedEventArgs e) 
+        private void btnPromeniLozinku_Click(object sender, RoutedEventArgs e)
         {
+
+            PromeniLozinku();
+           
+        }
+        private void PromeniLozinku()
+        {
+            Console.WriteLine(DBController.getPassword(trenutniKorisnik.getUserName()));
+            Console.WriteLine(trenutniKorisnik.getUserName());
+
             try
             {
-                Console.WriteLine(trenutniKorisnik.getUserName());
-                if (imaPraznihPolja())
-                    throw new Exception("Niste popunili sva polja");
-                if (txtNovaLozinka.Text != txtNovaLozinka2.Text)
-                    throw new Exception("Lozinke se ne poklapaju");
-             
-                    DBController.postaviNovuLozinku(trenutniKorisnik.getUserName(), txtStaraLozinka.Text, txtNovaLozinka.Text);
-                    MessageBox.Show("Uspesno ste promenili lozinku");
-                
+
+                if ((DBController.getPassword(trenutniKorisnik.getUserName()) == txtStaraLozinka.Password.ToString()))
+
+                /*if ((DBController.getPassword(trenutniKorisnik.getUserName())==true) && (txtNovaLozinka.Text==txtNovaLozinka2.Text))*/
+                {
+
+                    if (txtNovaLozinka.Password == txtNovaLozinka2.Password)
+                        if (txtNovaLozinka.Password == txtStaraLozinka.Password && txtNovaLozinka2.Password == txtStaraLozinka.Password)
+
+                        {
+                            MessageBox.Show("Ne mozete staviti istu lozinku");
+                        }
+                        else
+                        {
+                            if (txtNovaLozinka.Password !="" && txtNovaLozinka2.Password !="")
+                            {
+                                DBController.postaviNovuLozinku(trenutniKorisnik.getUserName(), txtStaraLozinka.Password.ToString(), txtNovaLozinka.Password.ToString());
+                                MessageBox.Show("Bravo");
+                                ocistiSvaPolja();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Popunite polja");
+                            }
+                            }
+                    else
+                    {
+                        MessageBox.Show("Nove lozinke se ne podudaraju");
+                    }
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Stara lozinka nije tacna");
+                }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Niste zamenili");
-                ocistiSvaPolja();
+
+                if (imaPraznihPolja())
+                    MessageBox.Show("Niste popunili sva polja");
+
+                /* if (txtNovaLozinka.Text != txtNovaLozinka2.Text)
+                     MessageBox.Show("Nove lozinke se ne podudaraju");*/
+
+
+
             }
         }
+        
         private void ocistiSvaPolja()
         {
-            txtStaraLozinka.Text = "";
-            txtNovaLozinka.Text = " ";
-            txtNovaLozinka2.Text = "";
+            txtStaraLozinka.Password = "";
+            txtNovaLozinka.Password = "";
+            txtNovaLozinka2.Password = "";
         }
         private bool imaPraznihPolja()
         {
-            return txtStaraLozinka.Text == ""
-                 || txtNovaLozinka.Text == ""
-                 || txtNovaLozinka2.Text == "";
+            return txtStaraLozinka.Password == " "
+                 || txtNovaLozinka.Password == " "
+                 || txtNovaLozinka2.Password == " ";
              
+        }
+
+      
+
+        private void txtNovaLozinka_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+        private void SAVE_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Enter)
+            {
+                PromeniLozinku();
+            }
         }
     }
 }

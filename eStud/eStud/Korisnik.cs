@@ -25,6 +25,7 @@ namespace eStud.Model
             this.prezime = prezime;
             this.datumRodjenja = datumRodjenja;
             this.pol = pol;
+            
 
 
         }

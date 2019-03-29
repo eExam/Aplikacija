@@ -50,21 +50,37 @@ namespace eStud
         {
             try
             {
-                if (ImaPraznoPolje())
+                /*if (ImaPraznoPolje())
                   throw new Exception("Popunite sva polja!");
                 if (DBController.ImaUBazi(txtUsername.Text, txtPassword.Text) != null)
-                    throw new Exception("Korisnicko ime je zauzeto");
+                    throw new Exception("Korisnicko ime je zauzeto");*/
 
-                DBController.UbaciUBazi(this.txtUsername.Text, this.txtPassword.Text, this.txtUsertype.Text, this.txtIme.Text, this.txtPrezime.Text, this.txtDatumRodj.Text, this.txtPol.Text);
-                    DBController.DodajRef(this.txtUsername.Text, this.txtDepartman.Text, this.txtStudijskiProgram.Text);
-                    MessageBox.Show("Uspesno ste dodali Korisnika");
-
+                if (!ImaPraznoPolje())
+                {
+                    if (DBController.ZauzetoKorisnicko(txtUsername.Text) == true)
+                    {
+                        MessageBox.Show("Korisnicko ime je zauzeto");
+                    }
+                    else
+                    {
+                        DBController.UbaciUBazi(this.txtUsername.Text, this.txtPassword.Text, this.txtUsertype.Text, this.txtIme.Text, this.txtPrezime.Text, this.txtDatumRodj.Text, this.txtPol.Text);
+                        DBController.DodajRef(this.txtUsername.Text, this.txtDepartman.Text, this.txtStudijskiProgram.Text);
+                        MessageBox.Show("Uspesno ste dodali Korisnika");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Niste popunili sva polja");
+                }
                
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Niste popunili sva polja");
+                if (DBController.ZauzetoKorisnicko(txtUsername.Text)== true)
+                    MessageBox.Show("Korisnicko ime je zauzeto");
+                if (ImaPraznoPolje())
+                    MessageBox.Show("Niste popunilil sva polja");
+                
             }
 
 

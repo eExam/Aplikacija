@@ -29,45 +29,79 @@ namespace eStud
         }
         private void BtnLogin(object sender, RoutedEventArgs e)
         {
-            Korisnik rezultatUpita = DBController.ImaUBazi(txtUser.Text,txtPass.Text);
+            LoginHandler();
+
+
+        }
+        private void LoginHandler()
+        {
+            Korisnik rezultatUpita = DBController.ImaUBazi(txtUser.Text, txtPass.Password.ToString());
+           
             
-             
-            if (rezultatUpita.getUserType() == "student")
-            {
-                try
+           
+            
+            try {
+                /*if (ImaPraznoPolje())
+                    throw new Exception("Popunite sva polja!");*/
+                if (rezultatUpita.getUserType() == "student")
                 {
+
                     this.Hide();
                     StudentWindow sw = new StudentWindow(new Student(rezultatUpita));
                     sw.ShowDialog();
                 }
-                catch (Exception es) { MessageBox.Show(es.Message); }
-            }
-            else if(rezultatUpita.getUserType()=="admin")
-            {
-                try
+
+                else if (rezultatUpita.getUserType() == "admin")
                 {
+
                     this.Hide();
                     AdminWindow aw = new AdminWindow(rezultatUpita);
                     aw.ShowDialog();
+
                 }
-                catch (Exception es) { MessageBox.Show(es.Message); }
-            }
-            else if(rezultatUpita.getUserType()=="referent")
-            {
-                try
+                else if (rezultatUpita.getUserType() == "referent")
                 {
+
                     this.Hide();
                     ReferentWindow rw = new ReferentWindow(new Referent(rezultatUpita));
                     rw.ShowDialog();
-                }
-                catch(Exception es)
-                {
-                    MessageBox.Show(es.Message);
+
                 }
             }
-
+            catch(Exception ex)
+            {
+                if((txtPass.Password.ToString() == "") || (txtUser.Text==""))
+                {
+                    MessageBox.Show("Niste popunili polja");
+                }
+               if(DBController.ImaUBazi(txtUser.Text,txtPass.Password.ToString())==null)
+                {
+                    MessageBox.Show("Pogresili ste lozinku/korisnicko ime .Pokusajte ponovo");
+                    txtPass.Password = "";
+                }
+                
+            }
 
         }
+        private bool ImaPraznoPolje()
+        {
+            return txtUser.Text == ""
+                || txtPass.Password == "";
+                
+        }
 
+        private void txtPass_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void txtPass_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                LoginHandler();
+            }
+        }
     }
-}
+    }
+

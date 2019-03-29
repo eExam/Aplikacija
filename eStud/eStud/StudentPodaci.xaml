@@ -5,12 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="1252.5" Height="757">
-    <Grid Background="White" Height="758" Margin="0,0,0,-1" VerticalAlignment="Top">
-        <DataGrid x:Name="TabelaStudenti" HorizontalAlignment="Left" Height="508" VerticalAlignment="Top" Width="897"/>
-        <Button x:Name="btnDodajStud" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btnDodajStud_Click" Background="#FF21A896" Height="36" BorderBrush="{x:Null}" Margin="26,534,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="232,533,0,0" Height="37"/>
-        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzmeni_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="428,534,0,0" Height="37"/>
+             d:DesignHeight="450" Width="1591" Height="1017.5">
+    <Grid Background="White" Height="1017.5" Margin="0,0,0,-1" VerticalAlignment="Top" Width="1591">
+        <DataGrid x:Name="TabelaStudenti" HorizontalAlignment="Left" Height="1017.5" VerticalAlignment="Top" Width="897"/>
+        <Button x:Name="btnDodajStud" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Click="btnDodajStud_Click" Background="#FF21A896" Height="36" BorderBrush="{x:Null}" Margin="918.5,24,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnIzbrisi" Content="Brisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzbrisi_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="918.5,82.5,0,0" Height="37"/>
+        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Click="btnIzmeni_Click" Background="#FF31B6A4" BorderBrush="{x:Null}" Margin="918.5,145.5,0,0" Height="37"/>
+        <StackPanel x:Name="pnlDodajStud" HorizontalAlignment="Left" Height="802" Margin="918.5,205.5,0,0" VerticalAlignment="Top" Width="662.5"/>
 
     </Grid>
 </UserControl>

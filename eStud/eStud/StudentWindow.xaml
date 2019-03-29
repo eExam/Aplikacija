@@ -14,7 +14,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="#FFFFFAF8"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="StudentWindow" Height="1050" Width="1930" WindowStyle="ThreeDBorderWindow" WindowState="Maximized">
+        Title="StudentWindow" Height="1050" Width="1930" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" ResizeMode="NoResize">
     <Grid Margin="0,0,2,1.5">
         <StackPanel x:Name="GlavniPanel" Height="1017.5" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1591" Background="#FFCBCBCB">
             <Button HorizontalAlignment="Right" Height="60" Margin="0,0,1496.84,0" VerticalAlignment="Top" Width="94.16" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">

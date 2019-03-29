@@ -39,7 +39,7 @@
         <TextBox x:Name="txtNazivPredmeta" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Naziv predmeta" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left"/>
         <TextBox x:Name="txtBrPrijave" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj prijave" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="1034.705,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="20" RenderTransformOrigin="0.349,0.804" HorizontalContentAlignment="Left"/>
         <TextBox x:Name="txtProfesor" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Profesor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="786,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left"/>
-        <Button Content="PRIJAVI" HorizontalAlignment="Left" Margin="600,711,0,0" VerticalAlignment="Top" Width="303" Height="63" FontSize="36" Background="#FF3AB745" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnPrijavi" Content="PRIJAVI" HorizontalAlignment="Left" Margin="600,711,0,0" VerticalAlignment="Top" Width="303" Height="63" FontSize="36" Background="#FF3AB745" BorderBrush="{x:Null}" Click="btnPrijavi_Click"/>
 
 
 

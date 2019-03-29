@@ -1,6 +1,7 @@
 ﻿using eStud.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,27 +12,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace eStud
 {
     /// <summary>
-    /// Interaction logic for ReferentWindow.xaml
+    /// Interaction logic for ReferentZahteviPrijava.xaml
     /// </summary>
-    public partial class ReferentWindow : Window
+    public partial class ReferentZahteviPrijava : UserControl
     {
-        private Referent r;
-        public ReferentWindow(Korisnik k)
+        public DataTable rezultati;
+        public ReferentZahteviPrijava()
         {
-            this.r = new Referent(k);
             InitializeComponent();
+            popuniTabelu();
         }
-
-        private void btnZahteviIspit_Click(object sender, RoutedEventArgs e)
+        public void popuniTabelu()
         {
-            this.GlavniPanel.Children.Clear();
-            ReferentZahteviPrijava rzp = new ReferentZahteviPrijava();
-            this.GlavniPanel.Children.Add(rzp);
+            rezultati = DBController.ReferentZahteviPrijava();
+            tabelaZahteva.ItemsSource = rezultati.DefaultView;
         }
     }
 }

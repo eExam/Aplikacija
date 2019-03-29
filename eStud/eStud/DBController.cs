@@ -31,7 +31,7 @@ namespace eStud.Model
                 Console.WriteLine(ex);
             }
         }
-        
+
         //Izvrsavanje upita
         public static void IzvrsiUpit(string upit)
         {
@@ -107,6 +107,24 @@ namespace eStud.Model
             }
 
         }
+        public static bool ZauzetoKorisnicko(string username)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = rezultatiUpita("Select * from users where username='" + username + "'");
+                // dt.Rows oznacava broj javljanja osobe u tabeli Korisnici
+                // Ovde se takodje vrsi i poredjenje lozinke sa enkriptovanom lozinkom u bazi
+                if (dt.Rows.Count == 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         //Popunjavanje tabele za predmete koje student slusa
         public DataTable StudentPredmeti(string username)
         {
@@ -122,6 +140,13 @@ namespace eStud.Model
             }
 
         }
+       public static string getSifraPredmeta(string NazivPredmeta)
+        {
+            DataTable dt = new DataTable();
+            
+            dt=rezultatiUpita("Select Sifra_predmeta From Predmeti where Naziv_predmeta='"+NazivPredmeta+"'");
+            return dt.Rows[0][0].ToString();
+        }
         //Popunjavanje tabele za biranje izbornih predmeta
         public static DataTable StudentIzborniPredmeti(string username)
         {
@@ -129,9 +154,9 @@ namespace eStud.Model
             {
                 DataTable dt = new DataTable();
                 int sem = getSemestar(username);
-                
-                dt = rezultatiUpita("Select IzborniPredmeti.Naziv_predmeta, IzborniPredmeti.Departman,IzborniPredmeti.Studijski_program,IzborniPredmeti.Semestar,IzborniPredmeti.ESPB FROM IzborniPredmeti Where IzborniPredmeti.Semestar=" + sem+"");
-                
+
+                dt = rezultatiUpita("Select IzborniPredmeti.Naziv_predmeta, IzborniPredmeti.Departman,IzborniPredmeti.Studijski_program,IzborniPredmeti.Semestar,IzborniPredmeti.ESPB FROM IzborniPredmeti Where IzborniPredmeti.Semestar=" + sem + "");
+
                 return dt;
             }
             catch (Exception ex)
@@ -140,7 +165,7 @@ namespace eStud.Model
             }
 
         }
-        
+
         public DataTable StudentPrijavljeniIspiti(string username)
         {
             try
@@ -159,11 +184,11 @@ namespace eStud.Model
             try
             {
                 DataTable dt = new DataTable();
-                 dt = rezultatiUpita("Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime,PolozeniIspiti.Ocena FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN PolozeniIspiti ON Predmeti.Sifra_predmeta=PolozeniIspiti.Sifra_predmeta) ON Users.username=Profesor.username WHERE PolozeniIspiti.Username_studenta='" + username + "'");
+                dt = rezultatiUpita("Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime,PolozeniIspiti.Ocena FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN PolozeniIspiti ON Predmeti.Sifra_predmeta=PolozeniIspiti.Sifra_predmeta) ON Users.username=Profesor.username WHERE PolozeniIspiti.Username_studenta='" + username + "'");
                 return dt;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -222,6 +247,7 @@ namespace eStud.Model
             DataTable dt = new DataTable();
             dt = rezultatiUpita(upit);
 
+
             try
             {
 
@@ -234,6 +260,23 @@ namespace eStud.Model
             return 0;
 
 
+        }
+        public static string getPassword(string username)
+        {
+            string upit = "Select password FROM Users where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+            try
+            {
+
+                return dt.Rows[0][0].ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         //Na kojem je departmanu student
         public static string getDepartman(string username)
@@ -308,8 +351,19 @@ namespace eStud.Model
             return null;
 
         }
-        
-        
+        public static void PosaljiZahtev(string username,string predmet,string ispitnirok,string usernameProf )
+        {
+            string upit = "Insert into ZahteviZaPrijavu values('" + username + "', '" + predmet + "','" + ispitnirok + "','" + usernameProf + "')";
+            IzvrsiUpit(upit);
+        }
+       
+        public static DataTable ReferentZahteviPrijava()
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select * FROM ZahteviZaPrijavu");
+            return dt;
+        }
+
         //Hashiranje lozinke
         public static string CreateMD5(string input)
         {

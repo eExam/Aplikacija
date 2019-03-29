@@ -23,6 +23,7 @@ namespace eStud
     public partial class StudentPodaci : UserControl
     {
         public DataTable rezultati;
+        bool state = false;
         public StudentPodaci()
         {
             InitializeComponent();
@@ -36,7 +37,18 @@ namespace eStud
 
         private void btnDodajStud_Click(object sender, RoutedEventArgs e)
         {
-
+            if (state == true)
+            {
+                pnlDodajStud.Children.Clear();
+                state = false;
+            }
+            else
+            {
+                pnlDodajStud.Children.Clear();
+                DodajStudenta df = new DodajStudenta(TabelaStudenti);
+                pnlDodajStud.Children.Add(df);
+                state = true;
+            }
         }
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
