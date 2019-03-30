@@ -33,5 +33,19 @@ namespace eStud
             rezultati = DBController.ReferentZahteviPrijava();
             tabelaZahteva.ItemsSource = rezultati.DefaultView;
         }
+
+        private void btnOdobri_Click(object sender, RoutedEventArgs e)
+        {
+            tabelaZahteva.CanUserDeleteRows = true;
+            DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
+            DBController.OdobriPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+        }
+
+        private void btnOdbij_Click(object sender, RoutedEventArgs e)
+        {
+            tabelaZahteva.CanUserDeleteRows = true;
+            DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
+            DBController.OdbijPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+        }
     }
 }

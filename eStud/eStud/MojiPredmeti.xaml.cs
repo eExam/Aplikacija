@@ -31,7 +31,7 @@ namespace eStud
         }
         private void popuniTabelu()
         {
-            DataTable rezultati = new DBController().StudentPredmeti(trenutniKor.getUserName());
+            DataTable rezultati =  DBController.StudentPredmeti(trenutniKor.getUserName());
             rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
             TabelaPredmeti.ItemsSource = rezultati.DefaultView;
         }

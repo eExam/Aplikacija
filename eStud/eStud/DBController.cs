@@ -126,7 +126,7 @@ namespace eStud.Model
             }
         }
         //Popunjavanje tabele za predmete koje student slusa
-        public DataTable StudentPredmeti(string username)
+        public static DataTable StudentPredmeti(string username)
         {
             try
             {
@@ -139,6 +139,28 @@ namespace eStud.Model
                 throw ex;
             }
 
+        }
+        
+
+        public static string getProfesora(string NazivPredmeta)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = rezultatiUpita("Select username_profesora From Predmeti where Naziv_predmeta='" + NazivPredmeta + "'");
+                if (dt.Rows.Count == 1)
+                {
+                    return dt.Rows[0][0].ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
        public static string getSifraPredmeta(string NazivPredmeta)
         {
@@ -164,6 +186,19 @@ namespace eStud.Model
                 throw ex;
             }
 
+        }
+        public static DataTable StudentNeprijavljeniIspiti(string username)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = rezultatiUpita(" SELECT Predmeti.Naziv_predmeta, Predmeti.Semestar, Predmeti.ESPB,Users.ime, Users.prezime,NeprijavljeniIspiti.broj_prijava FROM Users INNER JOIN((Profesor INNER JOIN Predmeti ON Profesor.username = Predmeti.username_profesora) INNER JOIN NeprijavljeniIspiti ON Predmeti.Sifra_predmeta = NeprijavljeniIspiti.Sifra_predmeta) ON Users.username = Profesor.username WHERE NeprijavljeniIspiti.username_studenta ='" + username + "'");
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public DataTable StudentPrijavljeniIspiti(string username)
@@ -200,6 +235,7 @@ namespace eStud.Model
 
             return dt;
         }
+        
         //Licni podaci o studentu
         public DataTable PodaciStudent()
         {
@@ -362,6 +398,19 @@ namespace eStud.Model
             DataTable dt = new DataTable();
             dt = rezultatiUpita("Select * FROM ZahteviZaPrijavu");
             return dt;
+        }
+        public static void OdobriPrijavuIspita(string username, int brojPrijave,string sifraPredmeta)
+        {
+            
+
+            string upit = "Insert into PrijavljeniIspiti values('" + sifraPredmeta + "', '" + brojPrijave+"','"+username+"')";
+            IzvrsiUpit(upit);
+
+        }
+        public static void OdbijPrijavuIspita(string username,int brojPrijave,string sifraPredmeta)
+        {
+            string upit = "Insert into NeprijavljeniIspiti values('" + sifraPredmeta + "','" + brojPrijave + "','" + username + "')";
+            IzvrsiUpit(upit);
         }
 
         //Hashiranje lozinke

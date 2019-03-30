@@ -47,7 +47,7 @@
                         <ColumnDefinition Width="7*"/>
                         <ColumnDefinition Width="142*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Left" Height="579.64" VerticalAlignment="Top" Width="1581" Grid.ColumnSpan="2" Margin="0,0,0,-19.14" FontSize="20" d:IsHidden="True"/>
+                    <DataGrid x:Name="tabelaNeprijavljeniIspiti" HorizontalAlignment="Left" Height="579.64" VerticalAlignment="Top" Width="1581" Grid.ColumnSpan="2" Margin="0,0,0,-19.14" FontSize="20" d:IsHidden="True"/>
                 </Grid>
             </TabItem>
         </TabControl>
