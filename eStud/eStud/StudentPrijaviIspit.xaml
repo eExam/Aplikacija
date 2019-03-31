@@ -31,22 +31,26 @@
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
-        <TextBox x:Name="txtDepartman" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="DEPARTMAN" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.705" FontSize="20" RenderTransformOrigin="0.498,0.811"/>
+        <TextBox  x:Name="txtDepartman" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="DEPARTMAN" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.705" FontSize="20" RenderTransformOrigin="0.498,0.811" IsEnabled="False"/>
         <Label Content="PRIJAVA ZA ISPIT" HorizontalAlignment="Left" Margin="556.5,314,0,0" VerticalAlignment="Top" FontSize="48" Width="418" Foreground="#DD878787"/>
-        <TextBox x:Name="txtImePrezime" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Ime i prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,436.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="#DD171717"/>
-        <TextBox x:Name="txtBrIndeksa" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj indeksa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="786,433.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384.705" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left"/>
-        <TextBox x:Name="txtStudijskiProgram" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="STUDIJSKI PROGRAM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="924,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246.705" FontSize="20" RenderTransformOrigin="0.498,0.811"/>
-        <TextBox x:Name="txtNazivPredmeta" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Naziv predmeta" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left"/>
-        <TextBox x:Name="txtBrPrijave" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj prijave" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="1034.705,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="20" RenderTransformOrigin="0.349,0.804" HorizontalContentAlignment="Left"/>
-        <TextBox x:Name="txtProfesor" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Profesor" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="786,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left"/>
+        <TextBox x:Name="txtImePrezime" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Ime i prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,436.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="#DD171717" IsEnabled="False"/>
+        <TextBox x:Name="txtBrIndeksa" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj indeksa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="786,433.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384.705" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left" IsEnabled="False"/>
+        <TextBox x:Name="txtStudijskiProgram" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="STUDIJSKI PROGRAM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="924,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246.705" FontSize="20" RenderTransformOrigin="0.498,0.811" IsEnabled="False"/>
+        <TextBox x:Name="txtBrPrijave" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj prijave" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="1010,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" FontSize="20" RenderTransformOrigin="0.349,0.804" HorizontalContentAlignment="Left"/>
         <Button x:Name="btnPrijavi" Content="PRIJAVI" HorizontalAlignment="Left" Margin="600,711,0,0" VerticalAlignment="Top" Width="303" Height="63" FontSize="36" Background="#FF3AB745" BorderBrush="{x:Null}" Click="btnPrijavi_Click"/>
-        <ComboBox x:Name="ComboPredmeti" HorizontalAlignment="Left" Margin="353,594,0,0" VerticalAlignment="Top" Width="384" Height="43">
-            <ComboBoxItem></ComboBoxItem>
-           
+
+        <CheckBox
+    x:Name="ClassicModeCheckBox"
+    IsThreeState="False"
+    IsChecked="True"
+    Margin="71,594,1468,386" Height="38" RenderTransformOrigin="9.375,16.259" Background="White" />
+        <ComboBox   materialDesign:ComboBoxAssist.ClassicMode="{Binding IsChecked, ElementName=ClassicModeCheckBox}" x:Name="ComboPredmeti" HorizontalAlignment="Left" Margin="353,545,0,0" VerticalAlignment="Top" Width="384" Height="28" >
+
         </ComboBox>
-        <ComboBox x:Name="ComboProf1" HorizontalAlignment="Left" Margin="786,609,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboProf1_SelectionChanged">
+
+        <ComboBox x:Name="ComboProf1" HorizontalAlignment="Left" Margin="786,545,0,0" VerticalAlignment="Top" Width="188" SelectionChanged="ComboProf1_SelectionChanged">
         </ComboBox>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="315,858,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Izaberi profesora" HorizontalAlignment="Left" Margin="786,501,0,0" VerticalAlignment="Top" Width="188" Click="Button_Click"/>
 
 
 

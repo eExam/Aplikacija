@@ -37,8 +37,24 @@ namespace eStud
             rezultati.Columns["Studijski_program"].ColumnName = "Studijski program";
 
             tabelaIzborniPredmeti.ItemsSource = rezultati.DefaultView;
+           
             
 
+        }
+
+        private void Izaberi_Click(object sender, RoutedEventArgs e)
+        {
+            string prof = "edin";   
+            DataRowView row = (DataRowView)tabelaIzborniPredmeti.SelectedItems[0];
+            DBController.StudentDodajIzborniPredmet(row["Predmet"].ToString(),row["Departman"].ToString(),row["Studijski program"].ToString(),prof,int.Parse(row["Semestar"].ToString()),int.Parse(row["ESPB"].ToString()));
+            DBController.StudentIzabrao(trenutniKorisnik.getUserName(), row["Predmet"].ToString());
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)tabelaIzborniPredmeti.SelectedItems[0];
+            DBController.StudentIzabrao(trenutniKorisnik.getUserName(),row["Predmet"].ToString());
         }
     }
 }

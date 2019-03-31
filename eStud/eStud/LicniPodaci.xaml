@@ -18,13 +18,13 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <Rectangle Height="588" Fill="White" VerticalAlignment="Bottom" Margin="457,0,332,246.5" RadiusX="15" RadiusY="15" Opacity="0.3">
+        <Rectangle Height="608" Fill="White" VerticalAlignment="Bottom" Margin="449,0,340,239.5" RadiusX="15" RadiusY="15">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
 
-        <ListView x:Name="ListView" Height="528" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF1F7C2B" Margin="525,207.5,400,0" FontSize="23" Foreground="#DD000000">
+        <ListView x:Name="ListView" Height="528" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF1F7C2B" Margin="518,214,407,0" FontSize="23" Foreground="#DD000000">
 
             <ListView.View>
                 <GridView x:Name="GridView" >

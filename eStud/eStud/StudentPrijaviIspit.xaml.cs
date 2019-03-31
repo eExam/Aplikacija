@@ -54,15 +54,15 @@ namespace eStud
                 ComboPredmeti.Items.Add(predmet[i]);
 
             }
-
-           /* string selected = ComboPredmeti.Text;
+            
+           string selected = ComboPredmeti.Text;
             
             string prof = DBController.getProfesora(selected);
             if(prof!=null)
             {
                 ComboProf1.Items.Add(prof);
             }
-            */
+            
 
         }
         
@@ -73,10 +73,10 @@ namespace eStud
 
         private void btnPrijavi_Click(object sender, RoutedEventArgs e)
         {
-            string sifra=DBController.getSifraPredmeta(txtNazivPredmeta.Text);
+            string sifra=DBController.getSifraPredmeta(ComboPredmeti.Text);
             string ispitnirok = "januar";
            
-            DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra,ispitnirok,txtProfesor.Text);
+            DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra,ispitnirok,ComboProf1.Text);
             MessageBox.Show("Zahtev je poslat");
 
         }
@@ -96,5 +96,9 @@ namespace eStud
                 ComboProf1.Items.Add(prof);
             }
         }
+
+       
+
+       
     }
 }

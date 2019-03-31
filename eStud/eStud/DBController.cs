@@ -140,6 +140,19 @@ namespace eStud.Model
             }
 
         }
+        public static void StudentDodajIzborniPredmet(string nazivPredmeta,string Departman,string smer,string usernameProf,int semestar,int espb)
+        {
+            string sifra = getSifraIzbornog(nazivPredmeta);
+            string upit = "Insert into Predmeti values('"+sifra+"','"+nazivPredmeta+"','"+Departman+"','"+smer+"','"+usernameProf+"','"+semestar+"','"+espb+"')";
+            IzvrsiUpit(upit);
+        }
+        public static void StudentIzabrao(string username,string nazivPredmeta)
+        {
+            string sifra = getSifraPredmeta(nazivPredmeta);
+            string upit = "Insert into SlusaPredmet values('" +username+"','" +sifra+"')";
+            IzvrsiUpit(upit);
+        }
+        
         
 
         public static string getProfesora(string NazivPredmeta)
@@ -169,6 +182,14 @@ namespace eStud.Model
             dt=rezultatiUpita("Select Sifra_predmeta From Predmeti where Naziv_predmeta='"+NazivPredmeta+"'");
             return dt.Rows[0][0].ToString();
         }
+        public static string getSifraIzbornog(string NazivPredmeta)
+
+        {
+            DataTable dt = new DataTable();
+
+            dt = rezultatiUpita("Select Sifra_predmeta From IzborniPredmeti where Naziv_predmeta='" + NazivPredmeta + "'");
+            return dt.Rows[0][0].ToString();
+        }
         //Popunjavanje tabele za biranje izbornih predmeta
         public static DataTable StudentIzborniPredmeti(string username)
         {
@@ -187,6 +208,7 @@ namespace eStud.Model
             }
 
         }
+        
         public static DataTable StudentNeprijavljeniIspiti(string username)
         {
             try
