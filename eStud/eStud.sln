@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStud", "eStud\eStud.csproj", "{4716D53F-5AAC-42E6-A527-596B21711421}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iText7Wrapper", "iText7Wrapper\iText7Wrapper.csproj", "{27C89899-A042-4546-990C-944CF4480782}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4716D53F-5AAC-42E6-A527-596B21711421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4716D53F-5AAC-42E6-A527-596B21711421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4716D53F-5AAC-42E6-A527-596B21711421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C89899-A042-4546-990C-944CF4480782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C89899-A042-4546-990C-944CF4480782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C89899-A042-4546-990C-944CF4480782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C89899-A042-4546-990C-944CF4480782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

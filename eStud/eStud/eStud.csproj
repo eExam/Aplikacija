@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,9 +72,15 @@
     <Compile Include="DodajStudenta.xaml.cs">
       <DependentUpon>DodajStudenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IspitniRokovi.xaml.cs">
+      <DependentUpon>IspitniRokovi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzborniPredmeti.cs" />
     <Compile Include="IzborniPredmeti.xaml.cs">
       <DependentUpon>IzborniPredmeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniReferentPodaci.xaml.cs">
+      <DependentUpon>IzmeniReferentPodaci.xaml</DependentUpon>
     </Compile>
     <Compile Include="LicniPodaci.xaml.cs">
       <DependentUpon>LicniPodaci.xaml</DependentUpon>
@@ -84,12 +92,18 @@
       <DependentUpon>PolozeniIspiti.xaml</DependentUpon>
     </Compile>
     <Compile Include="Predmeti.cs" />
+    <Compile Include="PrijavniceZaProfesora.xaml.cs">
+      <DependentUpon>PrijavniceZaProfesora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PromenaLozinke.xaml.cs">
       <DependentUpon>PromenaLozinke.xaml</DependentUpon>
     </Compile>
     <Compile Include="Referent.cs" />
     <Compile Include="ReferentPodaci.xaml.cs">
       <DependentUpon>ReferentPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReferentPrijavljeniIspiti.xaml.cs">
+      <DependentUpon>ReferentPrijavljeniIspiti.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReferentWindow.xaml.cs">
       <DependentUpon>ReferentWindow.xaml</DependentUpon>
@@ -100,6 +114,9 @@
     <Compile Include="StatusObavestenje.xaml.cs">
       <DependentUpon>StatusObavestenje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentPocetnaStrana.xaml.cs">
+      <DependentUpon>StudentPocetnaStrana.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentPodaci.xaml.cs">
       <DependentUpon>StudentPodaci.xaml</DependentUpon>
     </Compile>
@@ -108,6 +125,9 @@
     </Compile>
     <Compile Include="StudentPrijavljeniIspit.xaml.cs">
       <DependentUpon>StudentPrijavljeniIspit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPrikazIspitnihRokova.xaml.cs">
+      <DependentUpon>StudentPrikazIspitnihRokova.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
@@ -124,7 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IspitniRokovi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzborniPredmeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniReferentPodaci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,11 +182,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PrijavniceZaProfesora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PromenaLozinke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReferentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReferentPrijavljeniIspiti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,6 +214,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudentPocetnaStrana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentPodaci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentPrijavljeniIspit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentPrikazIspitnihRokova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +285,12 @@
     <Resource Include="Slike\SettingsIcon.png" />
     <Resource Include="Slike\LogOutIcon.png" />
     <Resource Include="Slike\AccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iText7Wrapper\iText7Wrapper.csproj">
+      <Project>{27c89899-a042-4546-990c-944cf4480782}</Project>
+      <Name>iText7Wrapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

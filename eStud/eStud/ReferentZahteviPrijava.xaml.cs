@@ -39,6 +39,7 @@ namespace eStud
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
             DBController.OdobriPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+            rezultati.Rows.Remove(row.Row);
         }
 
         private void btnOdbij_Click(object sender, RoutedEventArgs e)
@@ -46,6 +47,9 @@ namespace eStud
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
             DBController.OdbijPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+            rezultati.Rows.Remove(row.Row);
         }
+
+        
     }
 }

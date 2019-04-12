@@ -23,6 +23,7 @@ namespace eStud
     public partial class IzborniPredmeti : UserControl
     {
         Student trenutniKorisnik;
+        public DataTable rezultati;
         public IzborniPredmeti(Student tk)
         {
             trenutniKorisnik = tk;
@@ -31,7 +32,7 @@ namespace eStud
         }
         public void popuniIzbornePredmete()
         {
-            DataTable rezultati = DBController.StudentIzborniPredmeti(trenutniKorisnik.getUserName());
+           rezultati = DBController.StudentIzborniPredmeti(trenutniKorisnik.getUserName());
 
             rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
             rezultati.Columns["Studijski_program"].ColumnName = "Studijski program";
@@ -44,11 +45,14 @@ namespace eStud
 
         private void Izaberi_Click(object sender, RoutedEventArgs e)
         {
-            string prof = "edin";   
+           
+                string prof = "edin";
+            tabelaIzborniPredmeti.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaIzborniPredmeti.SelectedItems[0];
-            DBController.StudentDodajIzborniPredmet(row["Predmet"].ToString(),row["Departman"].ToString(),row["Studijski program"].ToString(),prof,int.Parse(row["Semestar"].ToString()),int.Parse(row["ESPB"].ToString()));
-            DBController.StudentIzabrao(trenutniKorisnik.getUserName(), row["Predmet"].ToString());
-
+                DBController.StudentDodajIzborniPredmet(row["Predmet"].ToString(), row["Departman"].ToString(), row["Studijski program"].ToString(), prof, int.Parse(row["Semestar"].ToString()), int.Parse(row["ESPB"].ToString()));
+                DBController.StudentIzabrao(trenutniKorisnik.getUserName(), row["Predmet"].ToString());
+            DBController.StudentIzbrisiIzborniPredmet(row["Predmet"].ToString());
+           rezultati.Rows.Remove(row.Row);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

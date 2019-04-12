@@ -23,7 +23,9 @@ namespace eStud
     public partial class StudentPrijaviIspit : UserControl
     {
         Student trenutniKorisnik;
-        
+        public DataTable rezultati;
+        public int BrPrijava;
+        public int BrZahteva;
         public StudentPrijaviIspit(Student s)
         {
             trenutniKorisnik = s;
@@ -65,7 +67,7 @@ namespace eStud
             
 
         }
-        
+
 
 
 
@@ -73,12 +75,53 @@ namespace eStud
 
         private void btnPrijavi_Click(object sender, RoutedEventArgs e)
         {
-            string sifra=DBController.getSifraPredmeta(ComboPredmeti.Text);
-            string ispitnirok = "januar";
-           
-            DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra,ispitnirok,ComboProf1.Text);
-            MessageBox.Show("Zahtev je poslat");
+            
+            string sifra = DBController.getSifraPredmeta(ComboPredmeti.Text);
+            string ispitnirok;
+            rezultati = DBController.PrikaziIspitniRok();
+            ispitnirok = rezultati.Rows[0][0].ToString();
+            int mozePrijava = int.Parse(rezultati.Rows[0][4].ToString());
+            DataTable polozeni = new DataTable();
+            
+            
+            BrZahteva = DBController.BrojPoslatihZahteva(trenutniKorisnik.getUserName());
+            BrPrijava = DBController.BrojBrijavljenihIspita(trenutniKorisnik.getUserName());
 
+            if (BrPrijava == mozePrijava)
+            {
+                MessageBox.Show("Prijavljeno je maks");
+                
+            }
+
+            else if(BrZahteva >= int.Parse(rezultati.Rows[0][4].ToString()))
+                {
+
+                MessageBox.Show("Moguce je prijaviti samo " + mozePrijava + " ispita");
+
+            }
+            else
+            {
+                if (DBController.DaLiJePolozenIspit(sifra, trenutniKorisnik.getUserName()) == true)
+                {
+                    MessageBox.Show("Ispit je polozen");
+                }
+                else
+                {
+                    if (DBController.DaLiJePrijavljenIspit(sifra, trenutniKorisnik.getUserName()))
+
+                    {
+                        MessageBox.Show("Ispit je prijavljen");
+                    }
+                    else
+                    {
+                        
+
+
+                        DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra, ispitnirok, ComboProf1.Text);
+                        MessageBox.Show("Zahtev je poslat" + BrPrijava);
+                    }
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -87,7 +130,9 @@ namespace eStud
             ComboProf1.Items.Add(DBController.getProfesora(selected));
         }
 
-        private void ComboProf1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void ComboProf1_DropDownOpened(object sender, EventArgs e)
         {
             string selected = ComboPredmeti.Text;
             string prof = DBController.getProfesora(selected);
@@ -96,9 +141,5 @@ namespace eStud
                 ComboProf1.Items.Add(prof);
             }
         }
-
-       
-
-       
     }
 }

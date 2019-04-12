@@ -16,31 +16,55 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
         Title="StudentWindow" Height="1050" Width="1930" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" ResizeMode="NoResize">
     <Grid Margin="0,0,2,1.5">
-        <StackPanel x:Name="GlavniPanel" Height="1017.5" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1591" Background="#FFCBCBCB">
-            <Button HorizontalAlignment="Right" Height="60" Margin="0,0,1496.84,0" VerticalAlignment="Top" Width="94.16" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" HorizontalContentAlignment="Right" RenderTransformOrigin="0.5,0.5">
-                <Image Source="Slike/HomeIcon.png" Height="46" VerticalAlignment="Center" Width="67"/>
-            </Button>
-        </StackPanel>
-        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1017.5" VerticalAlignment="Top" Width="327.5" Background="#FF1E262C">
+        <Grid x:Name="GlavniPanel" Margin="331,0,0,2" Background="#FFE4E4E4"/>
+        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1018" VerticalAlignment="Top" Width="331" Background="#FF1E262C">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="317*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnOdjava" Background="#FF930F2E" HorizontalAlignment="Center" BorderThickness="0" Click="btnOdjava_Click" Margin="35.25,735.7,22.5,163.5" Height="60" Width="260" BorderBrush="{x:Null}" Content="Odjavi se&#xA;" FontSize="22" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="16" FontFamily="Century Gothic"/>
+            <Button x:Name="btnOdjava" Background="#FFF56C2D" HorizontalAlignment="Center" BorderThickness="0" Click="btnOdjava_Click" Margin="35.25,735.7,22.5,163.5" Height="60" Width="260" BorderBrush="{x:Null}" Content="Odjavi se&#xA;" FontSize="22" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="16" FontFamily="Century Gothic"/>
             <Label x:Name="ime" FontSize="24" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Center" Height="48.5" HorizontalAlignment="Left" Width="241.5" Margin="34.258,959,0,10" Background="{x:Null}" HorizontalContentAlignment="Center" Padding="0" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Center" FontFamily="Century Gothic"/>
-            <Button x:Name="btnPredmeti" HorizontalAlignment="Left" Margin="35.008,352.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFC9A2A2" Click="btnPredmeti_Click" Content="Moji predmeti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic"/>
-            <Button x:Name="btnPodaci" Background="{x:Null}" BorderBrush="#FFF0EAEA" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="50" Click="btnPodaci_Click" Margin="34.258,152.5,0,0" Content="Licni podaci" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" />
-            <Button Background="{x:Null}" BorderBrush="#FFF0EAEA" x:Name="btnPrijaviIspit" VerticalAlignment="Top" Click="btnPrijaviIspit_Click" Height="50" HorizontalAlignment="Left" Width="260" Margin="35.008,202.5,0,0" Content="Prijavi ispit" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic"/>
-            <Button Background="{x:Null}" BorderBrush="#FFF0EAEA" x:Name="btnPrijavljeniIspiti_Copy" VerticalAlignment="Top" Click="btnPrijavljeniIspiti_Click" Height="50" HorizontalAlignment="Left" Width="206" Margin="89.008,252.5,0,0" Content="Prijavljeni ispiti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="20" FontFamily="Century Gothic"/>
-            <Button x:Name="btnPolozeniIspiti" HorizontalAlignment="Left" Margin="88.258,302.5,0,0" VerticalAlignment="Top" Width="206" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Polozeni ispiti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="20" Click="btnPolozeniIspiti_Click" FontFamily="Century Gothic" />
-            <Button x:Name="btnESPB" HorizontalAlignment="Left" Margin="34.258,452.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Osvojeni ESPB " HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic"/>
-            <Button x:Name="btnStatus" HorizontalAlignment="Left" Margin="35.008,502.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Status" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" Click="btnStatus_Click" FontFamily="Century Gothic"/>
-            <Button x:Name="btnIspitniRokovi" HorizontalAlignment="Left" Margin="34.258,552.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Ispitni rokovi" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic"/>
-            <Button x:Name="btnIzborniPredmeti" HorizontalAlignment="Left" Margin="89.008,402.5,0,0" VerticalAlignment="Top" Width="206" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Izborni predmeti" BorderThickness="0,0,0,0.3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="20" Click="btnIzborniPredmeti_Click" FontFamily="Century Gothic"/>
-            <Button x:Name="btnPromenaLozinke" HorizontalAlignment="Left" Margin="34.258,685,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" BorderBrush="#FF930F2E"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0" Click="btnPromenaLozinke_Click" FontFamily="Century Gothic"/>
+            <Button x:Name="btnPromenaLozinke" HorizontalAlignment="Left" Margin="34.258,685,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" BorderBrush="#FFF56C2D"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0" Click="btnPromenaLozinke_Click" FontFamily="Century Gothic"/>
             <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
             <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5" Grid.ColumnSpan="2"/>
 
+            <StackPanel
+  Orientation="Vertical"
+  Margin="4">
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    
+    IsChecked="True"
+                   x:Name="btnPocetna" Click="btnPocetna_Click" HorizontalAlignment="Left" Margin="35,102.5,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Pocetna" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDF1F1F1"/>
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="0,4,17,0"
+    IsChecked="False"
+ 
+                    x:Name="btnPodaci" Background="{x:Null}" BorderBrush="#FFF0EAEA" HorizontalAlignment="Right" VerticalAlignment="Top" Width="260" Height="45" Click="btnPodaci_Click"  Content="Licni podaci" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDF7F7F7" 
+                />
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="0,4,17,0"
+    IsChecked="False"
+    Background="{x:Null}"      BorderBrush="#FFF0EAEA" x:Name="btnPrijaviIspit" VerticalAlignment="Top" Click="btnPrijaviIspit_Click" Height="44" HorizontalAlignment="Right" Width="260"  Content="Prijavi ispit" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton      Margin="82,4,0,0" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" Background="{x:Null}" BorderBrush="#FFF0EAEA" x:Name="btnPrijavljeniIspiti_Copy" VerticalAlignment="Top" Click="btnPrijavljeniIspiti_Click" Height="48" HorizontalAlignment="Left" Width="213"  Content="Prijavljeni ispiti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="20" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton        IsChecked="False" Margin="0,4,17,0" Style="{StaticResource MaterialDesignTabRadioButton}" x:Name="btnPolozeniIspiti" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="213" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Polozeni ispiti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="20" Click="btnPolozeniIspiti_Click" FontFamily="Century Gothic" Foreground="#DDFDFBFB" />
+                <RadioButton Margin="0,0,17,0" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" x:Name="btnPredmeti" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFC9A2A2" Click="btnPredmeti_Click" Content="Moji predmeti" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton  Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="82,0,0,0"
+    IsChecked="False" x:Name="btnIzborniPredmeti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Izborni predmeti" BorderThickness="0,0,0,0.3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="20" Click="btnIzborniPredmeti_Click" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="35,0,0,0"
+    IsChecked="False" x:Name="btnESPB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA"  Content="Osvojeni ESPB " HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton  Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="35,4,0,0"
+    IsChecked="False" x:Name="btnStatus" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="267" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Status" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" Click="btnStatus_Click" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="35,4,0,0"
+    IsChecked="False" x:Name="btnIspitniRokovi" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Content="Ispitni rokovi" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Click="btnIspitniRokovi_Click" Foreground="#DDFFFFFF"/>
+
+            </StackPanel>
         </Grid>
 
 

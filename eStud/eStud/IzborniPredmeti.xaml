@@ -27,10 +27,9 @@
 
         </Rectangle>
         <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="305" Margin="0,516,0,0" VerticalAlignment="Top" Width="912"  CanUserAddRows="False">
-            
+
         </DataGrid>
-        <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="946,556,0,0" VerticalAlignment="Top" Width="75" Click="Izaberi_Click"/>
-        <Button Content="Potvrdi" HorizontalAlignment="Left" Margin="992,642,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="934,521,0,0" VerticalAlignment="Top" Width="169" Click="Izaberi_Click" Height="52"/>
 
 
     </Grid>

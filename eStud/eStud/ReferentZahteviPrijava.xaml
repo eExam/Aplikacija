@@ -8,8 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="#FFBDA4A4">
     <Grid Background="White">
         <DataGrid x:Name="tabelaZahteva" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="400"/>
-        <Button x:Name="btnOdobri" Content="Odobri" HorizontalAlignment="Left" Margin="426,22,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.156,-0.416" Click="btnOdobri_Click"/>
-        <Button x:Name="btnOdbij" Content="Odbij" HorizontalAlignment="Left" Margin="426,59,0,0" VerticalAlignment="Top" Width="75" Click="btnOdbij_Click"/>
+        <Button x:Name="btnOdobri" Content="Odobri" HorizontalAlignment="Left" Margin="426,22,0,0" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.156,-0.416" Click="btnOdobri_Click"/>
+        <Button x:Name="btnOdbij" Content="Odbij" HorizontalAlignment="Left" Margin="426,59,0,0" VerticalAlignment="Top" Width="229" Click="btnOdbij_Click"/>
 
     </Grid>
 </UserControl>

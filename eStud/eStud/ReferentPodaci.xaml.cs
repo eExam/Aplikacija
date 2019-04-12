@@ -48,8 +48,7 @@ namespace eStud
             rezultati.Columns["username"].ColumnName = "Username";
             rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
             TabelaReferenti.ItemsSource = rezultati.DefaultView;
-           
-           
+        
             
             
         }
@@ -98,6 +97,38 @@ namespace eStud
                 pnlRight.Children.Add(df);
                 state = true;
             }
+        }
+
+        private void btnIzmeni_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
+
+                txtIme.Text = (row["Ime"].ToString());
+                txtDepartman.Text = (row["Departman"].ToString());
+                txtDatumRodj.Text = row["Datum rodjenja"].ToString();
+                txtPrezime.Text = row["Prezime"].ToString();
+                txtPol.Text = (row["Pol"].ToString());
+                txtStudijskiProgram.Text = row["Studijski program"].ToString();
+                txtUsername.Text = row["Username"].ToString();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Niste izabrali");
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DBController.IzmeniRef(txtUsername.Text, txtIme.Text, txtPrezime.Text, txtDatumRodj.Text, txtPol.Text,txtDepartman.Text,txtStudijskiProgram.Text);
+            PopuniTabelu();
+        }
+
+        private void TabelaReferenti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabelaReferenti.IsReadOnly = true;
         }
     }
  }

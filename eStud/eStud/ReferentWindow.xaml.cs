@@ -33,5 +33,26 @@ namespace eStud
             ReferentZahteviPrijava rzp = new ReferentZahteviPrijava();
             this.GlavniPanel.Children.Add(rzp);
         }
+
+        private void btnIspitniRokovi_Click(object sender, RoutedEventArgs e)
+        {
+            this.GlavniPanel.Children.Clear();
+            IspitniRokovi ir = new IspitniRokovi();
+            this.GlavniPanel.Children.Add(ir);
+        }
+
+        private void btnPrijavljeniIspiti_Click(object sender, RoutedEventArgs e)
+        {
+            this.GlavniPanel.Children.Clear();
+            ReferentPrijavljeniIspiti rpi = new ReferentPrijavljeniIspiti();
+            this.GlavniPanel.Children.Add(rpi);
+        }
+
+        private void btnPrijavnice_Click(object sender, RoutedEventArgs e)
+        {
+            this.GlavniPanel.Children.Clear();
+            PrijavniceZaProfesora pzr = new PrijavniceZaProfesora();
+            this.GlavniPanel.Children.Add(pzr);
+        }
     }
 }

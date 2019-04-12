@@ -25,8 +25,8 @@ namespace eStud
 
        
         private Student student;
-       
 
+        public DataTable rezultati;
         
         public StudentWindow(Korisnik k)
         {
@@ -34,9 +34,9 @@ namespace eStud
             InitializeComponent();
             
             this.ime.Content =this.student.getIme()+ " " + this.student.getPrezime();
-
-            
-           
+            GlavniPanel.Children.Clear();
+            StudentPocetnaStrana sp = new StudentPocetnaStrana(student);
+            GlavniPanel.Children.Add(sp);
         }
 
        
@@ -54,10 +54,7 @@ namespace eStud
             
 
         }
-        //Klikom na button menu prikazuje se opadajuci meni
-      
-        //klikom na button podaci student vidi svoje podatke
-
+       
 
         private void btnPodaci_Click(object sender, RoutedEventArgs e)
         {
@@ -109,6 +106,20 @@ namespace eStud
         {
             StatusObavestenje so = new StatusObavestenje(student);
             so.ShowDialog();
+        }
+
+        private void btnIspitniRokovi_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            StudentPrikazIspitnihRokova spir = new StudentPrikazIspitnihRokova();
+            GlavniPanel.Children.Add(spir);
+        }
+
+        private void btnPocetna_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            StudentPocetnaStrana sp = new StudentPocetnaStrana(student);
+            GlavniPanel.Children.Add(sp);
         }
     }
 }

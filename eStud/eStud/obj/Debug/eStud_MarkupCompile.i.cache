@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\App.xaml
-18582293277
+25-665908353
 11580343117
-31-1521444209
-15-657244318
-AdminWindow.xaml;DodajReferenta.xaml;DodajStudenta.xaml;IzborniPredmeti.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;PolozeniIspiti.xaml;PromenaLozinke.xaml;ReferentPodaci.xaml;ReferentWindow.xaml;ReferentZahteviPrijava.xaml;Simple Styles.xaml;StatusObavestenje.xaml;StudentPodaci.xaml;StudentPrijaviIspit.xaml;StudentPrijavljeniIspit.xaml;StudentWindow.xaml;
+38-1033035144
+182082676693
+AdminWindow.xaml;DodajReferenta.xaml;DodajStudenta.xaml;IspitniRokovi.xaml;IzborniPredmeti.xaml;IzmeniReferentPodaci.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;PolozeniIspiti.xaml;PrijavniceZaProfesora.xaml;PromenaLozinke.xaml;ReferentPodaci.xaml;ReferentPrijavljeniIspiti.xaml;ReferentWindow.xaml;ReferentZahteviPrijava.xaml;Simple Styles.xaml;StatusObavestenje.xaml;StudentPocetnaStrana.xaml;StudentPodaci.xaml;StudentPotvrdeUverenja.xaml;StudentPrijaviIspit.xaml;StudentPrijavljeniIspit.xaml;StudentPrikazIspitnihRokova.xaml;StudentWindow.xaml;
 
 True
 
