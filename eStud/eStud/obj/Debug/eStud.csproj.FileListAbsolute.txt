@@ -122,3 +122,13 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\bin\Debug\Common.Logging
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\bin\Debug\Common.Logging.xml
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PrijavniceZaProfesora.g.cs
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PrijavniceZaProfesora.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentPotvrdeUverenja.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentPotvrdeUverenja.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PocetnaAdmin.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PocetnaReferent.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PocetnaAdmin.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\PocetnaReferent.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentIzmeniPodatke.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentIzmeniPodatke.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentIzmeniPodaci.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentIzmeniPodaci.baml

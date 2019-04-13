@@ -17,7 +17,9 @@ namespace eStud.Model
         protected string prezime;
         protected string datumRodjenja;
         protected string pol;
-        public Korisnik(string username,string usertype,string ime,string prezime,string datumRodjenja,string pol)
+        protected string grad;
+        protected string adresa;
+        public Korisnik(string username,string usertype,string ime,string prezime,string datumRodjenja,string pol,string grad,string adresa)
         {
             this.username = username;
             this.usertype = usertype;
@@ -25,6 +27,8 @@ namespace eStud.Model
             this.prezime = prezime;
             this.datumRodjenja = datumRodjenja;
             this.pol = pol;
+            this.grad = grad;
+            this.adresa = adresa;
             
 
 
@@ -84,8 +88,21 @@ namespace eStud.Model
         {
             return pol;
         }
-
-
-
+        public string getGrad()
+        {
+            return grad;
+        }
+        public void setGrad(string grad)
+        {
+            this.grad = grad;
+        }
+        public string getAdresa()
+        {
+            return adresa;
+        }
+        public void setAdresa()
+        {
+            this.adresa = adresa;
+        }
     }
 }

@@ -63,7 +63,7 @@ namespace eStud
                     }
                     else
                     {
-                        DBController.UbaciUBazi(this.txtUsername.Text, this.txtPassword.Text, this.txtUsertype.Text, this.txtIme.Text, this.txtPrezime.Text, this.txtDatumRodj.Text, this.txtPol.Text);
+                        DBController.UbaciUBazi(this.txtUsername.Text, this.txtPassword.Text, this.txtUsertype.Text, this.txtIme.Text, this.txtPrezime.Text, this.txtDatumRodj.Text, this.txtPol.Text,this.txtGrad.Text,this.txtAdresa.Text);
                         DBController.DodajRef(this.txtUsername.Text, this.txtDepartman.Text, this.txtStudijskiProgram.Text);
                         MessageBox.Show("Uspesno ste dodali Korisnika");
                     }

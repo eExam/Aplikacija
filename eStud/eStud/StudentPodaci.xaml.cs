@@ -31,7 +31,8 @@ namespace eStud
         }
         public void popuniTabelu()
         {
-            rezultati = new DBController().PodaciStudent();
+            rezultati = DBController.PodaciStudent();
+           
             TabelaStudenti.ItemsSource = rezultati.DefaultView;
         }
 
@@ -61,12 +62,37 @@ namespace eStud
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Niste izabrali");
+                throw ex;
             }
         }
         private void btnIzmeni_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                DataRowView row = (DataRowView)TabelaStudenti.SelectedItems[0];
+                pnlDodajStud.Children.Clear();
+                StudentIzmeniPodaci rp = new StudentIzmeniPodaci(row, TabelaStudenti);
+                pnlDodajStud.Children.Add(rp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Niste izabrali");
+            }
+        }
 
+        private void btnIzmeni_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataRowView row = (DataRowView)TabelaStudenti.SelectedItems[0];
+                pnlDodajStud.Children.Clear();
+                StudentIzmeniPodaci rp = new StudentIzmeniPodaci(row, TabelaStudenti);
+                pnlDodajStud.Children.Add(rp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Niste izabrali");
+            }
         }
     }
 }

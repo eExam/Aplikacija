@@ -27,7 +27,9 @@ namespace eStud
         private Student student;
 
         public DataTable rezultati;
-        
+        DataTable polozeniIspiti;
+
+
         public StudentWindow(Korisnik k)
         {
             this.student = new Student(k);
@@ -120,6 +122,20 @@ namespace eStud
             GlavniPanel.Children.Clear();
             StudentPocetnaStrana sp = new StudentPocetnaStrana(student);
             GlavniPanel.Children.Add(sp);
+        }
+
+        private void btnESPB_Checked(object sender, RoutedEventArgs e)
+        {
+            int ESPB=0;
+            
+            polozeniIspiti = DBController.StudentPolozeniIspiti(student.getUserName());
+            int brojac = polozeniIspiti.Rows.Count;
+            for (int i = 0; i < brojac; i++)
+            {
+                ESPB+=int.Parse(polozeniIspiti.Rows[i][2].ToString());
+
+            }
+            MessageBox.Show("Ukupan broj ESPB bodova =" + ESPB);
         }
     }
 }

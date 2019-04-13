@@ -104,15 +104,9 @@ namespace eStud
             try
             {
                 DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
-
-                txtIme.Text = (row["Ime"].ToString());
-                txtDepartman.Text = (row["Departman"].ToString());
-                txtDatumRodj.Text = row["Datum rodjenja"].ToString();
-                txtPrezime.Text = row["Prezime"].ToString();
-                txtPol.Text = (row["Pol"].ToString());
-                txtStudijskiProgram.Text = row["Studijski program"].ToString();
-                txtUsername.Text = row["Username"].ToString();
-
+                pnlRight.Children.Clear();
+                ReferentIzmeniPodatke rp = new ReferentIzmeniPodatke(row, TabelaReferenti);
+                pnlRight.Children.Add(rp);
             }
             catch(Exception ex)
             {
@@ -120,11 +114,8 @@ namespace eStud
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DBController.IzmeniRef(txtUsername.Text, txtIme.Text, txtPrezime.Text, txtDatumRodj.Text, txtPol.Text,txtDepartman.Text,txtStudijskiProgram.Text);
-            PopuniTabelu();
-        }
+      
+       
 
         private void TabelaReferenti_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

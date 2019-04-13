@@ -41,6 +41,9 @@ namespace eStud
             Smer.Content = DBController.getSmer(k.getUserName());
             Semestar.Content = DBController.getSemestar(k.getUserName());
             Indeks.Content = DBController.getBrIndeksa(k.getUserName());
+            Grad.Content = k.getGrad();
+            Adresa.Content = k.getAdresa();
+            GodinaUpisa.Content = DBController.getGodinaUpisa(k.getUserName());
 
         }
     }

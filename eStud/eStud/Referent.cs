@@ -14,12 +14,12 @@ namespace eStud
         
        
 
-        public Referent(string username, string usertype, string ime, string prezime, string datumRodjenja, string pol,string departman, string studijski_program) : base(username, usertype, ime, prezime, datumRodjenja, pol)
+        public Referent(string username, string usertype, string ime, string prezime, string datumRodjenja,string grad,string adresa, string pol,string departman, string studijski_program) : base(username, usertype, ime, prezime, datumRodjenja, pol,grad,adresa)
         {
             this.departman = departman;
             this.studijski_program = studijski_program;
         }
-        public Referent(Korisnik k):base(k.getUserName(),k.getUserType(),k.getIme(),k.getPrezime(),k.getDatumRodjenja(),k.getPol())
+        public Referent(Korisnik k):base(k.getUserName(),k.getUserType(),k.getIme(),k.getPrezime(),k.getDatumRodjenja(),k.getPol(),k.getGrad(),k.getAdresa())
         {
 
         }

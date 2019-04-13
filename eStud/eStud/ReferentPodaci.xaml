@@ -18,27 +18,15 @@
 
 
     <Grid x:Name="GlavniPanel" Width="1591" HorizontalAlignment="Left" Background="White" Height="1017.5">
-        <StackPanel x:Name="pnlRight" Height="405" Margin="861,66,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="612"/>
-        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Click="btnDodajRef_Click" Background="#FF3AB75C" Height="47" BorderBrush="{x:Null}" Margin="861,0,0,0" OpacityMask="#FFDAB3B3" RenderTransformOrigin="0.5,0.5">
-
-        </Button>
-        <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Click="btnIzbrisi_Click" Background="#FF3AB75C" BorderBrush="{x:Null}" Margin="1082,0,0,0" Height="46"/>
-        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166"  Background="#FF3AB75C" BorderBrush="{x:Null}" Margin="1307,1,0,0" Height="46" Click="btnIzmeni_Click" />
+        <StackPanel x:Name="pnlRight" Height="591" Margin="897,90,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="655.5"/>
+        <Button x:Name="btnDodajRef" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Click="btnDodajRef_Click" Background="#FFDCD6D6" Height="46" BorderBrush="#FFD6D1D1" Margin="1041,10,0,0" RenderTransformOrigin="0.5,0.5" Foreground="#DDFFFFFF" FontSize="22" FontFamily="Century Gothic"/>
+        <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="btnIzbrisi_Click" Background="#FFDCD6D6" BorderBrush="{x:Null}" Margin="1183,10,0,0" Height="46" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151"  Background="#FFDCD6D6" BorderBrush="{x:Null}" Margin="1328,10,0,0" Height="46" Click="btnIzmeni_Click" FontFamily="Century Gothic" FontSize="22" Foreground="#DDFFFFFF" />
         <DataGrid x:Name="TabelaReferenti" Margin="0,0,735,522.5" HorizontalAlignment="Center" Width="856" Background="White" BorderBrush="{x:Null}" SelectionChanged="TabelaReferenti_SelectionChanged"  IsReadOnly="true">
 
 
 
         </DataGrid>
-        <StackPanel x:Name="pnlIzmeni" HorizontalAlignment="Left" Height="496" VerticalAlignment="Top" Width="402" Margin="861,512,0,0">
-            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Height="45.44" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtDatumRodj" materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <Button Content="Sacuvaj" VerticalAlignment="Top" Click="Button_Click"  Margin="80,20,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}" Height="50" HorizontalAlignment="Left" Width="230"/>
-        </StackPanel>
 
     </Grid>
 </UserControl>

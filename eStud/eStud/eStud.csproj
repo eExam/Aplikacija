@@ -88,6 +88,12 @@
     <Compile Include="MojiPredmeti.xaml.cs">
       <DependentUpon>MojiPredmeti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PocetnaAdmin.xaml.cs">
+      <DependentUpon>PocetnaAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PocetnaReferent.xaml.cs">
+      <DependentUpon>PocetnaReferent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PolozeniIspiti.xaml.cs">
       <DependentUpon>PolozeniIspiti.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,9 @@
       <DependentUpon>PromenaLozinke.xaml</DependentUpon>
     </Compile>
     <Compile Include="Referent.cs" />
+    <Compile Include="ReferentIzmeniPodatke.xaml.cs">
+      <DependentUpon>ReferentIzmeniPodatke.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReferentPodaci.xaml.cs">
       <DependentUpon>ReferentPodaci.xaml</DependentUpon>
     </Compile>
@@ -114,11 +123,17 @@
     <Compile Include="StatusObavestenje.xaml.cs">
       <DependentUpon>StatusObavestenje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentIzmeniPodaci.xaml.cs">
+      <DependentUpon>StudentIzmeniPodaci.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentPocetnaStrana.xaml.cs">
       <DependentUpon>StudentPocetnaStrana.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentPodaci.xaml.cs">
       <DependentUpon>StudentPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPotvrdeUverenja.xaml.cs">
+      <DependentUpon>StudentPotvrdeUverenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentPrijaviIspit.xaml.cs">
       <DependentUpon>StudentPrijaviIspit.xaml</DependentUpon>
@@ -178,6 +193,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PocetnaAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PocetnaReferent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PolozeniIspiti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PromenaLozinke.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReferentIzmeniPodatke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -214,11 +241,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudentIzmeniPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentPocetnaStrana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentPotvrdeUverenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,12 +16,12 @@ namespace eStud.Model
         private static OleDbConnection connect = new OleDbConnection(connectionString);
 
         //Dodavanje novih korisnika u bazu
-        public static void UbaciUBazi(string username, string password, string usertype, string ime, string prezime, string datum_rodjenja, string pol)
+        public static void UbaciUBazi(string username, string password, string usertype, string ime, string prezime, string datum_rodjenja, string pol,string grad,string adresa)
         {
             try
             {
                 OleDbCommand cmd = connect.CreateCommand();
-                cmd.CommandText = "Insert into Users values('" + username + "', '" + password + "','" + usertype + "','" + ime + "','" + prezime + "','" + datum_rodjenja + "','" + pol + "')";
+                cmd.CommandText = "Insert into Users values('" + username + "', '" + password + "','" + usertype + "','" + ime + "','" + prezime + "','" + datum_rodjenja + "','" + pol + "','"+grad+"','"+adresa+"')";
                 connect.Open();
                 cmd.ExecuteNonQuery();
                 connect.Close();
@@ -98,11 +98,30 @@ namespace eStud.Model
                 throw ex;
             }
         }
-        public static void IzmeniRef(string username,string ime,string prezime,string datumRodj,string pol,string Departman,string studijskiProgram)
+        public static void DodajStud(string username,string departman,string studijski_program,int semestar,string broj_indeksa,string status,string godina_upisa)
         {
-            string upit = "UPDATE [Users] SET [Ime]='" + ime + "',[Prezime]='"+prezime+"',[Datum_rodjenja]='"+datumRodj+"',[pol]='"+pol+"' WHERE [username]='" + username + "';";
+            try
+            {
+                string upit = "Insert into Student Values('" + username + "','" + departman + "','" + studijski_program + "','" + semestar + "','" + broj_indeksa + "','" + status + "','" + godina_upisa + "')";
+                IzvrsiUpit(upit);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void IzmeniRef(string username,string ime,string prezime,string datumRodj,string pol,string Departman,string studijskiProgram,string grad,string adresa)
+        {
+            string upit = "UPDATE [Users] SET [Ime]='" + ime + "',[Prezime]='"+prezime+"',[Datum_rodjenja]='"+datumRodj+"',[pol]='"+pol+"',[grad]='"+grad+"',[adresa]='"+adresa+"' WHERE [username]='" + username + "';";
             IzvrsiUpit(upit);
             string upit2="UPDATE [Referent] SET [Departman]='"+Departman+"',[Studijski_program]='"+studijskiProgram+"' WHERE [username]='"+username+"'";
+            IzvrsiUpit(upit2);
+        }
+        public static void Izmenistud(string username,string ime,string prezime,string datumRodj,string pol,string Departman,string studijskiProgram,string grad,string adresa,int semestar,string brojIndeksa,string godinaUpisa,string status)
+        {
+            string upit = "UPDATE [Users] SET [Ime]='" + ime + "',[Prezime]='" + prezime + "',[Datum_rodjenja]='" + datumRodj + "',[pol]='" + pol + "',[grad]='" + grad + "',[adresa]='" + adresa + "' WHERE [username]='" + username + "';";
+            IzvrsiUpit(upit);
+            string upit2 = "UPDATE [Student] SET [departman]='" + Departman + "',[studijski_program]='" + studijskiProgram + "',[semestar]='"+semestar+"',[broj_indeksa]='"+brojIndeksa+"',[status]='"+status+"',[godina_upisa]='"+godinaUpisa+"' WHERE [username]='" + username + "'";
             IzvrsiUpit(upit2);
         }
         
@@ -116,7 +135,7 @@ namespace eStud.Model
                 // dt.Rows oznacava broj javljanja osobe u tabeli Korisnici
                 // Ovde se takodje vrsi i poredjenje lozinke sa enkriptovanom lozinkom u bazi
                 if (dt.Rows.Count == 1)
-                    return new Korisnik(dt.Rows[0][0].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
+                    return new Korisnik(dt.Rows[0][0].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString(),dt.Rows[0][7].ToString(),dt.Rows[0][8].ToString());
 
                 else
                     return null;
@@ -386,7 +405,7 @@ namespace eStud.Model
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
+                dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Users.Grad,Users.Adresa,Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username");
 
                 return dt;
             }
@@ -397,7 +416,7 @@ namespace eStud.Model
         }
         
         //Licni podaci o studentu
-        public DataTable PodaciStudent()
+        public static DataTable PodaciStudent()
         {
             try
             {
@@ -462,6 +481,24 @@ namespace eStud.Model
             return 0;
 
 
+        }
+        public static string getGodinaUpisa(string username)
+        {
+            string upit = "Select godina_upisa FROM Student where username='" + username + "'";
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita(upit);
+
+
+            try
+            {
+
+                return (dt.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
         }
         public static string getPassword(string username)
         {
