@@ -132,3 +132,9 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentIzmeni
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentIzmeniPodatke.baml
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentIzmeniPodaci.g.cs
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\StudentIzmeniPodaci.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajIspitniRok.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\IzmeniIspitniRok.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\DodajIspitniRok.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\IzmeniIspitniRok.baml
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentPotvrdeUverenja.g.cs
+C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\obj\Debug\ReferentPotvrdeUverenja.baml

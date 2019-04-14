@@ -124,7 +124,12 @@ namespace eStud.Model
             string upit2 = "UPDATE [Student] SET [departman]='" + Departman + "',[studijski_program]='" + studijskiProgram + "',[semestar]='"+semestar+"',[broj_indeksa]='"+brojIndeksa+"',[status]='"+status+"',[godina_upisa]='"+godinaUpisa+"' WHERE [username]='" + username + "'";
             IzvrsiUpit(upit2);
         }
-        
+        public static void IzmeniRok(string nazivRoka,string Redovan,string Pocetak,string Kraj,int max,int cena)
+        {
+            string upit = "UPDATE [IspitniRokovi] SET [Tip]='" + Redovan + "',[Pocetak_roka]='" + Pocetak + "',[Kraj_roka]='" + Kraj + "',[Max_brPrijava]='" + max + "',[Cena_prijave]='" + cena+ "' WHERE [Naziv_roka]='" + nazivRoka + "';";
+            IzvrsiUpit(upit);
+        }
+
         //Omogucavanje logina
         public static Korisnik ImaUBazi(string username, string password)
         {
@@ -144,6 +149,30 @@ namespace eStud.Model
             {
                 throw ex;
             }
+
+        }
+        public static void DodajPotvrdeUverenje(string username,string razlog,string obrazlozenje)
+        {
+            string upit = "insert into PotvrdeUverenja values ('" + username + "','" + razlog + "','" + obrazlozenje + "')";
+            IzvrsiUpit(upit);
+        }
+        public static DataTable PrikaziMolbe()
+        {
+            DataTable dt = new DataTable();
+            string upit = "select Users.username,Users.ime,Users.prezime, PotvrdeUverenja.razlog,PotvrdeUverenja.obrazlozenje FROM Users,PotvrdeUverenja where Users.username=PotvrdeUverenja.username_stud";
+            dt=rezultatiUpita(upit);
+            return dt;
+        }
+        public static void OdobriMolbe(string username,string tip)
+        {
+            string upit = "insert into OdobrenePotvrdeUverenja values('" + username + "','" + tip + "')";
+            IzvrsiUpit(upit);
+        }
+        public static DataTable prikaziOdobreneMolbe()
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select Users.username,Users.ime,Users.Prezime,OdobrenePotvrdeUverenja.tip_dokumenta FROM Users,OdobrenePotvrdeUverenja where Users.username=OdobrenePotvrdeUverenja.username");
+            return dt;
 
         }
         public static bool ZauzetoKorisnicko(string username)
@@ -602,25 +631,34 @@ namespace eStud.Model
 
             }
         }
-       
+       public static DataTable getPredmeti()
+        {
+            DataTable dt = new DataTable();
+            string upit = ("Select Predmeti.Naziv_predmeta FROM Predmeti");
+            dt=rezultatiUpita(upit);
+            return dt;
+        }
         public static DataTable ReferentZahteviPrijava()
         {
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select * FROM ZahteviZaPrijavu");
+                dt = rezultatiUpita("Select Users.username,Users.ime,Users.prezime ,Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Profesor.imeprof,Profesor.prezimeprof,ZahteviZaPrijavu.ispitni_rok FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN ZahteviZaPrijavu ON Predmeti.Sifra_predmeta=ZahteviZaPrijavu.sifra_predmeta) ON Users.username=ZahteviZaPrijavu.username_stud");
                 return dt;
+               
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public static void OdobriPrijavuIspita(string username, int brojPrijave,string sifraPredmeta)
+        
+        public static void OdobriPrijavuIspita(string username, int brojPrijave,string nazivPredmeta)
         {
 
             try
             {
+                string sifraPredmeta = getSifraPredmeta(nazivPredmeta);
                 string upit = "Insert into PrijavljeniIspiti values('" + sifraPredmeta + "', '" + brojPrijave + "','" + username + "')";
                 IzvrsiUpit(upit);
             }
@@ -660,7 +698,7 @@ namespace eStud.Model
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select * FROM IspitniRokovi");
+                dt = rezultatiUpita("Select IspitniRokovi.Naziv_roka,IspitniRokovi.Tip,IspitniRokovi.Pocetak_roka,IspitniRokovi.Kraj_roka,IspitniRokovi.Max_brPrijava,IspitniRokovi.Cena_prijave FROM IspitniRokovi");
                 
 
                     return dt;

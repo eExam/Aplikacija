@@ -33,6 +33,13 @@ namespace eStud
         {
            
             rezultati=DBController.ReferentPrijavljeniIspiti();
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
+            rezultati.Columns["imeprof"].ColumnName = "Ime profesora";
+            rezultati.Columns["prezimeprof"].ColumnName = "Prezime profesora";
+          //  rezultati.Columns["ispitni_rok"].ColumnName = "Ispitni rok";
+            rezultati.Columns["broj_prijava"].ColumnName = "Broj prijave";
             tabelaPrijavljeniIspiti.ItemsSource = rezultati.DefaultView;
         }
 

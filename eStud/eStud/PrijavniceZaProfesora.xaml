@@ -5,11 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1594" Height="1016.7">
     <Grid>
-        <TextBox x:Name="txtPredmet" HorizontalAlignment="Left" Height="23" Margin="301,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="301,171,0,0" TextWrapping="Wrap" Text="Januar" VerticalAlignment="Top" Width="185"/>
-        <Button Content="Stampaj" HorizontalAlignment="Left" Margin="328,240,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click"/>
+        <Rectangle Height="489" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="461" Fill="White" VerticalAlignment="Bottom" Margin="508,0,390,317" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button Content="Stampaj" HorizontalAlignment="Left" Margin="770,667,0,0" VerticalAlignment="Top" Width="174" Click="Button_Click" Height="54" FontSize="22" Background="#FF5CB73A" BorderBrush="White"/>
+        <ComboBox x:Name="txtPredmeti" HorizontalAlignment="Left" Margin="689,489,0,0" VerticalAlignment="Top" Width="315" Height="27"/>
+        <Label Content="Stampanje prijavnice za profesore" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="18.118,10.962" Margin="587,270,0,0" FontSize="36" Foreground="#DDA4A4A4"/>
+        <Label Content="Izaberite predmet" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="18.118,10.962" Margin="689,410,0,0" FontSize="36" Width="315" Foreground="#DDA4A4A4"/>
 
     </Grid>
 </UserControl>

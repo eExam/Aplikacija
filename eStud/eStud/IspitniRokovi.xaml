@@ -8,21 +8,9 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1594" Height="1017">
     <Grid Background="White">
-        <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="289" Margin="936,59,0,0" VerticalAlignment="Top" Width="288">
-            <TextBox x:Name="txtIspitniRok" Height="42" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Ispitni rok" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <ComboBox x:Name="txtTip" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Height="40">
-                <ComboBoxItem>Redovan</ComboBoxItem>
-                <ComboBoxItem>Vanredni</ComboBoxItem>
-            </ComboBox>
-            <TextBox x:Name="txtPocetak" Height="42" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Pocetak roka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="txtKraj" Height="42" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Kraj roka" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="txtMax" Height="42" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Maksimalan broj prijavnica" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="txtCena" Height="42" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Cena prijavnice" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-
-        </StackPanel>
-        <Button x:Name="btnSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Margin="936,364,0,0" Height="40" Click="btnSacuvaj_Click"/>
-        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="936,22,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="252" Margin="-1,0,0,0" VerticalAlignment="Top" Width="822" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="386" Margin="903,430,0,0" VerticalAlignment="Top" Width="380"/>
+        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="903,368,0,0" VerticalAlignment="Top" Width="75" Click="btnDodaj_Click"/>
+        <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="679" Margin="1,336,0,0" VerticalAlignment="Top" Width="657" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,8 +20,19 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="1044,22,0,0" VerticalAlignment="Top" Width="75" Click="btnIzbrisi_Click"/>
-        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="1149,22,0,0" VerticalAlignment="Top" Width="75" Click="btnIzmeni_Click"/>
+        <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="1005,368,0,0" VerticalAlignment="Top" Width="75" Click="btnIzbrisi_Click"/>
+        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="1120,368,0,0" VerticalAlignment="Top" Width="76" Click="btnIzmeni_Click"/>
+        <Rectangle Height="334" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
 
     </Grid>
 </UserControl>

@@ -50,7 +50,7 @@
     Margin="0,4,39.899,0"
     IsChecked="False"
  
-                    x:Name="btnPodaci" Background="{x:Null}" BorderBrush="#FFF56C2D" HorizontalAlignment="Right" VerticalAlignment="Top" Width="237.101" Height="45" Click="btnPodaci_Click"  Content="Licni podaci" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDF7F7F7" 
+                    x:Name="btnPodaci" Background="{x:Null}" BorderBrush="#FFF56C2D" HorizontalAlignment="Right" VerticalAlignment="Top" Width="237.101" Height="45" Click="btnPodaci_Click"  Content="Licni podaci" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Foreground="#DDF7F7F7" Checked="btnPodaci_Checked" 
                 />
                 <RadioButton
     Style="{StaticResource MaterialDesignTabRadioButton}"
@@ -72,7 +72,7 @@
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}"
     Margin="35,0,0,0"
     IsChecked="False" x:Name="btnIspitniRokovi" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="237" Height="50" Background="{x:Null}" BorderBrush="#FFF56C2D" Content="Ispitni rokovi" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Click="btnIspitniRokovi_Click" Foreground="#DDFFFFFF"/>
-                <RadioButton IsChecked="False" x:Name="btnPotvrdeUverenja" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="35,4,0,0" Content="Podnesi zahtev" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF" HorizontalAlignment="Left" Height="50" Width="237" HorizontalContentAlignment="Left" BorderBrush="#FFF56C2D"/>
+                <RadioButton IsChecked="False" x:Name="btnPotvrdeUverenja" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="35,4,0,0" Content="Podnesi zahtev" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF" HorizontalAlignment="Left" Height="50" Width="237" HorizontalContentAlignment="Left" BorderBrush="#FFF56C2D" Checked="btnPotvrdeUverenja_Checked"/>
             </StackPanel>
         </Grid>
 

@@ -5,11 +5,29 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="#FFBDA4A4">
+             d:DesignHeight="1017" d:DesignWidth="1594" Background="#FFBDA4A4">
     <Grid Background="White">
-        <DataGrid x:Name="tabelaZahteva" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="400"/>
-        <Button x:Name="btnOdobri" Content="Odobri" HorizontalAlignment="Left" Margin="426,22,0,0" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.156,-0.416" Click="btnOdobri_Click"/>
-        <Button x:Name="btnOdbij" Content="Odbij" HorizontalAlignment="Left" Margin="426,59,0,0" VerticalAlignment="Top" Width="229" Click="btnOdbij_Click"/>
+
+        <Rectangle Height="489" VerticalAlignment="Top" Margin="0,0,3,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="543" Fill="White" VerticalAlignment="Bottom" Margin="352,0,302,228" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaZahteva" HorizontalAlignment="Left" Height="446" VerticalAlignment="Top" Width="850" Margin="401,288,0,0" Background="White"/>
+        <Button x:Name="btnOdobri" Content="Odobri" HorizontalAlignment="Left" Margin="699,764,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.156,-0.416" Click="btnOdobri_Click" Height="38" Background="#FF3AB745" BorderBrush="White"/>
+        <Button x:Name="btnOdbij" Content="Odbij" HorizontalAlignment="Left" Margin="810,764,0,0" VerticalAlignment="Top" Width="88" Click="btnOdbij_Click" Height="38" Background="#FFE61717" BorderBrush="#FFFEFDFF"/>
+
 
     </Grid>
 </UserControl>

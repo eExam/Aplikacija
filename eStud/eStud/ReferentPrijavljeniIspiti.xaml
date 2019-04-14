@@ -6,9 +6,26 @@
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017">
-    <Grid x:Name="btnKreirajPrijavnicu" Background="#FFFBFBFB">
-        <DataGrid x:Name="tabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="408" VerticalAlignment="Top" Width="1103"/>
-        <Button x:Name="btnPrijavnica" Content="Stampaj" HorizontalAlignment="Left" Margin="1175,84,0,0" VerticalAlignment="Top" Width="194" Height="56" FontSize="20" Background="#FFA02B76" Click="btnPrijavnica_Click"/>
+    <Grid x:Name="btnKreirajPrijavnicu" Background="#FFFBFBFB" Width="1594">
+        <Rectangle Height="489" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="530" Fill="White" VerticalAlignment="Bottom" Margin="332,0,280,317" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="447" VerticalAlignment="Top" Width="862" Margin="387,213,0,0" BorderBrush="#89CFCFCF"/>
+        <Button x:Name="btnPrijavnica" Content="Stampaj" HorizontalAlignment="Left" Margin="746,680,0,0" VerticalAlignment="Top" Width="194" Height="56" FontSize="20" Background="#FF3AB745" Click="btnPrijavnica_Click" BorderBrush="White"/>
+
 
     </Grid>
 </UserControl>

@@ -137,5 +137,17 @@ namespace eStud
             }
             MessageBox.Show("Ukupan broj ESPB bodova =" + ESPB);
         }
+
+        private void btnPodaci_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPotvrdeUverenja_Checked(object sender, RoutedEventArgs e)
+        {
+            this.GlavniPanel.Children.Clear();
+            StudentPotvrdeUverenja s = new StudentPotvrdeUverenja(student);
+            this.GlavniPanel.Children.Add(s);
+        }
     }
 }

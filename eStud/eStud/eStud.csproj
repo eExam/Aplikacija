@@ -66,6 +66,9 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodajIspitniRok.xaml.cs">
+      <DependentUpon>DodajIspitniRok.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajReferenta.xaml.cs">
       <DependentUpon>DodajReferenta.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
     <Compile Include="IzborniPredmeti.cs" />
     <Compile Include="IzborniPredmeti.xaml.cs">
       <DependentUpon>IzborniPredmeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniIspitniRok.xaml.cs">
+      <DependentUpon>IzmeniIspitniRok.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniReferentPodaci.xaml.cs">
       <DependentUpon>IzmeniReferentPodaci.xaml</DependentUpon>
@@ -110,6 +116,9 @@
     </Compile>
     <Compile Include="ReferentPodaci.xaml.cs">
       <DependentUpon>ReferentPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReferentPotvrdeUverenja.xaml.cs">
+      <DependentUpon>ReferentPotvrdeUverenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReferentPrijavljeniIspiti.xaml.cs">
       <DependentUpon>ReferentPrijavljeniIspiti.xaml</DependentUpon>
@@ -151,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodajIspitniRok.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajReferenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzborniPredmeti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniIspitniRok.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReferentPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReferentPotvrdeUverenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

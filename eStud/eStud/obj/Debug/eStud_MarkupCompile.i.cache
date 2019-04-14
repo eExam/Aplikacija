@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\App.xaml
-29879916429
+321317872542
 11580343117
-42-1737249116
+451143453192
 182082676693
-AdminWindow.xaml;DodajReferenta.xaml;DodajStudenta.xaml;IspitniRokovi.xaml;IzborniPredmeti.xaml;IzmeniReferentPodaci.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;PocetnaAdmin.xaml;PocetnaReferent.xaml;PolozeniIspiti.xaml;PrijavniceZaProfesora.xaml;PromenaLozinke.xaml;ReferentIzmeniPodatke.xaml;ReferentPodaci.xaml;ReferentPrijavljeniIspiti.xaml;ReferentWindow.xaml;ReferentZahteviPrijava.xaml;Simple Styles.xaml;StatusObavestenje.xaml;StudentIzmeniPodaci.xaml;StudentPocetnaStrana.xaml;StudentPodaci.xaml;StudentPotvrdeUverenja.xaml;StudentPrijaviIspit.xaml;StudentPrijavljeniIspit.xaml;StudentPrikazIspitnihRokova.xaml;StudentWindow.xaml;
+AdminWindow.xaml;DodajIspitniRok.xaml;DodajReferenta.xaml;DodajStudenta.xaml;IspitniRokovi.xaml;IzborniPredmeti.xaml;IzmeniIspitniRok.xaml;IzmeniReferentPodaci.xaml;LicniPodaci.xaml;MainWindow.xaml;MojiPredmeti.xaml;PocetnaAdmin.xaml;PocetnaReferent.xaml;PolozeniIspiti.xaml;PrijavniceZaProfesora.xaml;PromenaLozinke.xaml;ReferentIzmeniPodatke.xaml;ReferentPodaci.xaml;ReferentPotvrdeUverenja.xaml;ReferentPrijavljeniIspiti.xaml;ReferentWindow.xaml;ReferentZahteviPrijava.xaml;Simple Styles.xaml;StatusObavestenje.xaml;StudentIzmeniPodaci.xaml;StudentPocetnaStrana.xaml;StudentPodaci.xaml;StudentPotvrdeUverenja.xaml;StudentPrijaviIspit.xaml;StudentPrijavljeniIspit.xaml;StudentPrikazIspitnihRokova.xaml;StudentWindow.xaml;
 
-False
+True
 

@@ -34,28 +34,18 @@ namespace eStud
         private void popuniTabelu()
         {
             rezultati=DBController.PrikaziIspitniRok();
+            rezultati.Columns["Naziv_roka"].ColumnName = "Ispitni rok";
+           // rezultati.Columns["Redovan/Vanredan"].ColumnName = "Tip";
+            rezultati.Columns["Pocetak_roka"].ColumnName = "Pocetak roka";
+            rezultati.Columns["Kraj_roka"].ColumnName = "Kraj roka";
+            rezultati.Columns["Max_brPrijava"].ColumnName = "Maksimalno";
+            rezultati.Columns["Cena_prijave"].ColumnName = "Cena prijave";
+
             tabelaIspitniRokovi.ItemsSource = rezultati.DefaultView;
 
         }
 
-        private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
-        {
-
-            try
-            {
-                DBController.DodajIspitniRok(txtIspitniRok.Text, txtTip.Text, txtPocetak.Text, txtKraj.Text, int.Parse(txtMax.Text), int.Parse(txtCena.Text));
-                MessageBox.Show("Dodali ste ispitni rok");
-                popuniTabelu();
-                OcistiPolja();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Probajte ponovo");
-            }
-
-           
-
-        }
+        
 
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
@@ -63,7 +53,7 @@ namespace eStud
             {
                 tabelaIspitniRokovi.CanUserDeleteRows = true;
                 DataRowView row = (DataRowView)tabelaIspitniRokovi.SelectedItems[0];
-                DBController.IzbrisiIspitniRok(row["Naziv_roka"].ToString());
+                DBController.IzbrisiIspitniRok(row["Ispitni rok"].ToString());
                 rezultati.Rows.Remove(row.Row);
             }
             catch (Exception ex)
@@ -74,25 +64,26 @@ namespace eStud
 
         private void btnIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)tabelaIspitniRokovi.SelectedItems[0];
-           
-            txtIspitniRok.Text=(row["Naziv_roka"].ToString());
-            txtTip.Text = row["Tip"].ToString();
-            txtPocetak.Text = row["Pocetak_roka"].ToString();
-            txtKraj.Text = row["Kraj_roka"].ToString();
-            txtCena.Text =(row["Cena_prijave"].ToString());
-            txtMax.Text = row["Max_brPrijava"].ToString();
-          
-
+            try
+            {
+                DataRowView row = (DataRowView)tabelaIspitniRokovi.SelectedItems[0];
+                this.pnlDodaj.Children.Clear();
+                IzmeniIspitniRok ir = new IzmeniIspitniRok(tabelaIspitniRokovi, row);
+                pnlDodaj.Children.Add(ir);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Niste izabrali");
+            }
         }
-        private void OcistiPolja()
+       
+
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
-            txtIspitniRok.Text = "";
-            txtTip.Text = "";
-            txtPocetak.Text = "";
-            txtKraj.Text = "";
-            txtMax.Text = "";
-            txtCena.Text = "";
+            
+            this.pnlDodaj.Children.Clear();
+            DodajIspitniRok dt = new DodajIspitniRok(tabelaIspitniRokovi);
+            this.pnlDodaj.Children.Add(dt);
         }
     }
 }

@@ -15,7 +15,7 @@
             <Button x:Name="btnRef" HorizontalAlignment="Left" Margin="34.5,204,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Click="btnRef_Click" Content="Referent" FontSize="22" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" MouseEnter="btn_MouseEnter" MouseLeave="btn_MouseLeave"/>
             <Button x:Name="btnStud" HorizontalAlignment="Left" Margin="34.5,259,0,0" VerticalAlignment="Top" Width="260" Height="50" Background="{x:Null}" BorderBrush="#FFF0EAEA" Click="btnStud_Click" Foreground="#DDF0ECEC" Content="Student" FontSize="22" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" MouseEnter="btn_MouseEnter" MouseLeave="btn_MouseLeave"/>
             <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
-            <Button Content="Promena lozinke" HorizontalAlignment="Left" Margin="34.5,688.5,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" FontSize="22" BorderBrush="White" FontFamily="Century Gothic"/>
+            <Button Content="Promena lozinke" HorizontalAlignment="Left" Margin="34.5,688.5,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" FontSize="22" BorderBrush="#FFF56C2D" FontFamily="Century Gothic"/>
 
         </Grid>
         <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5"/>

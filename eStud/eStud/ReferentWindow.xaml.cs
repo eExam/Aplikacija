@@ -1,6 +1,7 @@
 ﻿using eStud.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,21 @@ namespace eStud
     public partial class ReferentWindow : Window
     {
         private Referent r;
+        DataTable rezultati;
         public ReferentWindow(Korisnik k)
         {
             this.r = new Referent(k);
             InitializeComponent();
+            Obavestenje();
         }
+        private void Obavestenje()
+        {
+            
+            rezultati= DBController.ReferentZahteviPrijava();
+            int brojac = rezultati.Rows.Count;
+            txtNotification.Text = brojac.ToString();
 
+        }
         private void btnZahteviIspit_Click(object sender, RoutedEventArgs e)
         {
             this.GlavniPanel.Children.Clear();
@@ -53,6 +63,20 @@ namespace eStud
             this.GlavniPanel.Children.Clear();
             PrijavniceZaProfesora pzr = new PrijavniceZaProfesora();
             this.GlavniPanel.Children.Add(pzr);
+        }
+
+        private void btnOdjava_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow m = new MainWindow();
+            m.ShowDialog();
+        }
+
+        private void btnMolbe_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            ReferentPotvrdeUverenja r = new ReferentPotvrdeUverenja();
+            GlavniPanel.Children.Add(r);
         }
     }
 }

@@ -7,7 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White" Margin="0,0,-275,0">
-        <DataGrid x:Name="TabelaPredmeti" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="1075" />
+        <DataGrid    
+          
+                          x:Name="TabelaPredmeti" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="1075"/>
+
 
     </Grid>
+    
 </UserControl>

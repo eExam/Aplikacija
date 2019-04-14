@@ -31,6 +31,13 @@ namespace eStud
         public void popuniTabelu()
         {
             rezultati = DBController.ReferentZahteviPrijava();
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
+            rezultati.Columns["imeprof"].ColumnName = "Ime profesora";
+            rezultati.Columns["prezimeprof"].ColumnName = "Prezime profesora";
+            rezultati.Columns["ispitni_rok"].ColumnName = "Ispitni rok";
+         
             tabelaZahteva.ItemsSource = rezultati.DefaultView;
         }
 
@@ -38,7 +45,7 @@ namespace eStud
         {
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
-            DBController.OdobriPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+            DBController.OdobriPrijavuIspita(row["username"].ToString(), 2, row["Predmet"].ToString());
             rezultati.Rows.Remove(row.Row);
         }
 
@@ -46,7 +53,7 @@ namespace eStud
         {
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
-            DBController.OdbijPrijavuIspita(row["username_stud"].ToString(), 2, row["sifra_predmeta"].ToString());
+            DBController.OdbijPrijavuIspita(row["username"].ToString(), 2, row["Predmet"].ToString());
             rezultati.Rows.Remove(row.Row);
         }
 

@@ -25,13 +25,34 @@ namespace eStud
     {
         DataTable rezultati;
         DataTable rez;
+        
         public PrijavniceZaProfesora()
         {
             InitializeComponent();
+            popuniPredmete();
+        }
+        private void popuniPredmete()
+        {
+            rez = DBController.getPredmeti();
+            string[] predmet;
+
+            int broj = rez.Rows.Count;
+
+            predmet = new string[broj];
+            for (int i = 0; i < broj; i++)
+            {
+                predmet[i] = rez.Rows[i][0].ToString();
+                txtPredmeti.Items.Add(predmet[i]);
+
+            }
         }
         private DataTable napraviTabelu()
         {
-            rezultati = DBController.PrijavniceZaProfesora(txtPredmet.Text);
+            // pred=DBController.getPredmeti();
+            // pred.getNazivPredmeta();
+            //MessageBox.Show(pred.getNazivPredmeta());
+            
+            rezultati = DBController.PrijavniceZaProfesora(txtPredmeti.Text);
             int brojac = rezultati.Rows.Count;
             DataTable dt = new DataTable();
             dt.Clear();
@@ -61,7 +82,7 @@ namespace eStud
             using (var doc = new PdfWrapper(file))
             {
                 doc.DodajNaslov("Lista prijavljenih studenata", 14);
-                doc.DodajParagraf("Za polaganje ispita iz Predmeta " + txtPredmet.Text + " prijavili su se sledeci studenti");
+                doc.DodajParagraf("Za polaganje ispita iz Predmeta " + txtPredmeti.Text + " prijavili su se sledeci studenti");
 
                 doc.DodajTabelu(tabela);
 
