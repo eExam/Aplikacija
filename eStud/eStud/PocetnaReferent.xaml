@@ -5,8 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="450" d:DesignWidth="800" Width="1594" Height="1016" Background="White">
+    <Grid x:Name="GlavniPanel">
+        <Rectangle Height="444" VerticalAlignment="Top" Margin="0,0,3,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="367" Fill="White" VerticalAlignment="Bottom" Margin="115.5,0,846.5,345" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Height="367" Fill="White" VerticalAlignment="Bottom" Margin="851,0,111,345" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="btnPrikaziVise" Content="Prikazi vise" HorizontalAlignment="Left" Margin="307.5,653.892,0,0" VerticalAlignment="Top" Width="217" Height="56" FontSize="22" Click="btnPrikaziVise_Click" Background="#FF3AB73A" BorderBrush="White"/>
+        <DataGrid x:Name="tabelaPrijaveIspita" HorizontalAlignment="Left" Height="259.5" Margin="175.5,369.892,0,0" VerticalAlignment="Top" Width="518.133" Background="White"/>
+        <Label Content="Zahtevi za prijavu ispita" HorizontalAlignment="Left" Margin="289.173,322.5,0,0" VerticalAlignment="Top" Height="47.392" Width="262.327" FontSize="22" Foreground="#DD5D5D5D" FontFamily="Century Gothic"/>
+        <Button x:Name="btnPrikaziVise1" Content="Prikazi vise" HorizontalAlignment="Left" Margin="1069,653.892,0,0" VerticalAlignment="Top" Width="217" Height="56" FontSize="22" Click="btnPrikaziVise1_Click" Background="#FF3AB73A" BorderBrush="White"/>
+        <Label Content="Molbe" HorizontalAlignment="Left" Margin="1132,322.5,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#DD494949" FontFamily="Century Gothic"/>
+        <DataGrid x:Name="tabelaMolbe" HorizontalAlignment="Left" Height="259.5" Margin="907.5,369.892,0,0" VerticalAlignment="Top" Width="533.5" Background="White"/>
+
+
     </Grid>
 </UserControl>

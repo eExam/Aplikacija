@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1019" VerticalAlignment="Top" Width="326.5" Background="#FF1E262C" OpacityMask="#FF60685E" Grid.ColumnSpan="2">
             <Label x:Name="ime" FontSize="22" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="162" Margin="0,967,90.922,0" Background="{x:Null}" FontWeight="Bold" FontFamily="Century Gothic"/>
-            <Button HorizontalAlignment="Left" Height="50" Margin="20,130,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Pocetna" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic"/>
+            <Button x:Name="btnPocetna" HorizontalAlignment="Left" Height="50" Margin="20,130,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Pocetna" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPocetna_Click"/>
             <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
             <Button Content="Promena lozinke" HorizontalAlignment="Left" Margin="34,689,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" FontSize="22" BorderBrush="#FFF56C2D" FontFamily="Century Gothic"/>
 

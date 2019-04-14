@@ -8,19 +8,19 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" Background="White" Width="319.57">
     <Grid>
-        <TextBox x:Name="txtCena" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Cena prijavnice" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,205,18,203"/>
-        <TextBox x:Name="txtMax" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Maksimalan broj prijavnica" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,163,18,245"/>
-        <ComboBox x:Name="txtTip" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Height="40" Margin="18,72,0,0">
+        <TextBox x:Name="txtCena" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Cena prijavnice" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,212.587,21.57,194.373"/>
+        <TextBox x:Name="txtMax" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Maksimalan broj prijavnica" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,165.254,21.57,237.413"/>
+        <ComboBox x:Name="txtTip" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Height="36.667" Margin="20,62,0,0">
             <ComboBoxItem Content="Redovan"/>
             <ComboBoxItem Content="Vanredni"/>
         </ComboBox>
-        <TextBox x:Name="txtIspitniRok" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Ispitni rok" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,30,18,378"/>
-        <Button x:Name="btnSacuvaj" Content="Button" HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" Width="125" Click="btnSacuvaj_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="173,320,0,0" VerticalAlignment="Top" Width="125"/>
-        <DatePicker x:Name="txtPocetak" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.145,0.109" Margin="106,112,0,0" Height="28"/>
-        <DatePicker x:Name="txtKraj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.145,0.109" Margin="106,138,0,0"/>
-        <Label Content="Pocetak roka" HorizontalAlignment="Left" Margin="20,112,0,0" VerticalAlignment="Top" Width="81"/>
-        <Label Content="Kraj roka" HorizontalAlignment="Left" Margin="20,138,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="txtIspitniRok" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Ispitni rok" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,20,18,388"/>
+        <Button x:Name="btnSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" Width="125" Click="btnSacuvaj_Click" Background="#FF52CF4B" BorderBrush="White" FontSize="18"/>
+        <Button x:Name="btnOtkazi" Content="Otkazi" HorizontalAlignment="Left" Margin="173,320,0,0" VerticalAlignment="Top" Width="125" Background="#FF878787" BorderBrush="White" FontSize="18" Click="btnOtkazi_Click"/>
+        <DatePicker x:Name="txtPocetak"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="123.333" RenderTransformOrigin="0.145,0.109" Margin="174.667,98.667,0,0" Height="30.96" />
+        <DatePicker x:Name="txtKraj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124.667" RenderTransformOrigin="0.145,0.109" Margin="173.333,131.667,0,0" Height="33.587"/>
+        <Label Content="Pocetak roka" HorizontalAlignment="Left" Margin="20,103.667,0,0" VerticalAlignment="Top" Width="154.667" Foreground="#DD444444"/>
+        <Label Content="Kraj roka" HorizontalAlignment="Left" Margin="20,134.627,0,0" VerticalAlignment="Top" Width="148.333" Foreground="#DD444444"/>
 
     </Grid>
 </UserControl>

@@ -8,7 +8,7 @@
              d:DesignHeight="1017" d:DesignWidth="1594" Background="#FFBDA4A4">
     <Grid Background="White">
 
-        <Rectangle Height="489" VerticalAlignment="Top" Margin="0,0,3,0" >
+        <Rectangle Height="444" VerticalAlignment="Top" Margin="0,0,3,0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>

@@ -28,6 +28,10 @@ namespace eStud
             this.r = new Referent(k);
             InitializeComponent();
             Obavestenje();
+            GlavniPanel.Children.Clear();
+            PocetnaReferent pr = new PocetnaReferent();
+            GlavniPanel.Children.Add(pr);
+
         }
         private void Obavestenje()
         {
@@ -77,6 +81,13 @@ namespace eStud
             GlavniPanel.Children.Clear();
             ReferentPotvrdeUverenja r = new ReferentPotvrdeUverenja();
             GlavniPanel.Children.Add(r);
+        }
+
+        private void btnPocetna_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PocetnaReferent pr = new PocetnaReferent();
+            GlavniPanel.Children.Add(pr);
         }
     }
 }

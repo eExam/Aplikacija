@@ -159,7 +159,7 @@ namespace eStud.Model
         public static DataTable PrikaziMolbe()
         {
             DataTable dt = new DataTable();
-            string upit = "select Users.username,Users.ime,Users.prezime, PotvrdeUverenja.razlog,PotvrdeUverenja.obrazlozenje FROM Users,PotvrdeUverenja where Users.username=PotvrdeUverenja.username_stud";
+            string upit = "select Users.username,Users.ime,Users.prezime, PotvrdeUverenja.razlog,PotvrdeUverenja.obrazlozenje FROM Users INNER JOIN PotvrdeUverenja ON Users.username=PotvrdeUverenja.username_stud";
             dt=rezultatiUpita(upit);
             return dt;
         }
@@ -171,9 +171,14 @@ namespace eStud.Model
         public static DataTable prikaziOdobreneMolbe()
         {
             DataTable dt = new DataTable();
-            dt = rezultatiUpita("Select Users.username,Users.ime,Users.Prezime,OdobrenePotvrdeUverenja.tip_dokumenta FROM Users,OdobrenePotvrdeUverenja where Users.username=OdobrenePotvrdeUverenja.username");
+            dt = rezultatiUpita("Select Users.username,Users.ime,Users.Prezime,OdobrenePotvrdeUverenja.tip_dokumenta FROM Users INNER JOIN OdobrenePotvrdeUverenja ON Users.username=OdobrenePotvrdeUverenja.username");
             return dt;
 
+        }
+        public static void izbrisiZahtev(string username)
+        {
+            string upit = "delete from PotvrdeUverenja where username_stud='" + username + "'";
+            IzvrsiUpit(upit);
         }
         public static bool ZauzetoKorisnicko(string username)
         {

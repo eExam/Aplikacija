@@ -8,21 +8,11 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1594" Height="1017">
     <Grid Background="White">
-        <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="386" Margin="903,430,0,0" VerticalAlignment="Top" Width="380"/>
-        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="903,368,0,0" VerticalAlignment="Top" Width="75" Click="btnDodaj_Click"/>
-        <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="679" Margin="1,336,0,0" VerticalAlignment="Top" Width="657" RenderTransformOrigin="0.5,0.5">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.126"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-        </DataGrid>
-        <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="1005,368,0,0" VerticalAlignment="Top" Width="75" Click="btnIzbrisi_Click"/>
-        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="1120,368,0,0" VerticalAlignment="Top" Width="76" Click="btnIzmeni_Click"/>
-        <Rectangle Height="334" VerticalAlignment="Top" >
+
+
+
+
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
@@ -33,6 +23,40 @@
             </Rectangle.Fill>
 
         </Rectangle>
-
+        <Rectangle Height="676" Fill="White" VerticalAlignment="Bottom" Margin="136.5,0,105.5,196" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TabControl HorizontalAlignment="Left" Height="485.125" Margin="184.5,214.5,0,0" VerticalAlignment="Top" Width="1268.5">
+            <TabItem Header="Ispitni rok" FontSize="22" Foreground="#FF666666">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFFBFBFB" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White" Margin="0,0,10.5,1.5">
+                    <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="399.372" Margin="-0.602,-0.679,0,0" VerticalAlignment="Top" Width="884.719" RenderTransformOrigin="0.5,0.5" Background="#FFFDFDFD">
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.126"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                    </DataGrid>
+                    <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="139,400.362,0,0" VerticalAlignment="Top" Width="141" Click="btnIzbrisi_Click" Height="42" Background="#FFB4B4B4" FontSize="22" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="0,400.362,0,0" VerticalAlignment="Top" Width="139" Click="btnIzmeni_Click" Background="#FFB4B4B4" FontSize="22" Height="42" BorderBrush="{x:Null}"/>
+                    <StackPanel x:Name="pnlIzmeniRok" HorizontalAlignment="Left" Height="432.362" Margin="884.5,0,0,0" VerticalAlignment="Top" Width="367.5" Background="White"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Dodaj ispitni rok" FontSize="22" Foreground="#FF636363">
+                <Grid Background="White">
+                    <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="443.862" VerticalAlignment="Top" Width="421.5" Background="White"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

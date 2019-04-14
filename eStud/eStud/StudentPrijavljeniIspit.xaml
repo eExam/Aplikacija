@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="754.5" Width="1591" Height="1017">
     <Grid x:Name="GlavniPanel" Background="White" Width="1591" Height="1017.5" Margin="0,0,-10,-302" VerticalAlignment="Top">
-        <Rectangle Height="398" VerticalAlignment="Top" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
@@ -18,7 +18,7 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <TabControl HorizontalAlignment="Left" Height="609.5" Style="{DynamicResource SimpleTabControl}" VerticalAlignment="Top" Width="1591" BorderBrush="{x:Null}" BorderThickness="6,1,1,1" Margin="0,398,0,0">
+        <TabControl HorizontalAlignment="Left" Height="563.5" Style="{DynamicResource SimpleTabControl}" VerticalAlignment="Top" Width="1591" BorderBrush="{x:Null}" BorderThickness="6,1,1,1" Margin="0,444,0,0">
             <TabItem Header="Uspesno prijavljeni ispiti" Style="{DynamicResource SimpleTabItem}" Height="40" FontSize="20" Foreground="#FF6A6868">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -36,8 +36,8 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="TabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="571.6" VerticalAlignment="Top" Width="1581" Background="White" Grid.ColumnSpan="5" Margin="0,0,0,-11.1" FontSize="13" />
-                    
+                    <DataGrid x:Name="TabelaPrijavljeniIspiti" HorizontalAlignment="Left" Height="514.5" VerticalAlignment="Top" Width="1571" Background="White" Grid.ColumnSpan="5" FontSize="13" />
+
 
                 </Grid>
             </TabItem>

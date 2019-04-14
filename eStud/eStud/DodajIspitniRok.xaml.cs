@@ -64,5 +64,10 @@ namespace eStud
             txtMax.Text = "";
             txtCena.Text = "";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OcistiPolja();
+        }
     }
 }

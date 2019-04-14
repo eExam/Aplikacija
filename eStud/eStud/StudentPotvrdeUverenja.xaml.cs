@@ -26,8 +26,13 @@ namespace eStud
         {
             InitializeComponent();
             this.trenutniKorisnik = trenutniKorisnik;
+            popuni();
         }
-
+        private void popuni()
+        {
+            tbRazlog.Items.Add("Potvrda o studiranju");
+            tbRazlog.Items.Add("Potvrda o polozenim ispitima");
+        }
         private void btnPosalji_Click(object sender, RoutedEventArgs e)
         {
             DBController.DodajPotvrdeUverenje(trenutniKorisnik.getUserName(), tbRazlog.Text, tbObrazlozenje.Text);

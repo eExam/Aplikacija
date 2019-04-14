@@ -5,26 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Width="1594" Height="1017">
     <Grid Background="White">
-        <TabControl HorizontalAlignment="Left" Height="224" Margin="0,226,0,0" VerticalAlignment="Top" Width="438">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="tabelaMolbe" HorizontalAlignment="Left" Height="186" Margin="0,10,0,0" VerticalAlignment="Top" Width="271"/>
-                    <Button x:Name="btnOdobri" Content="Button" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="75" Click="btnOdobri_Click"/>
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="572" Fill="White" VerticalAlignment="Bottom" Margin="332,0,280,275" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TabControl HorizontalAlignment="Left" Height="463.5" VerticalAlignment="Top" Width="843" Margin="386,192,0,0">
+            <TabItem Header="Zahtevi" FontSize="25" Foreground="#FF747474">
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="240*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="tabelaMolbe" HorizontalAlignment="Left" Height="290.247" Margin="0,10,0,0" VerticalAlignment="Top" Width="837" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnOdobri" Content="Odobri" HorizontalAlignment="Left" Margin="180.802,352.747,0,0" VerticalAlignment="Top" Width="136" Click="btnOdobri_Click" Height="42" Background="#FF56B73A" BorderBrush="White" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Header="Odobrene molbe" FontSize="25" Foreground="#FF747474">
+                <Grid Background="White" Margin="0,0,40,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="17*"/>
-                        <ColumnDefinition Width="199*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tabelaOdobrene" HorizontalAlignment="Left" Height="165" Margin="10,10,0,0" VerticalAlignment="Top" Width="329" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnStampaj" Content="Button" HorizontalAlignment="Left" Margin="323.115,59,0,0" VerticalAlignment="Top" Width="75" Click="btnStampaj_Click" Grid.Column="1"/>
+                    <DataGrid x:Name="tabelaOdobrene" HorizontalAlignment="Left" Height="268" VerticalAlignment="Top" Width="797" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnStampaj" Content="Stampaj" HorizontalAlignment="Left" Margin="350,366.247,0,0" VerticalAlignment="Top" Width="125" Click="btnStampaj_Click" Grid.Column="1" Background="#FF67B73A" BorderBrush="White" Height="42"/>
                 </Grid>
             </TabItem>
         </TabControl>
+
 
     </Grid>
 </UserControl>

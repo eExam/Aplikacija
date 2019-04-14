@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017">
     <Grid x:Name="btnKreirajPrijavnicu" Background="#FFFBFBFB" Width="1594">
-        <Rectangle Height="489" VerticalAlignment="Top" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>

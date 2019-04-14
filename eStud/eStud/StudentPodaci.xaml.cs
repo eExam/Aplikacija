@@ -28,6 +28,9 @@ namespace eStud
         {
             InitializeComponent();
             popuniTabelu();
+            pnlDodajStud_Copy.Children.Clear();
+            DodajStudenta df = new DodajStudenta(TabelaStudenti);
+            pnlDodajStud_Copy.Children.Add(df);
         }
         public void popuniTabelu()
         {
@@ -36,21 +39,7 @@ namespace eStud
             TabelaStudenti.ItemsSource = rezultati.DefaultView;
         }
 
-        private void btnDodajStud_Click(object sender, RoutedEventArgs e)
-        {
-            if (state == true)
-            {
-                pnlDodajStud.Children.Clear();
-                state = false;
-            }
-            else
-            {
-                pnlDodajStud.Children.Clear();
-                DodajStudenta df = new DodajStudenta(TabelaStudenti);
-                pnlDodajStud.Children.Add(df);
-                state = true;
-            }
-        }
+        
         private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
         {
             try

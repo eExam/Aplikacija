@@ -29,7 +29,10 @@ namespace eStud
             InitializeComponent();
 
             popuniTabelu();
-            
+            this.pnlDodaj.Children.Clear();
+            DodajIspitniRok dt = new DodajIspitniRok(tabelaIspitniRokovi);
+            this.pnlDodaj.Children.Add(dt);
+
         }
         private void popuniTabelu()
         {
@@ -67,9 +70,9 @@ namespace eStud
             try
             {
                 DataRowView row = (DataRowView)tabelaIspitniRokovi.SelectedItems[0];
-                this.pnlDodaj.Children.Clear();
+                this.pnlIzmeniRok.Children.Clear();
                 IzmeniIspitniRok ir = new IzmeniIspitniRok(tabelaIspitniRokovi, row);
-                pnlDodaj.Children.Add(ir);
+                pnlIzmeniRok.Children.Add(ir);
             }
             catch(Exception ex)
             {

@@ -15,7 +15,7 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017.5">
     <Grid Background="White" Width="1591" Height="1017.5">
-        <Rectangle Height="516" VerticalAlignment="Top" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
@@ -26,7 +26,7 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="305" Margin="0,516,0,0" VerticalAlignment="Top" Width="912"  CanUserAddRows="False">
+        <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="305" Margin="0,449,0,0" VerticalAlignment="Top" Width="912"  CanUserAddRows="False">
 
         </DataGrid>
         <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="934,521,0,0" VerticalAlignment="Top" Width="169" Click="Izaberi_Click" Height="52"/>

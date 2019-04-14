@@ -15,7 +15,7 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017.5">
     <Grid x:Name="ComboProf" Background="White">
-        <Rectangle Height="516" VerticalAlignment="Top" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>

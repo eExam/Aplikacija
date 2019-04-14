@@ -32,9 +32,11 @@ namespace eStud
         {
             InitializeComponent();
             PopuniTabelu();
-            
-            
-            
+            pnlRight_Copy.Children.Clear();
+            DodajReferenta df = new DodajReferenta(TabelaReferenti);
+            pnlRight_Copy.Children.Add(df);
+
+
         }
        
         private void PopuniTabelu()

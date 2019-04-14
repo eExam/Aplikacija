@@ -54,5 +54,15 @@ namespace eStud
 
             mojGrid.ItemsSource = rezultati.DefaultView;
         }
+
+        private void btnOtkazi_Click(object sender, RoutedEventArgs e)
+        {
+            txtIspitniRok.Text = "";
+            txtTip.Text = "";
+            txtPocetak.Text = "";
+            txtKraj.Text = "";
+            txtCena.Text = "";
+            txtMax.Text = "";
+        }
     }
 }

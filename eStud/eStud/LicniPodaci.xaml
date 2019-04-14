@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="979" Width="1591" Height="1017.5">
     <Grid x:Name="GlavniPanel" Height="1017.5" Background="White" Width="1591" >
-        <Rectangle Height="471" VerticalAlignment="Top" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
