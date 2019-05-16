@@ -33,15 +33,15 @@ namespace eStud
         }
         private void popuniText()
         {
-            DataRowView row = (DataRowView)mojGrid.SelectedItems[0];
+           // DataRowView row = (DataRowView)mojGrid.SelectedItems[0];
 
             txtIme.Text = (row["Ime"].ToString());
            txtDepartman.Text = (row["Departman"].ToString());
-            txtDatumRodj.Text = row["Datum rodjenja"].ToString();
+            txtDatumRodj.Text = row["Datum rođenja"].ToString();
             txtPrezime.Text = row["Prezime"].ToString();
             txtPol.Text = (row["Pol"].ToString());
             txtStudijskiProgram.Text = row["Studijski program"].ToString();
-            txtUsername.Text = row["Username"].ToString();
+            txtUsername.Text = row["Korisničko ime"].ToString();
             txtGrad.Text = row["Grad"].ToString();
             txtAdresa.Text = row["Adresa"].ToString();
         }
@@ -64,6 +64,18 @@ namespace eStud
             rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
 
             mojGrid.ItemsSource = rezultati.DefaultView;
+        }
+        private void TextHandler(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch)) ) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
         }
     }
 }

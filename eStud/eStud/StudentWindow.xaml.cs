@@ -25,7 +25,7 @@ namespace eStud
 
        
         private Student student;
-
+        
         public DataTable rezultati;
         DataTable polozeniIspiti;
 
@@ -106,15 +106,25 @@ namespace eStud
         }
         private void btnStatus_Click(object sender, RoutedEventArgs e)
         {
-            StatusObavestenje so = new StatusObavestenje(student);
-            so.ShowDialog();
+            // MessageBox.Show(student.getStatus())č
+            MessageBox.Show("Vaš status je "+DBController.getStatus(student.getUserName()));
         }
 
         private void btnIspitniRokovi_Click(object sender, RoutedEventArgs e)
         {
-            GlavniPanel.Children.Clear();
-            StudentPrikazIspitnihRokova spir = new StudentPrikazIspitnihRokova();
-            GlavniPanel.Children.Add(spir);
+            DataTable ispitniRok = new DataTable();
+            ispitniRok = DBController.PrikaziIspitniRok();
+            if (ispitniRok.Rows.Count == 0)
+            {
+                MessageBox.Show("Jos nije poceo ispitni rok");
+            }
+            else
+            {
+                GlavniPanel.Children.Clear();
+
+                StudentPrikazIspitnihRokova spir = new StudentPrikazIspitnihRokova();
+                GlavniPanel.Children.Add(spir);
+            }
         }
 
         private void btnPocetna_Click(object sender, RoutedEventArgs e)

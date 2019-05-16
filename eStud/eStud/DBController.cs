@@ -21,7 +21,7 @@ namespace eStud.Model
             try
             {
                 OleDbCommand cmd = connect.CreateCommand();
-                cmd.CommandText = "Insert into Users values('" + username + "', '" + password + "','" + usertype + "','" + ime + "','" + prezime + "','" + datum_rodjenja + "','" + pol + "','"+grad+"','"+adresa+"')";
+                cmd.CommandText = "Insert into Users values('" + username + "', '" + CreateMD5(password) + "','" + usertype + "','" + ime + "','" + prezime + "','" + datum_rodjenja + "','" + pol + "','"+grad+"','"+adresa+"')";
                 connect.Open();
                 cmd.ExecuteNonQuery();
                 connect.Close();
@@ -133,10 +133,11 @@ namespace eStud.Model
         //Omogucavanje logina
         public static Korisnik ImaUBazi(string username, string password)
         {
+           
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select * from users where username='" + username + "' and password='" + password + "'");
+                dt = rezultatiUpita("Select * from users where username='" + username + "' and password='" +CreateMD5(password)+ "'");
                 // dt.Rows oznacava broj javljanja osobe u tabeli Korisnici
                 // Ovde se takodje vrsi i poredjenje lozinke sa enkriptovanom lozinkom u bazi
                 if (dt.Rows.Count == 1)
@@ -153,32 +154,45 @@ namespace eStud.Model
         }
         public static void DodajPotvrdeUverenje(string username,string razlog,string obrazlozenje)
         {
-            string upit = "insert into PotvrdeUverenja values ('" + username + "','" + razlog + "','" + obrazlozenje + "')";
+            string upit = "insert into PotvrdeUverenja (username_stud,razlog,obrazlozenje) values ('" + username + "','" + razlog + "','" + obrazlozenje + "')";
             IzvrsiUpit(upit);
         }
         public static DataTable PrikaziMolbe()
         {
             DataTable dt = new DataTable();
-            string upit = "select Users.username,Users.ime,Users.prezime, PotvrdeUverenja.razlog,PotvrdeUverenja.obrazlozenje FROM Users INNER JOIN PotvrdeUverenja ON Users.username=PotvrdeUverenja.username_stud";
+            string upit = "select PotvrdeUverenja.ID, Users.username,Users.ime,Users.prezime, PotvrdeUverenja.razlog,PotvrdeUverenja.obrazlozenje FROM Users INNER JOIN PotvrdeUverenja ON Users.username=PotvrdeUverenja.username_stud";
             dt=rezultatiUpita(upit);
             return dt;
         }
         public static void OdobriMolbe(string username,string tip)
         {
-            string upit = "insert into OdobrenePotvrdeUverenja values('" + username + "','" + tip + "')";
+            string upit = "insert into OdobrenePotvrdeUverenja (username,tip_dokumenta)values('" + username + "','" + tip + "')";
             IzvrsiUpit(upit);
         }
         public static DataTable prikaziOdobreneMolbe()
         {
             DataTable dt = new DataTable();
-            dt = rezultatiUpita("Select Users.username,Users.ime,Users.Prezime,OdobrenePotvrdeUverenja.tip_dokumenta FROM Users INNER JOIN OdobrenePotvrdeUverenja ON Users.username=OdobrenePotvrdeUverenja.username");
+            dt = rezultatiUpita("Select OdobrenePotvrdeUverenja.ID,Users.username,Users.ime,Users.Prezime,OdobrenePotvrdeUverenja.tip_dokumenta FROM Users INNER JOIN OdobrenePotvrdeUverenja ON Users.username=OdobrenePotvrdeUverenja.username");
             return dt;
-
         }
-        public static void izbrisiZahtev(string username)
+        
+        public static void izbrisiZahtev(int id)
         {
-            string upit = "delete from PotvrdeUverenja where username_stud='" + username + "'";
+            string upit = "delete from PotvrdeUverenja where ID="+id+"";
             IzvrsiUpit(upit);
+        }
+        public static void IzbrisiZahtevZaIspit(int id)
+        {
+            try
+            {
+                string upit = "delete from ZahteviZaPrijavu where ZahteviZaPrijavu.ID="+id+"";
+                
+                IzvrsiUpit(upit);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(id);
+            }
         }
         public static bool ZauzetoKorisnicko(string username)
         {
@@ -194,6 +208,36 @@ namespace eStud.Model
                     return false;
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static int getBrojPrijave(string nazivPredmeta,string username)
+        {
+            try
+            {
+                string sifra = getSifraPredmeta(nazivPredmeta);
+                DataTable dt = new DataTable();
+                string upit = "Select PrijavljeniIspiti.broj_prijava FROM PrijavljeniIspiti Where sifra_predmeta='" + sifra + "' and username_studenta='" + username + "'";
+                dt = rezultatiUpita(upit);
+                return int.Parse(dt.Rows[0][0].ToString());
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static void setBrojPrijave(string username, string nazivPredmeta,int brPrijave)
+        {
+            try { 
+            string sifra = getSifraPredmeta(nazivPredmeta);
+          
+            string upit = "UPDATE [PrijavljeniIspiti] SET [broj_prijava]='" + brPrijave + "' WHERE [sifra_predmeta]='" + sifra + "' and [username_studenta]='" + username + "'";
+            IzvrsiUpit(upit);
+        }
+
+            catch(Exception ex)
             {
                 throw ex;
             }
@@ -297,6 +341,21 @@ namespace eStud.Model
                 throw ex;
             }
         }
+        public static DataTable getStudente()
+        {
+            DataTable dt = new DataTable();
+            string upit = ("Select Users.ime,Users.prezime,Student.broj_indeksa FROM Users INNER JOIN Student ON Users.username=Student.username");
+            dt = rezultatiUpita(upit);
+            return dt;
+        }
+        public static DataTable getReferente()
+        {
+            DataTable dt = new DataTable();
+            string upit = ("Select Users.ime,Users.prezime,Referent.Departman From Users INNER JOIN Referent ON Users.username=Referent.username");
+            dt = rezultatiUpita(upit);
+            return dt;
+
+        }
         //Popunjavanje tabele za biranje izbornih predmeta
         public static DataTable StudentIzborniPredmeti(string username)
         {
@@ -305,7 +364,7 @@ namespace eStud.Model
                 DataTable dt = new DataTable();
                 int sem = getSemestar(username);
 
-                dt = rezultatiUpita("Select IzborniPredmeti.Naziv_predmeta, IzborniPredmeti.Departman,IzborniPredmeti.Studijski_program,IzborniPredmeti.Semestar,IzborniPredmeti.ESPB FROM IzborniPredmeti Where IzborniPredmeti.Semestar=" + sem + "");
+                dt = rezultatiUpita("Select Users.ime,IzborniPredmeti.Naziv_predmeta, IzborniPredmeti.Departman,IzborniPredmeti.Studijski_program,IzborniPredmeti.Semestar,IzborniPredmeti.ESPB FROM IzborniPredmeti,Users Where IzborniPredmeti.Semestar=" + sem + " and Users.username=IzborniPredmeti.username_profesora");
 
                 return dt;
             }
@@ -350,7 +409,7 @@ namespace eStud.Model
             return int.Parse(dt.Rows[0][0].ToString());
         }
 
-        public DataTable StudentPrijavljeniIspiti(string username)
+        public static DataTable StudentPrijavljeniIspiti(string username)
         {
             try
             {
@@ -422,17 +481,17 @@ namespace eStud.Model
             }
             
         }
-        public static bool DaLiJePrijavljenIspit(string sifraPredmeta,string username)
+        public static bool DaLiJePrijavljenIspit(string nazivPredmeta,string username,int brPrijave)
         {
+            string sifraPredmeta = getSifraPredmeta(nazivPredmeta);
             DataTable dt = new DataTable();
-            dt = rezultatiUpita("Select PrijavljeniIspiti.sifra_predmeta,PrijavljeniIspiti.username_studenta From PrijavljeniIspiti where username_studenta='" + username + "' and sifra_predmeta='" + sifraPredmeta+"'");
+            string upit = "Select * FROM PrijavljeniIspiti where sifra_predmeta='" + sifraPredmeta + "' and broj_prijava=" + brPrijave + " and username_studenta='" + username + "'";
+            dt = rezultatiUpita(upit);
             if (dt.Rows.Count == 1)
-            {
-                return true;
 
-            }
+                return true;
             else
-                return false;
+                return false ;
         }
         public static DataTable PodaciReferent()
         {
@@ -455,7 +514,7 @@ namespace eStud.Model
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Student.departman,Student.studijski_program FROM Student,Users WHERE Users.username=Student.username");
+                dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Users.Grad,Users.Adresa, Student.departman,Student.studijski_program,Student.semestar,Student.status,Student.broj_indeksa,Student.godina_upisa FROM Student,Users WHERE Users.username=Student.username");
                 return dt;
             }
             catch(Exception ex)
@@ -469,7 +528,7 @@ namespace eStud.Model
             IzbrisiIzBaze("delete from Users where Users.username='" + username + "'");
         }
         //Promena lozinke
-        public static void postaviNovuLozinku(string username, string staraLozinka, string NovaLozinka)
+        public static void postaviNovuLozinku(string username, string NovaLozinka)
         {
             try
             {
@@ -477,7 +536,7 @@ namespace eStud.Model
                 OleDbCommand cmd = new OleDbCommand();
 
                 cmd.Connection = connect;
-                string upit = "UPDATE [Users] SET [password]='" + NovaLozinka + "' WHERE [username]='" + username + "';";
+                string upit = "UPDATE [Users] SET [password]='" + CreateMD5(NovaLozinka) + "' WHERE [username]='" + username + "';";
 
                 cmd.CommandText = upit;
 
@@ -542,7 +601,7 @@ namespace eStud.Model
             try
             {
 
-                return dt.Rows[0][0].ToString();
+                return (dt.Rows[0][0].ToString());
 
 
             }
@@ -624,11 +683,11 @@ namespace eStud.Model
             return null;
 
         }
-        public static void PosaljiZahtev(string username,string predmet,string ispitnirok,string usernameProf )
+        public static void PosaljiZahtev(string username,string predmet,string ispitnirok,string usernameProf,int brPrijave )
         {
             try
             {
-                string upit = "Insert into ZahteviZaPrijavu values('" + username + "', '" + predmet + "','" + ispitnirok + "','" + usernameProf + "')";
+                string upit = "Insert into ZahteviZaPrijavu (username_stud,sifra_predmeta,ispitni_rok,username_prof,brPrijave) values('" + username + "', '" + predmet + "','" + ispitnirok + "','" + usernameProf + "','"+brPrijave+"')";
                 IzvrsiUpit(upit);
             }
             catch(Exception ex)
@@ -648,7 +707,7 @@ namespace eStud.Model
             try
             {
                 DataTable dt = new DataTable();
-                dt = rezultatiUpita("Select Users.username,Users.ime,Users.prezime ,Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Profesor.imeprof,Profesor.prezimeprof,ZahteviZaPrijavu.ispitni_rok FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN ZahteviZaPrijavu ON Predmeti.Sifra_predmeta=ZahteviZaPrijavu.sifra_predmeta) ON Users.username=ZahteviZaPrijavu.username_stud");
+                dt = rezultatiUpita("Select ZahteviZaPrijavu.ID,Users.username,Users.ime,Users.prezime ,Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Profesor.imeprof,Profesor.prezimeprof,ZahteviZaPrijavu.ispitni_rok, ZahteviZaPrijavu.brPrijave FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN ZahteviZaPrijavu ON Predmeti.Sifra_predmeta=ZahteviZaPrijavu.sifra_predmeta) ON Users.username=ZahteviZaPrijavu.username_stud");
                 return dt;
                
             }
@@ -657,7 +716,23 @@ namespace eStud.Model
                 throw ex;
             }
         }
-        
+        public static int getBrPrijaveRef(string nazivPredmeta,string username)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+              
+                string sifra = getSifraPredmeta(nazivPredmeta);
+                string upit = "Select ZahteviZaPrijavu.brPrijave FROM ZahteviZaPrijavu where username_stud='" + username + "' and sifra_predmeta='" + sifra + "'";
+                dt = rezultatiUpita(upit);
+                return int.Parse(dt.Rows[0][0].ToString());
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
         public static void OdobriPrijavuIspita(string username, int brojPrijave,string nazivPredmeta)
         {
 
@@ -673,11 +748,12 @@ namespace eStud.Model
             }
 
         }
-        public static void OdbijPrijavuIspita(string username,int brojPrijave,string sifraPredmeta)
+        public static void OdbijPrijavuIspita(string username,int brojPrijave,string nazivPredmeta)
         {
             try
             {
-                string upit = "Insert into NeprijavljeniIspiti values('" + sifraPredmeta + "','" + brojPrijave + "','" + username + "')";
+                string sifra = getSifraPredmeta(nazivPredmeta);
+                string upit = "Insert into NeprijavljeniIspiti values('" + sifra + "','" + brojPrijave + "','" + username + "')";
                 IzvrsiUpit(upit);
             }
             catch (Exception ex)

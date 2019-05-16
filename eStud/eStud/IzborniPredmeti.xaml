@@ -26,10 +26,16 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="305" Margin="0,449,0,0" VerticalAlignment="Top" Width="912"  CanUserAddRows="False">
+        <Rectangle Height="668" Fill="White" VerticalAlignment="Bottom" Margin="256,0,157,187" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="475" Margin="370,259,0,0" VerticalAlignment="Top" Width="956"  CanUserAddRows="False" SelectionChanged="tabelaIzborniPredmeti_SelectionChanged" Background="White">
 
         </DataGrid>
-        <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="934,521,0,0" VerticalAlignment="Top" Width="169" Click="Izaberi_Click" Height="52"/>
+        <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="743,800,0,0" VerticalAlignment="Top" Width="169" Click="Izaberi_Click" Height="52" FontSize="25" Background="#FF73B73A" BorderBrush="White"/>
+
 
 
     </Grid>

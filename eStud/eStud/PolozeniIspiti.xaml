@@ -18,17 +18,14 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <TabControl HorizontalAlignment="Left" Height="492.5" Margin="0,449,0,0" Style="{DynamicResource SimpleTabControl}" VerticalAlignment="Top" Width="1591" FontSize="20">
-            <TabItem Header="Spisak polozenih ispita" Style="{DynamicResource SimpleTabItem}" FontSize="20" Height="40">
-                <Grid Background="#FFE5E5E5" Margin="0,0,9,-5.5" Width="1591">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16*"/>
-                        <ColumnDefinition Width="249*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tabelaPolozeniIspiti" HorizontalAlignment="Left" Height="520.9" VerticalAlignment="Top" Width="1581" Grid.ColumnSpan="2" Margin="0,0,0,-71.9"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
+        <Rectangle Height="668" Fill="White" VerticalAlignment="Bottom" Margin="256,0,157,187.5" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaPolozeniIspiti" HorizontalAlignment="Left" Height="487" VerticalAlignment="Top" Width="998" SelectionChanged="tabelaPolozeniIspiti_SelectionChanged" Margin="359,261,0,0" Background="White"/>
+
+
 
     </Grid>
 </UserControl>

@@ -29,11 +29,11 @@
             </Rectangle.Effect>
         </Rectangle>
         <Button x:Name="btnPrikaziVise" Content="Prikazi vise" HorizontalAlignment="Left" Margin="307.5,653.892,0,0" VerticalAlignment="Top" Width="217" Height="56" FontSize="22" Click="btnPrikaziVise_Click" Background="#FF3AB73A" BorderBrush="White"/>
-        <DataGrid x:Name="tabelaPrijaveIspita" HorizontalAlignment="Left" Height="259.5" Margin="175.5,369.892,0,0" VerticalAlignment="Top" Width="518.133" Background="White"/>
+        <DataGrid x:Name="tabelaPrijaveIspita" HorizontalAlignment="Left" Height="259.5" Margin="175.5,369.892,0,0" VerticalAlignment="Top" Width="518.133" Background="White" SelectionChanged="tabelaPrijaveIspita_SelectionChanged"/>
         <Label Content="Zahtevi za prijavu ispita" HorizontalAlignment="Left" Margin="289.173,322.5,0,0" VerticalAlignment="Top" Height="47.392" Width="262.327" FontSize="22" Foreground="#DD5D5D5D" FontFamily="Century Gothic"/>
         <Button x:Name="btnPrikaziVise1" Content="Prikazi vise" HorizontalAlignment="Left" Margin="1069,653.892,0,0" VerticalAlignment="Top" Width="217" Height="56" FontSize="22" Click="btnPrikaziVise1_Click" Background="#FF3AB73A" BorderBrush="White"/>
         <Label Content="Molbe" HorizontalAlignment="Left" Margin="1132,322.5,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#DD494949" FontFamily="Century Gothic"/>
-        <DataGrid x:Name="tabelaMolbe" HorizontalAlignment="Left" Height="259.5" Margin="907.5,369.892,0,0" VerticalAlignment="Top" Width="533.5" Background="White"/>
+        <DataGrid x:Name="tabelaMolbe" HorizontalAlignment="Left" Height="259.5" Margin="907.5,369.892,0,0" VerticalAlignment="Top" Width="533.5" Background="White" SelectionChanged="tabelaMolbe_SelectionChanged"/>
 
 
     </Grid>

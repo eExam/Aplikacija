@@ -37,7 +37,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="White" Margin="0,0,10.5,1.5">
-                    <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="399.372" Margin="-0.602,-0.679,0,0" VerticalAlignment="Top" Width="884.719" RenderTransformOrigin="0.5,0.5" Background="#FFFDFDFD">
+                    <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="441.378" Margin="-0.648,-0.679,0,0" VerticalAlignment="Top" Width="884.719" RenderTransformOrigin="0.5,0.5" Background="#FFFDFDFD" SelectionChanged="tabelaIspitniRokovi_SelectionChanged">
                         <DataGrid.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -47,14 +47,15 @@
                             </TransformGroup>
                         </DataGrid.RenderTransform>
                     </DataGrid>
-                    <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="139,400.362,0,0" VerticalAlignment="Top" Width="141" Click="btnIzbrisi_Click" Height="42" Background="#FFB4B4B4" FontSize="22" BorderBrush="{x:Null}"/>
-                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="0,400.362,0,0" VerticalAlignment="Top" Width="139" Click="btnIzmeni_Click" Background="#FFB4B4B4" FontSize="22" Height="42" BorderBrush="{x:Null}"/>
-                    <StackPanel x:Name="pnlIzmeniRok" HorizontalAlignment="Left" Height="432.362" Margin="884.5,0,0,0" VerticalAlignment="Top" Width="367.5" Background="White"/>
+                    <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="884.5,-1,0,0" VerticalAlignment="Top" Width="177" Click="btnIzbrisi_Click" Height="46" Background="#FFF5804B" FontSize="22" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="1066.5,0,0,0" VerticalAlignment="Top" Width="185.5" Click="btnIzmeni_Click" Background="#FFF5804B" FontSize="22" Height="46" BorderBrush="{x:Null}"/>
+                    <StackPanel x:Name="pnlIzmeniRok" HorizontalAlignment="Left" Height="396.362" Margin="884.5,46,0,0" VerticalAlignment="Top" Width="367.5" Background="White"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Dodaj ispitni rok" FontSize="22" Foreground="#FF636363">
                 <Grid Background="White">
-                    <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="443.862" VerticalAlignment="Top" Width="421.5" Background="White"/>
+                    <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="421.362" VerticalAlignment="Top" Width="421.5" Background="White" Margin="414,22.5,0,0"/>
+                    <Border BorderBrush="#FF8D8D8D" BorderThickness="1,0.2" HorizontalAlignment="Left" Height="423.862" Margin="396,10,0,0" VerticalAlignment="Top" Width="477"/>
                 </Grid>
             </TabItem>
         </TabControl>

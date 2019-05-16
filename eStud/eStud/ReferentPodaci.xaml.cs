@@ -26,7 +26,7 @@ namespace eStud
     public partial class ReferentPodaci : UserControl
     {
         public DataTable rezultati;
-        bool state = false;
+        
         //private DBController db=new DBController();
         public ReferentPodaci()
         {
@@ -47,8 +47,8 @@ namespace eStud
             rezultati.Columns["pol"].ColumnName = "Pol";
             rezultati.Columns["prezime"].ColumnName = "Prezime";
             rezultati.Columns["ime"].ColumnName = "Ime";
-            rezultati.Columns["username"].ColumnName = "Username";
-            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
+            rezultati.Columns["username"].ColumnName = "Korisničko ime";
+            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rođenja";
             TabelaReferenti.ItemsSource = rezultati.DefaultView;
         
             
@@ -69,7 +69,7 @@ namespace eStud
                     TabelaReferenti.CanUserDeleteRows = true;
                     
                     DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
-                    DBController.izbrisiKorisnika(row["username"].ToString());
+                    DBController.izbrisiKorisnika(row["Korisničko ime"].ToString());
                     rezultati.Rows.Remove(row.Row);
                     //  MessageBox.Show(TabelaReferenti.SelectedItem.ToString());
                     //PopuniTabelu();
@@ -82,24 +82,7 @@ namespace eStud
         }
        
 
-        private void btnDodajRef_Click(object sender, RoutedEventArgs e)
-        {
-           // state = 0;
-            if (state==true)
-            {
-                pnlRight.Children.Clear();
-               
-                state = false;               
-            }
-            
-            else
-            {
-                pnlRight.Children.Clear();
-                DodajReferenta df = new DodajReferenta(TabelaReferenti);
-                pnlRight.Children.Add(df);
-                state = true;
-            }
-        }
+        
 
         private void btnIzmeni_Click(object sender, RoutedEventArgs e)
         {
@@ -122,6 +105,21 @@ namespace eStud
         private void TabelaReferenti_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TabelaReferenti.IsReadOnly = true;
+        }
+
+        private void btnPromena_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataRowView row = (DataRowView)TabelaReferenti.SelectedItems[0];
+                pnlRight.Children.Clear();
+                ReferentIzmeniPodatke rp = new ReferentIzmeniPodatke(row, TabelaReferenti);
+                pnlRight.Children.Add(rp);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
  }

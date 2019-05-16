@@ -21,8 +21,8 @@ namespace eStud
     /// </summary>
     public partial class PromenaLozinke : UserControl
     {
-        Student trenutniKorisnik;
-        public PromenaLozinke(Student tk)
+        Korisnik trenutniKorisnik;
+        public PromenaLozinke(Korisnik tk)
         {
             trenutniKorisnik = tk;
             InitializeComponent();
@@ -38,11 +38,14 @@ namespace eStud
         {
             Console.WriteLine(DBController.getPassword(trenutniKorisnik.getUserName()));
             Console.WriteLine(trenutniKorisnik.getUserName());
-
+            string staraLozinka = DBController.getPassword(trenutniKorisnik.getUserName());
+            string unesena = CreateMD5(txtStaraLozinka.Password.ToString());
+            unesena=CreateMD5(txtStaraLozinka.Password.ToString());
+           
             try
             {
 
-                if ((DBController.getPassword(trenutniKorisnik.getUserName()) == txtStaraLozinka.Password.ToString()))
+                if (staraLozinka == unesena)
 
                 /*if ((DBController.getPassword(trenutniKorisnik.getUserName())==true) && (txtNovaLozinka.Text==txtNovaLozinka2.Text))*/
                 {
@@ -57,7 +60,7 @@ namespace eStud
                         {
                             if (txtNovaLozinka.Password !="" && txtNovaLozinka2.Password !="")
                             {
-                                DBController.postaviNovuLozinku(trenutniKorisnik.getUserName(), txtStaraLozinka.Password.ToString(), txtNovaLozinka.Password.ToString());
+                                DBController.postaviNovuLozinku(trenutniKorisnik.getUserName(),txtNovaLozinka.Password.ToString());
                                 MessageBox.Show("Bravo");
                                 ocistiSvaPolja();
                             }
@@ -118,6 +121,36 @@ namespace eStud
             if(e.Key==Key.Enter)
             {
                 PromeniLozinku();
+            }
+        }
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
+
+        private void txtStaraLozinka_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch)) )|| ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
             }
         }
     }

@@ -27,20 +27,14 @@ namespace eStud
         {
             this.r = new Referent(k);
             InitializeComponent();
-            Obavestenje();
+           
             GlavniPanel.Children.Clear();
             PocetnaReferent pr = new PocetnaReferent();
             GlavniPanel.Children.Add(pr);
+            ime.Content = r.getIme()+" "+r.getPrezime();
 
         }
-        private void Obavestenje()
-        {
-            
-            rezultati= DBController.ReferentZahteviPrijava();
-            int brojac = rezultati.Rows.Count;
-            txtNotification.Text = brojac.ToString();
-
-        }
+       
         private void btnZahteviIspit_Click(object sender, RoutedEventArgs e)
         {
             this.GlavniPanel.Children.Clear();
@@ -88,6 +82,13 @@ namespace eStud
             GlavniPanel.Children.Clear();
             PocetnaReferent pr = new PocetnaReferent();
             GlavniPanel.Children.Add(pr);
+        }
+
+        private void btnPromenaLozinke_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PromenaLozinke p = new PromenaLozinke(r);
+            GlavniPanel.Children.Add(p);
         }
     }
 }

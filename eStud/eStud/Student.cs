@@ -26,6 +26,9 @@ namespace eStud.Model
             
 
         }
+
+       
+
         public string getGodinaUpisa()
         {
             return godina_upisa;

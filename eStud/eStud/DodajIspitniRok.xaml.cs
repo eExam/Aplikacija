@@ -69,5 +69,70 @@ namespace eStud
         {
             OcistiPolja();
         }
+
+        private void txtMax_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch))&& ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
+
+        private void txtCena_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
+
+        private void txtIspitniRok_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
+
+        private void txtPocetak_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
+
+        private void txtKraj_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
     }
 }

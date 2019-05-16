@@ -36,29 +36,46 @@ namespace eStud
           // DataRowView row = (DataRowView)mojGrid.SelectedItems[0];
 
             txtIme.Text = (row["Ime"].ToString());
-           /* txtDepartman.Text = (row["Departman"].ToString());
-            txtDatumRodj.Text = row["Datum rodjenja"].ToString();
+            txtDepartman.Text = (row["Departman"].ToString());
+            txtDatumRodj.Text = row["Datum rođenja"].ToString();
             txtPrezime.Text = row["Prezime"].ToString();
             txtPol.Text = (row["Pol"].ToString());
             txtStudijskiProgram.Text = row["Studijski program"].ToString();
-            txtUsername.Text = row["Username"].ToString();
+            txtUsername.Text = row["Korisničko ime"].ToString();
             txtGrad.Text = row["Grad"].ToString();
-            txtAdresa.Text = row["Adresa"].ToString();*/
+            txtAdresa.Text = row["Adresa"].ToString();
+            txtSemestar.Text = row["Semestar"].ToString();
+            txtGodinaUpisa.Text = row["Godina upisa"].ToString();
            
         }
         private void btnSacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            DBController.Izmenistud(txtUsername.Text, txtIme.Text, txtPrezime.Text, txtDatumRodj.Text, txtPol.Text, txtDepartman.Text, txtStudijskiProgram.Text, txtGrad.Text, txtAdresa.Text, int.Parse(txtSemestar.Text), txtBrojIndeksa.Text, txtGodinaUpisa.Text, txtStatus.Text);
-            DataTable rezultati = DBController.PodaciStudent();
-            rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
-            rezultati.Columns["departman"].ColumnName = "Departman";
-            rezultati.Columns["pol"].ColumnName = "Pol";
-            rezultati.Columns["prezime"].ColumnName = "Prezime";
-            rezultati.Columns["ime"].ColumnName = "Ime";
-            rezultati.Columns["username"].ColumnName = "Username";
-            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
+            
+            
+                DBController.Izmenistud(txtUsername.Text, txtIme.Text, txtPrezime.Text, txtDatumRodj.Text, txtPol.Text, txtDepartman.Text, txtStudijskiProgram.Text, txtGrad.Text, txtAdresa.Text, int.Parse(txtSemestar.Text), txtBrojIndeksa.Text, txtGodinaUpisa.Text, txtStatus.Text);
+                DataTable rezultati = DBController.PodaciStudent();
+                rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
+                rezultati.Columns["departman"].ColumnName = "Departman";
+                rezultati.Columns["pol"].ColumnName = "Pol";
+                rezultati.Columns["prezime"].ColumnName = "Prezime";
+                rezultati.Columns["ime"].ColumnName = "Ime";
+                rezultati.Columns["username"].ColumnName = "Username";
+                rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rodjenja";
 
-            mojGrid.ItemsSource = rezultati.DefaultView;
+                mojGrid.ItemsSource = rezultati.DefaultView;
+            
+        }
+        private void TextHandler(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
         }
     }
 }

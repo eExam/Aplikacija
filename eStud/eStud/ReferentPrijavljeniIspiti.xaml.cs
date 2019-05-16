@@ -59,5 +59,10 @@ namespace eStud
             PdfWrapper.OtvoriFile(file);
 
         }
+
+        private void tabelaPrijavljeniIspiti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaPrijavljeniIspiti.IsReadOnly = true;
+        }
     }
 }

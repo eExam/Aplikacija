@@ -332,6 +332,10 @@
     <Content Include="eSTUD.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Slike\comp.png" />
+    <Resource Include="Slike\logoFaksa.png" />
+    <Resource Include="Slike\profil.png" />
+    <Resource Include="Slike\key.png" />
     <Resource Include="Slike\NotificationIcon.png" />
     <Resource Include="Slike\logo.png" />
     <Resource Include="Slike\PrijavljeniIspiti.png" />

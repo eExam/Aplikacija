@@ -31,9 +31,12 @@ namespace eStud
         private void popuniLabele()
         {
             rezultati = DBController.PrikaziIspitniRok();
-            lblIspitniRok.Content = rezultati.Rows[0][0].ToString() + "Ispitni Rok";
+            
+            lblIspitniRok.Content = rezultati.Rows[0][0].ToString() + " Ispitni Rok";
             lblPocetak.Content = rezultati.Rows[0][2].ToString();
             lblKrajRoka.Content = rezultati.Rows[0][3].ToString();
+            txtCena.Content = rezultati.Rows[0][4].ToString();
+            txtMax.Content = rezultati.Rows[0][5].ToString();
 
 
         }

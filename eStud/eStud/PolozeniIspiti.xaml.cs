@@ -33,8 +33,16 @@ namespace eStud
 
         {
             DataTable rezultati= DBController.StudentPolozeniIspiti(trenutniKorisnik.getUserName());
+            rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
             tabelaPolozeniIspiti.ItemsSource = rezultati.DefaultView;
 
+        }
+
+        private void tabelaPolozeniIspiti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaPolozeniIspiti.IsReadOnly = true;
         }
     }
 }

@@ -35,7 +35,16 @@ namespace eStud
         public void popuniTabelu()
         {
             rezultati = DBController.PodaciStudent();
-           
+            rezultati.Columns["studijski_program"].ColumnName = "Studijski program";
+            rezultati.Columns["departman"].ColumnName = "Departman";
+            rezultati.Columns["pol"].ColumnName = "Pol";
+            rezultati.Columns["prezime"].ColumnName = "Prezime";
+            rezultati.Columns["ime"].ColumnName = "Ime";
+            rezultati.Columns["username"].ColumnName = "Korisničko ime";
+            rezultati.Columns["datum_rodjenja"].ColumnName = "Datum rođenja";
+            rezultati.Columns["status"].ColumnName = "Status ";
+            rezultati.Columns["godina_upisa"].ColumnName = "Godina upisa";
+
             TabelaStudenti.ItemsSource = rezultati.DefaultView;
         }
 
@@ -46,7 +55,7 @@ namespace eStud
             {
                 TabelaStudenti.CanUserDeleteRows = true;
                 DataRowView row = (DataRowView)TabelaStudenti.SelectedItems[0];
-                DBController.izbrisiKorisnika(row["username"].ToString());
+                DBController.izbrisiKorisnika(row["Korisničko ime"].ToString());
                 rezultati.Rows.Remove(row.Row);
             }
             catch(Exception ex)
@@ -82,6 +91,11 @@ namespace eStud
             {
                 MessageBox.Show("Niste izabrali");
             }
+        }
+
+        private void TabelaStudenti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabelaStudenti.IsReadOnly = true;
         }
     }
 }

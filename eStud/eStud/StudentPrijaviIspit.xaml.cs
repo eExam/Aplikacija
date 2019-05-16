@@ -24,6 +24,7 @@ namespace eStud
     {
         Student trenutniKorisnik;
         public DataTable rezultati;
+        public DataTable ispitniRok=DBController.PrikaziIspitniRok();
         public int BrPrijava;
         public int BrZahteva;
         public StudentPrijaviIspit(Student s)
@@ -32,6 +33,16 @@ namespace eStud
             InitializeComponent();
             popuniPrijavu();
             popuniPredmete();
+            if (ispitniRok.Rows.Count == 0)
+            {
+                this.btnPrijavi.IsEnabled = false;
+            }
+            else
+            {
+                this.btnPrijavi.IsEnabled = true;
+            }
+           
+            
         }
         public void popuniPrijavu()
         {
@@ -78,22 +89,34 @@ namespace eStud
             
             string sifra = DBController.getSifraPredmeta(ComboPredmeti.Text);
             string ispitnirok;
+            int brPrijave;
+            try
+            {
+                 brPrijave = DBController.getBrojPrijave(ComboPredmeti.Text, trenutniKorisnik.getUserName());
+            }
+            catch(Exception ex)
+            {
+                brPrijave = 1;
+            }
             rezultati = DBController.PrikaziIspitniRok();
             ispitnirok = rezultati.Rows[0][0].ToString();
             int mozePrijava = int.Parse(rezultati.Rows[0][4].ToString());
             DataTable polozeni = new DataTable();
-            
-            
+            int prijava;
+            try
+            {
+                prijava = DBController.getBrPrijaveRef(ComboPredmeti.Text, trenutniKorisnik.getUserName());
+            }
+            catch (Exception ex)
+            {
+                prijava = 0;
+            }
             BrZahteva = DBController.BrojPoslatihZahteva(trenutniKorisnik.getUserName());
             BrPrijava = DBController.BrojBrijavljenihIspita(trenutniKorisnik.getUserName());
 
-            if (BrPrijava == mozePrijava)
-            {
-                MessageBox.Show("Prijavljeno je maks");
-                
-            }
+          
 
-            else if(BrZahteva >= int.Parse(rezultati.Rows[0][4].ToString()))
+            if(BrZahteva >= int.Parse(rezultati.Rows[0][4].ToString()))
                 {
 
                 MessageBox.Show("Moguce je prijaviti samo " + mozePrijava + " ispita");
@@ -107,19 +130,30 @@ namespace eStud
                 }
                 else
                 {
-                    if (DBController.DaLiJePrijavljenIspit(sifra, trenutniKorisnik.getUserName()))
-
+                    if (int.Parse(txtBrPrijave.Text) != brPrijave)
                     {
-                        MessageBox.Show("Ispit je prijavljen");
+                        MessageBox.Show("Broj prijave nije tacan" + brPrijave);
                     }
                     else
                     {
+                       
                         
+                            if (prijava == brPrijave)
 
+                            {
+                                MessageBox.Show("Zahtev je vec poslat");
+                            }
+                            else
+                            {
+                                DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra, ispitnirok, ComboProf1.Text, brPrijave);
 
-                        DBController.PosaljiZahtev(trenutniKorisnik.getUserName(), sifra, ispitnirok, ComboProf1.Text);
-                        MessageBox.Show("Zahtev je poslat" + BrPrijava);
-                    }
+                                DBController.setBrojPrijave(trenutniKorisnik.getUserName(), ComboPredmeti.Text, brPrijave);
+                                MessageBox.Show("Uspesno ste poslali zahtev");
+
+                            }
+                        }
+
+                    
                 }
             }
         }
@@ -139,6 +173,21 @@ namespace eStud
             if (prof != null)
             {
                 ComboProf1.Items.Add(prof);
+            }
+          //  else
+           // ComboProf1.Items.Remove(prof);
+        }
+
+        private void txtBrPrijave_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
             }
         }
     }

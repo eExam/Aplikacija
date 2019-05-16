@@ -36,6 +36,9 @@ namespace eStud
             TabelaPredmeti.ItemsSource = rezultati.DefaultView;
         }
 
-       
+        private void TabelaPredmeti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabelaPredmeti.IsReadOnly = true;
+        }
     }
 }

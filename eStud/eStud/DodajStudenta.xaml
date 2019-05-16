@@ -9,23 +9,56 @@
     <Grid Background="White" Margin="0,0,0,-28.5">
 
         <StackPanel HorizontalAlignment="Left" Height="417.5" Margin="35.5,10,0,0" VerticalAlignment="Top" Width="369.5">
-            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Student" IsEnabled="False" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Height="45.44" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtDatumRodj" materialDesign:HintAssist.Hint="Datum rodjenja" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
-            <TextBox x:Name="txtPol" materialDesign:HintAssist.Hint="Pol" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtGrad" materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <TextBox x:Name="txtUsername" materialDesign:HintAssist.Hint="Korisničko ime" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{x:Null}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Lozinka" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtUsertype" materialDesign:HintAssist.Hint="Tip korisnika" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Student" IsEnabled="False" CaretBrush="#FF3AB75C" />
+            <TextBox x:Name="txtIme" materialDesign:HintAssist.Hint="Ime" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Height="45.44" CaretBrush="#FF3AB75C" />
+            <TextBlock Text="Pol" IsHitTestVisible="False" FontSize="20" Foreground="#DD939393" FontFamily="Segoe UI Light">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedItem, ElementName=txtPol}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <ComboBox x:Name="txtPol" VerticalAlignment="Stretch" Height="39" FontSize="20" BorderBrush="#FFF5804B">
+                <ComboBoxItem Content="Zenski" FontSize="20" Foreground="#FF8D8D8D"/>
+                <ComboBoxItem Content="Muski" FontSize="20" Foreground="#FF919191"/>
+            </ComboBox>
+
+            <TextBox x:Name="txtPrezime" materialDesign:HintAssist.Hint="Prezime" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <DatePicker x:Name="txtDatumRodj" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="370" Foreground="#FF7C7C7C" BorderBrush="#FFF5804B"/>
+
+            <TextBox x:Name="txtGrad" materialDesign:HintAssist.Hint="Grad" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
         </StackPanel>
-        <Button x:Name="txtSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Click="txtSacuvaj_Click"  Margin="316,432.5,0,0" Background="#FF3AB75C" BorderBrush="{x:Null}" Height="56" FontSize="22" FontFamily="Century Gothic"/>
-        <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,58,143.864,628.787"/>
-        <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,102.94,143.864,585.187"/>
-        <TextBox x:Name="txtSemestar" materialDesign:HintAssist.Hint="Semestar" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,283.94,143.864,403.687"/>
-        <TextBox x:Name="txtBrojIndeksa" materialDesign:HintAssist.Hint="Broj indeksa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,146.54,143.864,540.087"/>
-        <TextBox x:Name="txtStatus" materialDesign:HintAssist.Hint="Status" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,191.64,143.864,494.487"/>
-        <TextBox x:Name="txtGodinaUpisa" materialDesign:HintAssist.Hint="Datum Upisa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,237.24,143.864,447.787"/>
-        <TextBox x:Name="txtAdresa" materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF3AB75C" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,10,142.571,676.127"/>
+        <Button x:Name="txtSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="743.207" Click="txtSacuvaj_Click"  Margin="35.5,551,0,0" Background="#FFF5804B" BorderBrush="{x:Null}" Height="66.5" FontSize="36" FontFamily="Century Gothic"/>
+        <TextBox x:Name="txtDepartman" materialDesign:HintAssist.Hint="Departman" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,58,143.864,628.787"/>
+        <TextBox x:Name="txtStudijskiProgram" materialDesign:HintAssist.Hint="Studijski program" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,102.94,143.864,585.187"/>
+        <TextBox x:Name="txtSemestar" materialDesign:HintAssist.Hint="Semestar" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="425,304,142,381.5"/>
+        <TextBox x:Name="txtBrojIndeksa" materialDesign:HintAssist.Hint="Broj indeksa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,146.54,143.864,540.087"/>
+        <TextBox x:Name="txtGodinaUpisa" materialDesign:HintAssist.Hint="Godina Upisa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="426,256,141,427.5"/>
+        <TextBox x:Name="txtAdresa" materialDesign:HintAssist.Hint="Adresa" PreviewTextInput="TextHandler" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C" Margin="424,10,142.571,676.127"/>
+        <TextBlock Text="Status" IsHitTestVisible="False" FontSize="20" Foreground="#DD939393" HorizontalAlignment="Center" Margin="426,192,353,512.5" Width="144" RenderTransformOrigin="-0.004,-1.154" FontFamily="Segoe UI Light">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedItem, ElementName=txtStatus}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <ComboBox x:Name="txtStatus" HorizontalAlignment="Left" Margin="425,220,0,0" VerticalAlignment="Top" Width="355" Height="36" BorderBrush="#FFF5804B">
+            <ComboBoxItem>Budzet</ComboBoxItem>
+            <ComboBoxItem>Samofinansiranje</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </UserControl>

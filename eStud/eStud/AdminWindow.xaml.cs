@@ -20,11 +20,15 @@ namespace eStud
     /// </summary>
     public partial class AdminWindow : Window
     {
-
-        public AdminWindow(Model.Korisnik rezultatUpit)
+      Korisnik trenutniKorisnik;
+        public AdminWindow(Korisnik tk)
         {
-
+            trenutniKorisnik = tk;
             InitializeComponent();
+            GlavniPanel.Children.Clear();
+            PocetnaAdmin p = new PocetnaAdmin();
+            GlavniPanel.Children.Add(p);
+           
         }
        
 
@@ -56,32 +60,25 @@ namespace eStud
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
         }
-
-        private void btn_MouseEnter(object sender, MouseEventArgs e)
+        private void popuniListuStudenata()
         {
             
-           // HoverButtonEnter((Button)sender);
-               
         }
-
-        private void btn_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Button b = (Button)sender;
-           
-
-          HoverButtonLeave(b);
-            
-        }
-        public void HoverButtonEnter(Button b)
-        {
-            
-            b.Background = Brushes.DimGray;
-        }
-        public void HoverButtonLeave(Button b)
-        {
-            b.Background = Brushes.Transparent;
-        }
-
        
+
+        
+        private void btnPocetna_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PocetnaAdmin pa = new PocetnaAdmin();
+            GlavniPanel.Children.Add(pa);
+        }
+
+        private void btnPromenaLozinke_Click(object sender, RoutedEventArgs e)
+        {
+            GlavniPanel.Children.Clear();
+            PromenaLozinke p = new PromenaLozinke(trenutniKorisnik);
+            GlavniPanel.Children.Add(p);
+        }
     }
 }

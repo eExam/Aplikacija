@@ -37,7 +37,9 @@ namespace eStud
             rezultati.Columns["imeprof"].ColumnName = "Ime profesora";
             rezultati.Columns["prezimeprof"].ColumnName = "Prezime profesora";
             rezultati.Columns["ispitni_rok"].ColumnName = "Ispitni rok";
-         
+            rezultati.Columns["brPrijave"].ColumnName = "Broj prijave";
+            
+            rezultati.Columns["username"].ColumnName = "Korisničko ime";
             tabelaZahteva.ItemsSource = rezultati.DefaultView;
         }
 
@@ -45,18 +47,45 @@ namespace eStud
         {
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
-            DBController.OdobriPrijavuIspita(row["username"].ToString(), 2, row["Predmet"].ToString());
-            rezultati.Rows.Remove(row.Row);
+            int prijava = int.Parse(row["Broj prijave"].ToString());
+            MessageBox.Show(prijava.ToString());
+          
+            bool prijavljeni = DBController.DaLiJePrijavljenIspit(row["Predmet"].ToString(), row["Korisničko ime"].ToString(), prijava);
+            if (prijavljeni==true)
+            {
+                MessageBox.Show("Vec ste odobrili zahtev");
+            }
+            else if(prijavljeni !=true)
+            {
+
+
+                //    MessageBox.Show(row["Broj prijave"].ToString());
+                 DBController.OdobriPrijavuIspita(row["Korisničko ime"].ToString(), int.Parse(row["Broj prijave"].ToString()), row["Predmet"].ToString());
+            }
         }
 
         private void btnOdbij_Click(object sender, RoutedEventArgs e)
         {
-            tabelaZahteva.CanUserDeleteRows = true;
-            DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
-            DBController.OdbijPrijavuIspita(row["username"].ToString(), 2, row["Predmet"].ToString());
-            rezultati.Rows.Remove(row.Row);
+            try
+            {
+                tabelaZahteva.CanUserDeleteRows = true;
+                DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
+                //    DBController.getBrojPrijave(row["Predmet"].ToString(), row["Korisničko ime"].ToString());
+                DBController.OdbijPrijavuIspita(row["Korisničko ime"].ToString(), int.Parse(row["Broj prijave"].ToString()), row["Predmet"].ToString());
+                MessageBox.Show("Zahtev je odbijen");
+                DBController.IzbrisiZahtevZaIspit(int.Parse(row["ID"].ToString()));
+                row.Row.Delete();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Niste odbili");
+            }
+
         }
 
-        
+        private void tabelaZahteva_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaZahteva.IsReadOnly = true;
+        }
     }
 }

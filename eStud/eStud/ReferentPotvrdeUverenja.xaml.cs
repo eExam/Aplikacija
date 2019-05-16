@@ -35,6 +35,10 @@ namespace eStud
         private void popuniTabelu ()
             {
             rezultati = DBController.PrikaziMolbe();
+            rezultati.Columns["username"].ColumnName ="Korisničko ime";
+           rezultati.Columns["razlog"].ColumnName ="Tip dokumenta";
+            rezultati.Columns["obrazlozenje"].ColumnName ="Obrazloženje";
+            rezultati.Columns["ime"].ColumnName = "Ime";
             tabelaMolbe.ItemsSource = rezultati.DefaultView;
             }
 
@@ -42,16 +46,22 @@ namespace eStud
         {
             tabelaMolbe.CanUserDeleteRows = true;
 
-            DataRowView row1 = (DataRowView)tabelaMolbe.SelectedItems[0];
-            DBController.OdobriMolbe(row1["username"].ToString(), row1["razlog"].ToString());
-            MessageBox.Show("Zahtev je odobren");
-            popuniTabelu2();
-           // row1.Row.Delete();
-            //DBController.izbrisiZahtev(row1["username"].ToString());
+           
+                DataRowView row1 = (DataRowView)tabelaMolbe.SelectedItems[0];
+                DBController.OdobriMolbe(row1["Korisničko ime"].ToString(), row1["Tip dokumenta"].ToString());
+                MessageBox.Show("Zahtev je odobren");
+                popuniTabelu2();
+            
+            
+            row1.Row.Delete();
+            DBController.izbrisiZahtev(int.Parse(row1["ID"].ToString()));
         }
         private void popuniTabelu2()
         {
             rezultati1 = DBController.prikaziOdobreneMolbe();
+            rezultati1.Columns["username"].ColumnName = "Korisničko ime";
+            rezultati1.Columns["tip_dokumenta"].ColumnName = "Tip dokumenta";
+            rezultati1.Columns["ime"].ColumnName = "Ime";
             tabelaOdobrene.ItemsSource = rezultati1.DefaultView;
         }
 
@@ -61,15 +71,17 @@ namespace eStud
            // string file = @"test.pdf"; // nalazi se u bin\Debug
             DataRowView row = izabrani();
             //  string tip;
-            if (row["Tip_dokumenta"].ToString() == "Potvrda o studiranju")
-            {
-                stampajPotvrduStudiranje(row);
+            
+                if (row["Tip dokumenta"].ToString() == "Potvrda o studiranju")
+                {
+                    stampajPotvrduStudiranje(row);
+                }
+                else
+                {
+                    StampajPolozeneIspite(row);
+                }
             }
-            else
-            {
-                StampajPolozeneIspite(row);
-            }
-        }
+           
         private void stampajPotvrduStudiranje(DataRowView row)
         {
             string file = @"test.pdf"; // nalazi se u bin\Debug
@@ -84,7 +96,7 @@ namespace eStud
                 doc.DodajParagraf("Student " + row["Ime"].ToString() + " " + row["prezime"].ToString() + ", broj indeksa " + Tabela(row) + ", podneo je zahtev, na osnovu clana 171. Zakona o opstem upravnom postupku izdaje se");
 
 
-                doc.DodajNaslov(row["Tip_dokumenta"].ToString());
+                doc.DodajNaslov(row["Tip dokumenta"].ToString());
 
                 doc.DodajParagraf("Student " + row["Ime"].ToString() + " " + row["Prezime"].ToString() + " ,upisan je kao redovni student na Drzavni univerzitet u Novom Pazaru, departman za " + getDepartman(row));
                 doc.DodajParagraf("Potvrda koja se izdaje sluzi za korisnicko uputstvo i u druge svrhe se ne moze upotrebljavati");
@@ -123,25 +135,39 @@ namespace eStud
         private DataRowView izabrani()
         {
             DataRowView row = (DataRowView)tabelaOdobrene.SelectedItems[0];
-            return row;
+           
+               
+                return row;
+
+           
+            
         }
         private string Tabela(DataRowView row)
         {
            
-            string brojIndeksa=DBController.getBrIndeksa(row["username"].ToString());
+            string brojIndeksa=DBController.getBrIndeksa(row["Korisničko ime"].ToString());
 
             return brojIndeksa;
         }
         private string getDepartman(DataRowView row)
         {
-            string departman = DBController.getDepartman(row["username"].ToString());
+            string departman = DBController.getDepartman(row["Korisničko ime"].ToString());
             return departman;
         }
         private string Username(DataRowView row)
         {
-            string username = row["username"].ToString();
+            string username = row["Korisničko ime"].ToString();
             return username;
         }
-        
+
+        private void tabelaMolbe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaMolbe.IsReadOnly = true;
+        }
+
+        private void tabelaOdobrene_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaOdobrene.IsReadOnly = true;
+        }
     }
 }

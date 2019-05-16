@@ -5,13 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White" Margin="0,0,-275,0">
-        <DataGrid    
-          
-                          x:Name="TabelaPredmeti" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="1075"/>
+             d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017">
+    <Grid Background="White">
 
+        <Rectangle Height="444" VerticalAlignment="Top" Margin="0,0,-3,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="567" Fill="White" VerticalAlignment="Bottom" Margin="298.5,0,244.5,217" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid  AutoGenerateColumns="true"   
+          
+                          x:Name="TabelaPredmeti" HorizontalAlignment="Left" Height="434" VerticalAlignment="Top" Width="785" SelectionChanged="TabelaPredmeti_SelectionChanged" Margin="416,287,0,0" Background="White"/>
 
     </Grid>
-    
+
 </UserControl>

@@ -19,7 +19,7 @@
 
     <Grid x:Name="GlavniPanel" Width="1594" HorizontalAlignment="Left" Background="White" Height="1017.5">
 
-        <Rectangle Height="444" VerticalAlignment="Top" Margin="0,0,-3,0" >
+        <Rectangle Height="444" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF56C2D"/>
@@ -35,18 +35,18 @@
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
-        <TabControl HorizontalAlignment="Left" Height="743" Margin="134,144,0,0" VerticalAlignment="Top" Width="1343.5">
-            <TabItem Header="Spisak Referenata" FontSize="22" Foreground="Gray">
+        <TabControl HorizontalAlignment="Left" Height="733" Margin="130,156,0,0" VerticalAlignment="Top" Width="1343.5" FontSize="22">
+            <TabItem Header="Spisak Referenata" FontSize="22" Foreground="Gray" FontFamily="Century Gothic">
                 <Grid Background="White">
-                    <DataGrid x:Name="TabelaReferenti" Margin="0,0,511,46" HorizontalAlignment="Right" Width="826.5" Background="White" BorderBrush="{x:Null}" SelectionChanged="TabelaReferenti_SelectionChanged"  IsReadOnly="true"/>
-                    <StackPanel x:Name="pnlRight" Height="704.6" Margin="826.5,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="511" Background="White"/>
-                    <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="btnIzbrisi_Click" Background="#FFDCD6D6" BorderBrush="{x:Null}" Margin="0,658.6,0,0" Height="46" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
-                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Width="151"  Background="#FFDCD6D6" BorderBrush="{x:Null}" Margin="145,658.6,0,0.8" Height="Auto" Click="btnIzmeni_Click" FontFamily="Century Gothic" FontSize="22" Foreground="#DDFFFFFF" />
+                    <DataGrid x:Name="TabelaReferenti" Margin="0,0,511,0" HorizontalAlignment="Right" Width="826.5" Background="White" BorderBrush="#FF9B9B9B" SelectionChanged="TabelaReferenti_SelectionChanged" />
+                    <StackPanel x:Name="pnlRight" Height="631.1" Margin="826.5,52.927,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="511" Background="White"/>
+                    <Button x:Name="btnIzbrisi" Content="Izbriši" HorizontalAlignment="Left" VerticalAlignment="Top" Width="246.5" Click="btnIzbrisi_Click" Background="#FFF5804B" BorderBrush="{x:Null}" Margin="831.5,0,0,0" Height="46" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF"/>
+                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Width="254.5"  Background="#FFF5804B" BorderBrush="{x:Null}" Margin="1083,0,0,648.027" Height="Auto" Click="btnIzmeni_Click" FontFamily="Century Gothic" FontSize="22" Foreground="#DDFFFFFF" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Dodaj novog referenta" FontSize="22" Foreground="#FF666666">
+            <TabItem Header="Dodaj novog referenta" FontSize="22" Foreground="#FF666666" FontFamily="Century Gothic">
                 <Grid Background="White">
-                    <StackPanel x:Name="pnlRight_Copy" Height="694.6" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="511" Background="White"/>
+                    <StackPanel x:Name="pnlRight_Copy" Height="657.1" Margin="433.5,37.5,0,-0.573" VerticalAlignment="Top" HorizontalAlignment="Left" Width="511" Background="White"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -24,7 +24,7 @@
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label Content="PODNOSENJE MOLBE" HorizontalAlignment="Left" Margin="610,223,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DD646464"/>
+        <Label Content="PODNOŠENJE MOLBE" HorizontalAlignment="Left" Margin="610,223,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DD646464"/>
         <TextBox x:Name="tbObrazlozenje"
             TextWrapping="Wrap"
             VerticalAlignment="Center"
@@ -32,9 +32,9 @@
             AcceptsReturn="True"
             VerticalScrollBarVisibility="Auto"
             SpellCheck.IsEnabled="False"
-            materialDesign:HintAssist.Hint="Obrazlozenje"
+            materialDesign:HintAssist.Hint="Obrazloženje"
             Height="55" Margin="410,466,390,496" FontSize="22"/>
-        <Button x:Name="btnPosalji" Content="POSALJI" HorizontalAlignment="Left" Margin="698,794,0,0" VerticalAlignment="Top" Width="206" Height="64" FontSize="22" Background="#FFF5804B" BorderBrush="White" Click="btnPosalji_Click"/>
+        <Button x:Name="btnPosalji" Content="POŠALJI" HorizontalAlignment="Left" Margin="698,794,0,0" VerticalAlignment="Top" Width="206" Height="64" FontSize="22" Background="#FFF5804B" BorderBrush="White" Click="btnPosalji_Click"/>
         <ComboBox x:Name="tbRazlog" HorizontalAlignment="Left" Margin="410,384.04,0,0" VerticalAlignment="Top" Width="794" Height="59.96"/>
 
     </Grid>

@@ -13,36 +13,34 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ReferentWindow" Height="1050" Width="1921" WindowStyle="ThreeDBorderWindow">
-    <Grid Width="1930" Height="1050">
+        Title="eSTUD" Height="1104" Width="1930" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+    <Grid Width="1930" Margin="0,0,-6,-5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="163*"/>
             <ColumnDefinition Width="802*"/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1019" VerticalAlignment="Top" Width="326.5" Background="#FF1E262C" OpacityMask="#FF60685E" Grid.ColumnSpan="2">
-            <Label x:Name="ime" FontSize="22" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="162" Margin="0,967,90.922,0" Background="{x:Null}" FontWeight="Bold" FontFamily="Century Gothic"/>
-            <Button x:Name="btnPocetna" HorizontalAlignment="Left" Height="50" Margin="20,130,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Pocetna" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPocetna_Click"/>
+        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Bottom" Width="326" Background="#FF1E262C" OpacityMask="#FF60685E">
+            <Label x:Name="ime" FontSize="22" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="233" Margin="0,1012,32,0" Background="{x:Null}" FontWeight="Bold" FontFamily="Century Gothic"/>
+            <RadioButton IsChecked="True"  Style="{StaticResource MaterialDesignTabRadioButton}" Margin="20,125,0,0"  x:Name="btnPocetna" HorizontalAlignment="Left" Height="50"  VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Početna" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPocetna_Click" Foreground="#DDFFFFFF"/>
+
             <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
-            <Button Content="Promena lozinke" HorizontalAlignment="Left" Margin="34,689,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" FontSize="22" BorderBrush="#FFF56C2D" FontFamily="Century Gothic"/>
+            <RadioButton IsChecked="false" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="20,698,0,0" x:Name="btnPromenaLozinke" Content="Promena lozinke" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="289" Height="66" Background="{x:Null}" FontSize="22" BorderBrush="#FFF56C2D" FontFamily="Century Gothic" Click="btnPromenaLozinke_Click" Foreground="#DDFFFFFF"/>
 
-            <Button x:Name="btnZahteviIspit" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5"  BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnZahteviIspit_Click" Margin="20,180,0,0">
+            <RadioButton x:Name="btnZahteviIspit" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}"  HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5"  BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnZahteviIspit_Click" Margin="20,180,0,0" Foreground="#DDFFFFFF">
                 Zahtevi prijava ispita
-            </Button>
+            </RadioButton>
 
 
 
-            <Button x:Name="btnIspitniRokovi" HorizontalAlignment="Left" Height="50" Margin="20,330,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Ispitni rokovi" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnIspitniRokovi_Click"/>
-            <Button x:Name="btnPrijavljeniIspiti" HorizontalAlignment="Left" Height="50" Margin="20,230,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Prijavljeni ispiti" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPrijavljeniIspiti_Click"/>
-            <Button x:Name="btnPrijavnice" HorizontalAlignment="Left" Height="50" Margin="20,280,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Prijavnice za profesora" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPrijavnice_Click"/>
-            <Button x:Name="btnOdjava" Background="#FFF56C2D" HorizontalAlignment="Center" BorderThickness="0" Click="btnOdjava_Click" Margin="34,754,33,205" Height="60" Width="260" BorderBrush="{x:Null}" Content="Odjavi se&#xA;" FontSize="22" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="16" FontFamily="Century Gothic"/>
-            <Border Background="#FFF56C2D" CornerRadius="999" Padding="4" Margin="282,172,17,823" RenderTransformOrigin="0.978,0.78">
-                <TextBlock x:Name="txtNotification" Foreground="White" FontWeight="Bold" FontSize="12" Margin="4,3" RenderTransformOrigin="-0.1,0.056" VerticalAlignment="Center" Height="10"><Run Text=""/></TextBlock>
-            </Border>
-            <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,-0.5,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5"/>
-            <Button x:Name="btnMolbe" HorizontalAlignment="Left" Height="50" Margin="20,380,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF0EAEA" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Molbe" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnMolbe_Click" />
+            <RadioButton x:Name="btnIspitniRokovi" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="false" HorizontalAlignment="Left" Height="50" Margin="20,330,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Ispitni rokovi" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnIspitniRokovi_Click" Foreground="#DDFFFFFF"/>
+            <RadioButton x:Name="btnPrijavljeniIspiti" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" HorizontalAlignment="Left" Height="50" Margin="20,230,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Prijavljeni ispiti" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPrijavljeniIspiti_Click" Foreground="#DDFFFFFF"/>
+            <RadioButton x:Name="btnPrijavnice" IsChecked="False" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignTabRadioButton}" Height="50" Margin="20,280,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Prijavnice za profesora" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPrijavnice_Click" Foreground="#DDFFFFFF"/>
+            <Button x:Name="btnOdjava" Background="#FFF56C2D" HorizontalAlignment="Center" BorderThickness="0" Click="btnOdjava_Click" Margin="20,754,17.5,205" Height="60" Width="289" BorderBrush="{x:Null}" Content="Odjavi se&#xA;" FontSize="22" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="16" FontFamily="Century Gothic"/>
+            <Separator HorizontalAlignment="Left" Height="1" Margin="0,988,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="326"/>
+            <RadioButton x:Name="btnMolbe" IsChecked="false" Style="{StaticResource MaterialDesignTabRadioButton}"  HorizontalAlignment="Left" Height="50" Margin="20,380,0,0" VerticalAlignment="Top" Width="274" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Molbe" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnMolbe_Click" Foreground="#DDFFFFFF" />
 
         </Grid>
-        <Grid x:Name="GlavniPanel" Grid.Column="1" HorizontalAlignment="Left" Height="1019" Margin="1,0,0,0" VerticalAlignment="Top" Width="1593"/>
+        <Grid x:Name="GlavniPanel" Grid.Column="1" HorizontalAlignment="Left" Height="1017" VerticalAlignment="Top" Width="1604"/>
 
 
     </Grid>

@@ -88,5 +88,10 @@ namespace eStud
             DodajIspitniRok dt = new DodajIspitniRok(tabelaIspitniRokovi);
             this.pnlDodaj.Children.Add(dt);
         }
+
+        private void tabelaIspitniRokovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaIspitniRokovi.IsReadOnly = true;
+        }
     }
 }

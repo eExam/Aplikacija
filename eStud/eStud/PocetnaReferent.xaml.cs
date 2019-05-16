@@ -39,13 +39,18 @@ namespace eStud
             rezultati.Columns["imeprof"].ColumnName = "Ime profesora";
             rezultati.Columns["prezimeprof"].ColumnName = "Prezime profesora";
             rezultati.Columns["ispitni_rok"].ColumnName = "Ispitni rok";
+            rezultati.Columns["username"].ColumnName = "Korisničko ime";
             tabelaPrijaveIspita.ItemsSource = rezultati.DefaultView;
         }
         public void popuniTabelu1()
         {
-            DataTable rez = new DataTable();
-            rez = DBController.PrikaziMolbe();
-            tabelaMolbe.ItemsSource = rez.DefaultView;
+            DataTable rezultati1 = new DataTable();
+            rezultati1 = DBController.PrikaziMolbe();
+            rezultati1.Columns["username"].ColumnName = "Korisničko ime";
+            rezultati1.Columns["razlog"].ColumnName = "Tip dokumenta";
+            rezultati1.Columns["obrazlozenje"].ColumnName = "Obrazloženje";
+            rezultati1.Columns["ime"].ColumnName = "Ime";
+            tabelaMolbe.ItemsSource = rezultati1.DefaultView;
         }
 
         private void btnPrikaziVise_Click(object sender, RoutedEventArgs e)
@@ -60,6 +65,16 @@ namespace eStud
             GlavniPanel.Children.Clear();
             ReferentPotvrdeUverenja r = new ReferentPotvrdeUverenja();
             GlavniPanel.Children.Add(r);
+        }
+
+        private void tabelaPrijaveIspita_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaPrijaveIspita.IsReadOnly = true;
+        }
+
+        private void tabelaMolbe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tabelaMolbe.IsReadOnly = true;
         }
     }
 }

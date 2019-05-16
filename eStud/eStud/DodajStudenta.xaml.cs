@@ -94,6 +94,18 @@ namespace eStud
                     || txtDepartman.Text == ""
                     || txtStudijskiProgram.Text == "";
             }
+        private void TextHandler(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch)) )|| ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
         }
+    }
     }
 

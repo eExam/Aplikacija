@@ -41,44 +41,52 @@ namespace eStud
            
             
             try {
-                /*if (ImaPraznoPolje())
-                    throw new Exception("Popunite sva polja!");*/
-                if (rezultatUpita.getUserType() == "student")
+                if ((txtPass.Password.ToString() == "") || (txtUser.Text == ""))
                 {
-
-                    this.Hide();
-                    StudentWindow sw = new StudentWindow(new Student(rezultatUpita));
-                    sw.ShowDialog();
+                    MessageBox.Show("Niste popunili polja");
                 }
-
-                else if (rezultatUpita.getUserType() == "admin")
+                else
                 {
+                    if (DBController.ImaUBazi(txtUser.Text,txtPass.Password.ToString() )== null)
+                    {
+                        lblGreska.Content = "Pogrešno korisničko ime/lozinka";
+                        txtPass.Password = "";
+                    }
+                   // lblGreska.Content = "";
+                    if (rezultatUpita.getUserType() == "student")
+                    {
 
-                    this.Hide();
-                    AdminWindow aw = new AdminWindow(rezultatUpita);
-                    aw.ShowDialog();
+                        this.Hide();
+                        StudentWindow sw = new StudentWindow(new Student(rezultatUpita));
+                        sw.ShowDialog();
+                    }
 
-                }
-                else if (rezultatUpita.getUserType() == "referent")
-                {
+                    else if (rezultatUpita.getUserType() == "admin")
+                    {
 
-                    this.Hide();
-                    ReferentWindow rw = new ReferentWindow(new Referent(rezultatUpita));
-                    rw.ShowDialog();
+                        this.Hide();
+                        AdminWindow aw = new AdminWindow(rezultatUpita);
+                        aw.ShowDialog();
 
+                    }
+                    else if (rezultatUpita.getUserType() == "referent")
+                    {
+
+                        this.Hide();
+                        ReferentWindow rw = new ReferentWindow(new Referent(rezultatUpita));
+                        rw.ShowDialog();
+
+                    }
                 }
             }
             catch(Exception ex)
             {
-                if((txtPass.Password.ToString() == "") || (txtUser.Text==""))
-                {
-                    MessageBox.Show("Niste popunili polja");
-                }
-               if(DBController.ImaUBazi(txtUser.Text,txtPass.Password.ToString())==null)
+                //throw ex;
+               /*if(DBController.ImaUBazi(txtUser.Text,txtPass.Password.ToString())==null)
                 {
                     MessageBox.Show("Pogresili ste lozinku/korisnicko ime .Pokusajte ponovo");
                     txtPass.Password = "";
-                }
+                }*/
                 
             }
 
@@ -100,6 +108,51 @@ namespace eStud
             if (e.Key == Key.Enter)
             {
                 LoginHandler();
+            }
+        }
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
+
+        private void txtUser_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            
+                foreach (var ch in e.Text)
+                {
+                    if (!((Char.IsLetter(ch))) || ch.Equals('='))
+                    {
+                        e.Handled = true;
+
+                        break;
+                    }
+                }
+            
+        }
+
+        private void txtPass_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch))) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
             }
         }
     }

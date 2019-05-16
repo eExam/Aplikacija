@@ -46,5 +46,7 @@ namespace eStud
             GodinaUpisa.Content = DBController.getGodinaUpisa(k.getUserName());
 
         }
+
+      
     }
 }

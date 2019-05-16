@@ -18,35 +18,43 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <Rectangle Height="675.5" Fill="White" VerticalAlignment="Bottom" Margin="449,0,340,172" RadiusX="15" RadiusY="15">
+        <Rectangle Height="675.5" Fill="White" VerticalAlignment="Bottom" Margin="441,0,328,172" RadiusX="15" RadiusY="15">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
         </Rectangle>
+        <Border BorderBrush="#FFB0B0B0" BorderThickness="0.3" HorizontalAlignment="Left" Height="591.183" Margin="483,211,0,0" VerticalAlignment="Top" Width="735"/>
+        <StackPanel HorizontalAlignment="Center" Margin="860.503,245.683,373,215.317" Width="357.497" >
+            <Label x:Name="Username" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="46.753" Width="347.497" Foreground="#FF787878"/>
+            <Label x:Name="Ime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997" Foreground="#FF787878"/>
+            <Label x:Name="Prezime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420.497" Foreground="#FF787878"/>
+            <Label x:Name="DatumRodjenja" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="357.497" Foreground="#FF787878"/>
+            <Label x:Name="Grad" Content="-" FontSize="27" Foreground="#FF787878"/>
+            <Label x:Name="Adresa" Content="-" FontSize="27" Foreground="#FF787878"/>
+            <Label x:Name="Pol" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497" Foreground="#FF787878"/>
+            <Label x:Name="Depatman" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878" Width="200.797"/>
+            <Label x:Name="Smer" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878" Width="277.297"/>
+            <Label x:Name="Indeks" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878" Width="214.297"/>
+            <Label x:Name="Semestar" Content="-" FontSize="27" Foreground="#FF787878"/>
+            <Label x:Name="GodinaUpisa" Content="-" FontSize="27" Foreground="#FF787878"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="556.5" Margin="549,245.683,0,0" VerticalAlignment="Top" Width="311.503">
+            <Label x:Name="Username1" FontSize="27" Content="Korisničko ime" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="219.057" Foreground="#FF787878"/>
+            <Label x:Name="Ime1" FontSize="27" Content="Ime" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997" Foreground="#FF787878"/>
+            <Label x:Name="Prezime1" FontSize="27" Content="Prezime" HorizontalAlignment="Left" VerticalAlignment="Top" Width="311.503" Foreground="#FF787878"/>
+            <Label x:Name="DatumRodjenja1" FontSize="27" Content="Datum rođenja" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="311.503" Foreground="#FF787878"/>
+            <Label x:Name="Grad1" Content="Mesto stanovanja" FontSize="27" Foreground="#FF787878"/>
+            <Label x:Name="Adresa1" Content="Adresa" FontSize="27" Foreground="#FF787878"/>
+            <Label x:Name="Pol1" FontSize="27" Content="Pol" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497" Foreground="#FF787878"/>
+            <Label x:Name="Depatman1" FontSize="27" Content="Departman" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878"/>
+            <Label x:Name="Smer1" FontSize="27" Content="Studijski program" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878"/>
+            <Label x:Name="Indeks1" FontSize="27" Content="Broj indeksa" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF787878"/>
+            <Label x:Name="Semestar1" Content="Semestar" FontSize="27" Height="42.913" Foreground="#FF787878"/>
+            <Label x:Name="GodinaUpisa1" Content="Godina upisa" FontSize="27" Width="311.503" Foreground="#FF787878"/>
 
-        <ListView x:Name="ListView" Height="564" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Background="#FF1F7C2B" Margin="518,220,407,0" FontSize="23" Foreground="#DD000000">
+        </StackPanel>
 
-            <ListView.View>
-                <GridView x:Name="GridView" >
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Content}" />
-                </GridView>
-            </ListView.View>
-            <Label x:Name="Username" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.775,0.763" Height="40.753" Width="61.997"/>
-            <Label x:Name="Ime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244.997"/>
-            <Label x:Name="Prezime" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420.497"/>
-            <Label x:Name="DatumRodjenja" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.51,1.492" Width="381.497"/>
-            <Label x:Name="Grad" Content="-"/>
-            <Label x:Name="Adresa" Content="-"/>
-            <Label x:Name="Pol" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234.497"/>
-            <Label x:Name="Depatman" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label x:Name="Smer" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label x:Name="Indeks" FontSize="27" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label x:Name="GodinaUpisa" Content="-"/>
-            <Label x:Name="Semestar" Content="-"/>
-           
 
-        </ListView>
 
     </Grid>
 </UserControl>
