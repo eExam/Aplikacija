@@ -38,12 +38,12 @@
                 <ComboBoxItem Content="Zenski" FontSize="20" Foreground="#FF939393"/>
                 <ComboBoxItem Content="Muski" FontSize="20" Foreground="#FF858585"/>
             </ComboBox>
-            <DatePicker x:Name="txtDatumRodj" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="412" FontSize="20" BorderBrush="#FFF5804B"/>
+            <DatePicker x:Name="txtDatumRodj" PreviewTextInput="txtDatumRodj_PreviewTextInput" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="412" FontSize="20" BorderBrush="#FFF5804B"/>
 
             <TextBox x:Name="txtDepartman"  PreviewTextInput="TextHandler"  materialDesign:HintAssist.Hint="Departman" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
             <TextBox x:Name="txtStudijskiProgram" PreviewTextInput="TextHandler"  materialDesign:HintAssist.Hint="Studijski program" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
             <TextBox x:Name="txtGrad" PreviewTextInput="TextHandler" materialDesign:HintAssist.Hint="Grad" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
-            <TextBox x:Name="txtAdresa"  materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
+            <TextBox x:Name="txtAdresa" PreviewTextInput="TextHandler" materialDesign:HintAssist.Hint="Adresa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FFF5804B" Foreground="#DD191919" FontWeight="Bold" FontSize="18" Height="45.6" FontFamily="Segoe UI Light" CaretBrush="#FF3AB75C"/>
             <Button Content="Sacuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="411.5" Click="Button_Click"  Margin="0,20,0,0" Background="#FFF5804B" BorderBrush="{x:Null}" Height="50" FontSize="30" FontFamily="Segoe UI Light"/>
         </StackPanel>
 

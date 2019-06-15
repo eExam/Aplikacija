@@ -74,7 +74,7 @@ namespace eStud
         {
             foreach (var ch in e.Text)
             {
-                if (!((Char.IsDigit(ch))&& ch.Equals('=')))
+                if (!((Char.IsDigit(ch)))&& ch.Equals('='))
                 {
                     e.Handled = true;
 
@@ -87,7 +87,7 @@ namespace eStud
         {
             foreach (var ch in e.Text)
             {
-                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+                if (!((Char.IsDigit(ch))) || ch.Equals('='))
                 {
                     e.Handled = true;
 

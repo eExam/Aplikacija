@@ -121,5 +121,35 @@ namespace eStud
                 Console.WriteLine(ex);
             }
         }
+        private void searchData(string valueToFind)
+        {
+            DataTable dt = DBController.pretragaReferenta(valueToFind);
+            dt.Columns["studijski_program"].ColumnName = "Studijski program";
+            dt.Columns["departman"].ColumnName = "Departman";
+            dt.Columns["pol"].ColumnName = "Pol";
+            dt.Columns["prezime"].ColumnName = "Prezime";
+            dt.Columns["ime"].ColumnName = "Ime";
+            dt.Columns["username"].ColumnName = "Korisničko ime";
+            dt.Columns["datum_rodjenja"].ColumnName = "Datum rođenja";
+           // TabelaReferenti.ItemsSource = rezultati.DefaultView;
+            TabelaReferenti.ItemsSource = dt.DefaultView;
+        }
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            searchData(txtSearch.Text);
+        }
+
+        private void txtSearch_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch))) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
     }
  }

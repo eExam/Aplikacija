@@ -145,7 +145,7 @@ namespace eStud
                 ESPB+=int.Parse(polozeniIspiti.Rows[i][2].ToString());
 
             }
-            MessageBox.Show("Ukupan broj ESPB bodova =" + ESPB);
+            MessageBox.Show("Ukupan broj ESPB bodova " + ESPB);
         }
 
         private void btnPodaci_Checked(object sender, RoutedEventArgs e)

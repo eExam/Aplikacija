@@ -19,7 +19,7 @@
             </Rectangle.Fill>
 
         </Rectangle>
-        <Rectangle Height="666" Fill="White" VerticalAlignment="Bottom" Margin="337,0,313,181" RadiusX="15" RadiusY="15">
+        <Rectangle Height="600" Fill="White" VerticalAlignment="Bottom" Margin="337,0,321,247" RadiusX="15" RadiusY="15">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
             </Rectangle.Effect>
@@ -33,9 +33,9 @@
             VerticalScrollBarVisibility="Auto"
             SpellCheck.IsEnabled="False"
             materialDesign:HintAssist.Hint="Obrazloženje"
-            Height="55" Margin="410,466,390,496" FontSize="22"/>
-        <Button x:Name="btnPosalji" Content="POŠALJI" HorizontalAlignment="Left" Margin="698,794,0,0" VerticalAlignment="Top" Width="206" Height="64" FontSize="22" Background="#FFF5804B" BorderBrush="White" Click="btnPosalji_Click"/>
-        <ComboBox x:Name="tbRazlog" HorizontalAlignment="Left" Margin="410,384.04,0,0" VerticalAlignment="Top" Width="794" Height="59.96"/>
+            Height="55" Margin="538,488,524,474" FontSize="22" PreviewTextInput="tbObrazlozenje_PreviewTextInput"/>
+        <Button x:Name="btnPosalji" Content="POŠALJI" HorizontalAlignment="Left" Margin="676,728,0,0" VerticalAlignment="Top" Width="206" Height="64" FontSize="22" Background="#FFF5804B" BorderBrush="White" Click="btnPosalji_Click"/>
+        <ComboBox x:Name="tbRazlog" HorizontalAlignment="Left" Margin="538,384,0,0" VerticalAlignment="Top" Width="532" Height="60" FontSize="22"/>
 
     </Grid>
 </UserControl>

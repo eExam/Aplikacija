@@ -106,6 +106,18 @@ namespace eStud
                 }
             }
         }
+        private void DigitHandler(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch))) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
     }
     }
 

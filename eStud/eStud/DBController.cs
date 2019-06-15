@@ -802,6 +802,27 @@ namespace eStud.Model
 
             }
         }
+        public static DataTable pretragaPredmeta(string value,string username)
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select Predmeti.Naziv_predmeta,Predmeti.Semestar,Predmeti.ESPB,Users.ime,Users.prezime FROM Users INNER JOIN ((Profesor INNER JOIN Predmeti ON Profesor.username=Predmeti.Username_profesora) INNER JOIN SlusaPredmet ON Predmeti.Sifra_predmeta=SlusaPredmet.sifra_predmeta) ON Users.username=Profesor.username WHERE SlusaPredmet.username_student='" + username + "' and Naziv_predmeta like '%"+value+"%'");
+
+          
+           
+            return dt;
+        }
+        public static DataTable pretragaReferenta(string value)
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Users.Grad,Users.Adresa,Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username and Users.Ime like '%"+value+"%'");
+            return dt;
+        }
+        public static DataTable pretragaStudenata(string value)
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja,Users.pol,Users.Grad,Users.Adresa, Student.departman,Student.studijski_program,Student.semestar,Student.status,Student.broj_indeksa,Student.godina_upisa FROM Student,Users WHERE Users.username=Student.username and Users.Ime like '%"+value+"%'");
+            return dt;
+        }
         //Hashiranje lozinke
         public static string CreateMD5(string input)
         {

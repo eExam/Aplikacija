@@ -40,8 +40,8 @@ namespace eStud
             GlavniPanel.Children.Clear();
             StudentPodaci sp = new StudentPodaci();
             GlavniPanel.Children.Add(sp);
-            this.btnStud.Background = Brushes.DimGray;
-            this.btnRef.Background = Brushes.Transparent;
+           // this.btnStud.Background = Brushes.DimGray;
+           // this.btnRef.Background = Brushes.Transparent;
         }
 
         private void btnRef_Click(object sender, RoutedEventArgs e)
@@ -50,8 +50,8 @@ namespace eStud
             ReferentPodaci rp = new ReferentPodaci();
             GlavniPanel.Children.Add(rp);
             
-            this.btnRef.Background = Brushes.DimGray;
-            this.btnStud.Background = Brushes.Transparent;
+           // this.btnRef.Background = Brushes.DimGray;
+           // this.btnStud.Background = Brushes.Transparent;
         }
 
         private void btnOdjava_Click(object sender, RoutedEventArgs e)

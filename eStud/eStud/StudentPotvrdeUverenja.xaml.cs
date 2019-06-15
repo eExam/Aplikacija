@@ -38,5 +38,19 @@ namespace eStud
             DBController.DodajPotvrdeUverenje(trenutniKorisnik.getUserName(), tbRazlog.Text, tbObrazlozenje.Text);
             MessageBox.Show("Zahtev je poslat");
         }
+      
+
+        private void tbObrazlozenje_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsLetter(ch))) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
     }
 }

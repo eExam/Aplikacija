@@ -93,5 +93,6 @@ namespace eStud
         {
             tabelaIspitniRokovi.IsReadOnly = true;
         }
+
     }
 }

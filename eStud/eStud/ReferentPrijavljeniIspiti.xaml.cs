@@ -53,8 +53,7 @@ namespace eStud
                 doc.DodajTabelu(rezultati);
                
                 doc.DodajMPiPotpis();
-                doc.DodajTabelu(rezultati);
-                doc.DodajMPiPotpis();
+               
             }
             PdfWrapper.OtvoriFile(file);
 

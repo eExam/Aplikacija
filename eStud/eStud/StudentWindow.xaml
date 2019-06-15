@@ -14,7 +14,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="White"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="eSTUD" Height="1104" Width="1932" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+       Icon="Slike/HomeIcon.png" Height="1104" Width="1932" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Border BorderBrush="#FF7A7A7A" BorderThickness="1" HorizontalAlignment="Left" Height="1076" VerticalAlignment="Top" Width="1930" Margin="0,0,-4,-1">
 
         <Grid Margin="0,0,2,1.5">
@@ -34,14 +34,13 @@
                     <ColumnDefinition Width="11*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnOdjava" Background="#FFF56C2D" HorizontalAlignment="Center" BorderThickness="0" Click="btnOdjava_Click" Margin="34.258,804.1,25.641,153.9" Height="60" Width="260" BorderBrush="{x:Null}" Content="Odjavi se&#xA;" FontSize="22" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="16" FontFamily="Century Gothic"/>
-                <Label x:Name="ime" FontSize="24" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Center" Height="48" HorizontalAlignment="Left" Width="242" Margin="34,1006,0,18" Background="{x:Null}" HorizontalContentAlignment="Center" Padding="0" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Center" FontFamily="Century Gothic"/>
-                <RadioButton x:Name="btnPromenaLozinke" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" HorizontalAlignment="Left" Margin="34,754,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" BorderBrush="#FFF56C2D"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0" Click="btnPromenaLozinke_Click" FontFamily="Century Gothic"/>
+                <Label x:Name="ime" FontSize="24" Foreground="White" Content="Ime i prezime"   VerticalAlignment="Center" Height="48" HorizontalAlignment="Left" Width="242" Margin="34,1001,0,23" Background="{x:Null}" HorizontalContentAlignment="Center" Padding="0" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Center" FontFamily="Century Gothic"/>
                 <Label Content="eSTUD" HorizontalAlignment="Left" Margin="96.008,22,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
-                <Separator HorizontalAlignment="Left" Height="0.5" Margin="0,951,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="327.5" Grid.ColumnSpan="2"/>
+                <Separator HorizontalAlignment="Left" Height="0" Margin="3,996,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="2"/>
 
                 <StackPanel
   Orientation="Vertical"
-  Margin="4,4,4,71">
+  Margin="4,4,4,258">
                     <RadioButton
     Style="{StaticResource MaterialDesignTabRadioButton}"
                         
@@ -76,6 +75,7 @@
     Margin="35,0,0,0"
     IsChecked="False" x:Name="btnIspitniRokovi" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="237" Height="50" Background="{x:Null}" BorderBrush="#FFF56C2D" Content="Ispitni rokovi" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontSize="22" FontFamily="Century Gothic" Click="btnIspitniRokovi_Click" Foreground="#DDFFFFFF"/>
                     <RadioButton IsChecked="False" x:Name="btnPotvrdeUverenja" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="35,4,0,0" Content="Podnesi zahtev" FontSize="22" FontFamily="Century Gothic" Foreground="#DDFFFFFF" HorizontalAlignment="Left" Height="50" Width="237" HorizontalContentAlignment="Left" BorderBrush="#FFF56C2D" Checked="btnPotvrdeUverenja_Checked"/>
+                    <RadioButton x:Name="btnPromenaLozinke" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" HorizontalAlignment="Left" Margin="35,95,0,10" VerticalAlignment="Top" Width="237" Height="52" Background="{x:Null}" BorderBrush="#FFF56C2D"  Content="Promena lozinke" HorizontalContentAlignment="Center" BorderThickness="1" FontSize="22" Foreground="#DDE6E0E0" Click="btnPromenaLozinke_Click" FontFamily="Century Gothic"/>
 
                 </StackPanel>
             </Grid>

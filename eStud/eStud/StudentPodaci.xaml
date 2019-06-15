@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eStud"
              mc:Ignorable="d" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" Width="1594" Height="1017.5">
 
     <Grid Background="White" Height="1017.5" Margin="0,0,0,-1" VerticalAlignment="Top" Width="1594">
@@ -24,16 +25,18 @@
             </Rectangle.Effect>
         </Rectangle>
         <TabControl HorizontalAlignment="Left" Height="749" Margin="130,156,0,0" VerticalAlignment="Top" Width="1361.5">
-            <TabItem Header="Spisak studenata" FontSize="22" Foreground="#FF616161" FontFamily="Century Gothic">
+            <TabItem Header="Spisak studenata" FontSize="22" Foreground="#FF616161">
                 <Grid Background="White">
-                    <DataGrid x:Name="TabelaStudenti" HorizontalAlignment="Left" Height="662.243" VerticalAlignment="Top" Width="841.5" SelectionChanged="TabelaStudenti_SelectionChanged" Background="White"/>
+                    <DataGrid x:Name="TabelaStudenti" HorizontalAlignment="Left" Height="652" VerticalAlignment="Top" Width="842" SelectionChanged="TabelaStudenti_SelectionChanged" Background="White" Margin="0,58,0,-2" FontFamily="Segoe UI"/>
                     <Button x:Name="btnIzbrisi" Content="Izbriši" HorizontalAlignment="Left" VerticalAlignment="Top" Width="246.5" Click="btnIzbrisi_Click" Background="#FFF5804B" BorderBrush="{x:Null}" Margin="851.5,0,0,0" Height="46" FontSize="22"/>
                     <Button x:Name="btnIzmenii" Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="246.5" Click="btnIzmeni_Click" Background="#FFF5804B" BorderBrush="{x:Null}" Margin="1103.5,0,0,0" Height="46" FontSize="22"/>
                     <StackPanel x:Name="pnlDodajStud" HorizontalAlignment="Left" Height="644.027" Margin="851.5,46,0,0" VerticalAlignment="Top" Width="502.5" Background="White"/>
-                    <Border BorderBrush="#FFB9B9B9" BorderThickness="0,0,1,0" HorizontalAlignment="Left" Height="710.027" VerticalAlignment="Top" Width="846.5"/>
+
+                    <TextBox x:Name="txtSearch"  PreviewTextInput="txtSearch_PreviewTextInput" materialDesign:HintAssist.Hint="Pretraga studenta" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtSearch_TextChanged" HorizontalAlignment="Left" Height="58" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="376" Margin="470,0,0,0" BorderBrush="#896C6C6C"/>
+
                 </Grid>
             </TabItem>
-            <TabItem Header="Dodaj novog studenta" FontSize="22" Foreground="#FF444444" FontFamily="Century Gothic">
+            <TabItem Header="Dodaj novog studenta" FontSize="22" Foreground="#FF444444">
                 <Grid>
                     <StackPanel x:Name="pnlDodajStud_Copy" HorizontalAlignment="Left" Height="651.027" VerticalAlignment="Top" Width="901" Margin="228,31,0,0" Background="#FFD3D1D1"/>
                 </Grid>

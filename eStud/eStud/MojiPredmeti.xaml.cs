@@ -23,15 +23,18 @@ namespace eStud
     public partial class MojiPredmeti : UserControl
     {
         private Student trenutniKor;
+        DataTable rezultati;
+        DataView dv;
         public MojiPredmeti(Korisnik k)
         {
             this.trenutniKor = new Student(k);
             InitializeComponent();
             popuniTabelu();
+            searchData("");
         }
         private void popuniTabelu()
         {
-            DataTable rezultati =  DBController.StudentPredmeti(trenutniKor.getUserName());
+          rezultati =  DBController.StudentPredmeti(trenutniKor.getUserName());
             rezultati.Columns["Naziv_predmeta"].ColumnName = "Predmet";
             TabelaPredmeti.ItemsSource = rezultati.DefaultView;
         }
@@ -39,6 +42,19 @@ namespace eStud
         private void TabelaPredmeti_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TabelaPredmeti.IsReadOnly = true;
+        }
+       private void searchData(string valueToFind)
+        {
+            DataTable dt = DBController.pretragaPredmeta(valueToFind,trenutniKor.getUserName()) ;
+            dt.Columns["Naziv_predmeta"].ColumnName = "Predmet";
+            dt.Columns["ime"].ColumnName = "Ime";
+            dt.Columns["prezime"].ColumnName = "Prezime";
+            TabelaPredmeti.ItemsSource = dt.DefaultView;
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            searchData(txtSearch.Text);
         }
     }
 }

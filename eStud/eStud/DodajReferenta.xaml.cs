@@ -109,6 +109,19 @@ namespace eStud
                 }
             }
         }
+
+        private void txtDatumRodj_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var ch in e.Text)
+            {
+                if (!((Char.IsDigit(ch))) || ch.Equals('='))
+                {
+                    e.Handled = true;
+
+                    break;
+                }
+            }
+        }
     }
 }
             

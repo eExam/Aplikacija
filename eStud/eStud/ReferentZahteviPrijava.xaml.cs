@@ -48,7 +48,7 @@ namespace eStud
             tabelaZahteva.CanUserDeleteRows = true;
             DataRowView row = (DataRowView)tabelaZahteva.SelectedItems[0];
             int prijava = int.Parse(row["Broj prijave"].ToString());
-            MessageBox.Show(prijava.ToString());
+           // MessageBox.Show(prijava.ToString());
           
             bool prijavljeni = DBController.DaLiJePrijavljenIspit(row["Predmet"].ToString(), row["Korisničko ime"].ToString(), prijava);
             if (prijavljeni==true)
@@ -61,6 +61,7 @@ namespace eStud
 
                 //    MessageBox.Show(row["Broj prijave"].ToString());
                  DBController.OdobriPrijavuIspita(row["Korisničko ime"].ToString(), int.Parse(row["Broj prijave"].ToString()), row["Predmet"].ToString());
+                MessageBox.Show("Zahtev je odobren");
             }
         }
 

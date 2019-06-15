@@ -180,14 +180,16 @@ namespace eStud
 
         private void txtBrPrijave_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            foreach (var ch in e.Text)
-            {
-                if (!((Char.IsDigit(ch)) && ch.Equals('=')))
+           
+                foreach (var ch in e.Text)
                 {
-                    e.Handled = true;
+                    if (!((Char.IsDigit(ch))) || ch.Equals('='))
+                    {
+                        e.Handled = true;
 
-                    break;
-                }
+                        break;
+                    }
+                
             }
         }
     }

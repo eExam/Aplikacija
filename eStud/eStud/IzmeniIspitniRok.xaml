@@ -8,7 +8,7 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" Background="White" Width="319.57">
     <Grid>
-        <TextBox x:Name="txtCena" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Cena prijavnice" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,212.587,21.57,194.373" PreviewTextInput="txtCena_PreviewTextInput" BorderBrush="#FFF5804B" Foreground="#FF7A7A7A" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtCena" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Cena prijavnice" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,218,22,187" PreviewTextInput="txtCena_PreviewTextInput" BorderBrush="#FFF5804B" Foreground="#FF7A7A7A" FontFamily="Segoe UI Light"/>
         <TextBox x:Name="txtMax" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Maksimalan broj prijavnica" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,165.254,21.57,237.413" PreviewTextInput="txtMax_PreviewTextInput" BorderBrush="#FFF5804B" Foreground="#FF7A7A7A" FontFamily="Segoe UI Light"/>
         <ComboBox x:Name="txtTip" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Height="36.667" Margin="20,62,0,0" BorderBrush="#FFF5804B">
             <ComboBoxItem Content="Redovan"/>

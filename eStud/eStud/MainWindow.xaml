@@ -13,7 +13,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="890" Width="1383" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+       Icon="Slike/HomeIcon.png" Height="890" Width="1383" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Border BorderBrush="#FF7A7A7A" BorderThickness="1" HorizontalAlignment="Left" Height="861" VerticalAlignment="Top" Width="1377">
 
         <Grid Background="White">
