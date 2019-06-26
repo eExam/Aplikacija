@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="eStud.StudentPocetnaStrana"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017">
+    <Grid x:Name="GlavniPanel" Background="#FFFDFDFD">
+        <Rectangle Height="468" VerticalAlignment="Top" Margin="0,0,-3,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="414" Fill="White" VerticalAlignment="Bottom" Margin="58,0,1079,371" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Height="414" Fill="White" VerticalAlignment="Bottom" Margin="549,0,578,371" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Height="414" Fill="White" VerticalAlignment="Bottom" Margin="1076,0,41,371" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Border BorderBrush="#FFB0B0B0" BorderThickness="0.3" HorizontalAlignment="Left" Height="108" Margin="100,378,0,0" VerticalAlignment="Top" Width="376"/>
+
+        <Label Content="Obaveštenje za ispitni rok" HorizontalAlignment="Left" Margin="84,262,0,0" VerticalAlignment="Top" FontSize="33" Foreground="#DD767676" FontFamily="Century Gothic"/>
+        <Label Content="Počinje od" HorizontalAlignment="Left" Margin="126,387,0,0" VerticalAlignment="Top" Height="39" Width="148" FontSize="26" Foreground="#DD555555" FontFamily="Century Gothic"/>
+        <Label Content="Traje do" HorizontalAlignment="Left" Margin="126,426,0,0" VerticalAlignment="Top" Height="45" Width="148" FontSize="26" Foreground="#DD555555" FontFamily="Century Gothic"/>
+        <Label x:Name="txtPocetak" Content="-" HorizontalAlignment="Left" Margin="338,387,0,0" VerticalAlignment="Top" FontSize="26" Width="138" Foreground="#DD555555" FontFamily="Century Gothic"/>
+        <Label x:Name="txtKraj" Content="-" HorizontalAlignment="Left" Margin="338,426,0,0" VerticalAlignment="Top" FontSize="26" Width="138" Foreground="#DD555555" FontFamily="Century Gothic"/>
+
+        <ListView x:Name="listaPredmeta" HorizontalAlignment="Left" Height="160" Margin="600,326,0,0" VerticalAlignment="Top" Width="383" SelectionChanged="ListView_SelectionChanged" BorderThickness="0.3" BorderBrush="#897C7C7C" FontFamily="Century Gothic">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Predmet}"
+        Header="Predmet" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Semestar}"
+        Header="Semestar" />
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Label Content="Prijavljeni ispiti" HorizontalAlignment="Left" Margin="661,255,0,0" VerticalAlignment="Top" FontSize="33" Foreground="#DD767676" FontFamily="Century Gothic"/>
+        <Button x:Name="btnIspitniRok" Content="Prikaži više" HorizontalAlignment="Left" Margin="100,536,0,0" VerticalAlignment="Top" Width="376" Height="59" FontSize="36" Background="#FFF5804B" BorderBrush="{x:Null}" FontFamily="Century Gothic" Click="btnIspitniRok_Click"/>
+        <Label Content="Polozeni ispiti" HorizontalAlignment="Left" Margin="1216,255,0,0" VerticalAlignment="Top" FontSize="33" Foreground="#DD767676" FontFamily="Century Gothic"/>
+        <ListView x:Name="listaPolozenihIspita" HorizontalAlignment="Left" Height="160" Margin="1138,326,0,0" VerticalAlignment="Top" Width="362" FontFamily="Century Gothic">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Predmet}"
+        Header="Predmet" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Ocena}"
+        Header="Ocena" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding ESPB}"
+        Header="ESPB" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnPrikaziPrijavljene" Content="Prikaži više" HorizontalAlignment="Left" Margin="600,536,0,0" VerticalAlignment="Top" Width="383" Height="59" FontSize="36" Background="#FFF5804B" BorderBrush="{x:Null}" FontFamily="Century Gothic" Click="btnPrikaziPrijavljene_Click"/>
+        <Button x:Name="btnPrikaziPolozene" Content="Prikaži više" HorizontalAlignment="Left" Margin="1138,536,0,0" VerticalAlignment="Top" Width="362" Height="59" FontSize="36" Background="#FFF5804B" BorderBrush="{x:Null}" FontFamily="Century Gothic" Click="btnPrikaziPolozene_Click"/>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="eStud.IspitniRokovi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1604" Height="1017">
+    <Grid Background="White">
+
+
+
+
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="676" Fill="White" VerticalAlignment="Bottom" Margin="136.5,0,105.5,196" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TabControl HorizontalAlignment="Left" Height="485.125" Margin="184.5,214.5,0,0" VerticalAlignment="Top" Width="1268.5">
+            <TabItem Header="Ispitni rok" FontSize="22" Foreground="#FF666666">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFFBFBFB" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White" Margin="0,0,10.5,1.5">
+                    <DataGrid x:Name="tabelaIspitniRokovi" HorizontalAlignment="Left" Height="441.378" Margin="-0.648,-0.679,0,0" VerticalAlignment="Top" Width="884.719" RenderTransformOrigin="0.5,0.5" Background="#FFFDFDFD" SelectionChanged="tabelaIspitniRokovi_SelectionChanged">
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.126"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                    </DataGrid>
+                    <Button x:Name="btnIzbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="884.5,-1,0,0" VerticalAlignment="Top" Width="177" Click="btnIzbrisi_Click" Height="46" Background="#FFF5804B" FontSize="22" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="1066.5,0,0,0" VerticalAlignment="Top" Width="185.5" Click="btnIzmeni_Click" Background="#FFF5804B" FontSize="22" Height="46" BorderBrush="{x:Null}"/>
+                    <StackPanel x:Name="pnlIzmeniRok" HorizontalAlignment="Left" Height="396.362" Margin="884.5,46,0,0" VerticalAlignment="Top" Width="367.5" Background="White"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Dodaj ispitni rok" FontSize="22" Foreground="#FF636363">
+                <Grid Background="White">
+                    <StackPanel x:Name="pnlDodaj" HorizontalAlignment="Left" Height="421.362" VerticalAlignment="Top" Width="421.5" Background="White" Margin="414,22.5,0,0"/>
+                    <Border BorderBrush="#FF8D8D8D" BorderThickness="1,0.2" HorizontalAlignment="Left" Height="423.862" Margin="396,10,0,0" VerticalAlignment="Top" Width="477"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

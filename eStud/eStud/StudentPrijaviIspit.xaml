@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="eStud.StudentPrijaviIspit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017.5">
+    <Grid x:Name="ComboProf" Background="White">
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="588.3" Fill="#FFFDF9F6" VerticalAlignment="Bottom" Margin="269.904,0,339.705,264.2" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TextBox  x:Name="txtDepartman" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="DEPARTMAN" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260.705" FontSize="20" RenderTransformOrigin="0.498,0.811" IsEnabled="False" FontFamily="Century Gothic"/>
+        <Label Content="PRIJAVA ZA ISPIT" HorizontalAlignment="Left" Margin="556.5,314,0,0" VerticalAlignment="Top" FontSize="48" Width="418" Foreground="#DD555454"/>
+        <TextBox x:Name="txtImePrezime" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Ime i prezime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="353.295,436.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="#DD171717" IsEnabled="False" FontFamily="Century Gothic"/>
+        <TextBox x:Name="txtBrIndeksa" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="Broj indeksa" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="786,433.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384.705" FontSize="20" RenderTransformOrigin="0.498,0.811" HorizontalContentAlignment="Left" IsEnabled="False" FontFamily="Century Gothic"/>
+        <TextBox x:Name="txtStudijskiProgram" HorizontalAlignment="Left" Height="51" materialDesign:HintAssist.Hint="STUDIJSKI PROGRAM" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="924,197.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246.705" FontSize="20" RenderTransformOrigin="0.498,0.811" IsEnabled="False" FontFamily="Century Gothic"/>
+        <TextBox x:Name="txtBrPrijave" PreviewTextInput="txtBrPrijave_PreviewTextInput" HorizontalAlignment="Left" Height="53" materialDesign:HintAssist.Hint="Broj prijave" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="1057.705,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="20" RenderTransformOrigin="0.349,0.804" HorizontalContentAlignment="Left" Background="{x:Null}" BorderBrush="#89616161" CaretBrush="#FF4AB64F"/>
+        <Button x:Name="btnPrijavi" Content="PRIJAVI" HorizontalAlignment="Left" Margin="600,711,0,0" VerticalAlignment="Top" Width="303" Height="63" FontSize="36" Background="#FF3AB745" Click="btnPrijavi_Click" BorderBrush="#FFA2A1A1"/>
+
+        <CheckBox
+    x:Name="ClassicModeCheckBox"
+    IsThreeState="False"
+    IsChecked="True"
+    Margin="71,594,1468,386" Height="38" RenderTransformOrigin="9.375,16.259" Background="White" />
+        <ComboBox   materialDesign:ComboBoxAssist.ClassicMode="{Binding IsChecked, ElementName=ClassicModeCheckBox}" x:Name="ComboPredmeti" HorizontalAlignment="Left" Margin="353.295,559,0,0" VerticalAlignment="Top" Width="384" Height="38" BorderBrush="#89616161" FontSize="20" >
+
+        </ComboBox>
+        <Label Content="Izaberi predmet" HorizontalAlignment="Left" Margin="353.295,523,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DD707070" Height="36" Width="180" FontFamily="Century Gothic"/>
+        <Label Content="Profesor" HorizontalAlignment="Left" Margin="786,526.4,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DD6A6A6A" Height="36" Width="90" FontFamily="Century Gothic"/>
+        <ComboBox x:Name="ComboProf1" HorizontalAlignment="Left" Margin="786,559,0,0" VerticalAlignment="Top" Width="218.5" Height="38" BorderBrush="#896C6C6C" FontSize="20" DropDownOpened="ComboProf1_DropDownOpened"/>
+
+
+
+
+    </Grid>
+</UserControl>

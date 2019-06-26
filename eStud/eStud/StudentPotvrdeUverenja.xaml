@@ -1,0 +1,41 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="eStud.StudentPotvrdeUverenja"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1594" Height="1014.8">
+    <Grid Height="1017">
+        <Rectangle Height="444" VerticalAlignment="Top" Margin="0,0,3,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="600" Fill="White" VerticalAlignment="Bottom" Margin="337,0,321,247" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label Content="PODNOŠENJE MOLBE" HorizontalAlignment="Left" Margin="610,223,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DD646464"/>
+        <TextBox x:Name="tbObrazlozenje"
+            TextWrapping="Wrap"
+            VerticalAlignment="Center"
+            MinWidth="80"
+            AcceptsReturn="True"
+            VerticalScrollBarVisibility="Auto"
+            SpellCheck.IsEnabled="False"
+            materialDesign:HintAssist.Hint="Obrazloženje"
+            Height="55" Margin="538,488,524,474" FontSize="22" PreviewTextInput="tbObrazlozenje_PreviewTextInput"/>
+        <Button x:Name="btnPosalji" Content="POŠALJI" HorizontalAlignment="Left" Margin="676,728,0,0" VerticalAlignment="Top" Width="206" Height="64" FontSize="22" Background="#FFF5804B" BorderBrush="White" Click="btnPosalji_Click"/>
+        <ComboBox x:Name="tbRazlog" HorizontalAlignment="Left" Margin="538,384,0,0" VerticalAlignment="Top" Width="532" Height="60" FontSize="22"/>
+
+    </Grid>
+</UserControl>

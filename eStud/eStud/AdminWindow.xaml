@@ -1,0 +1,23 @@
+﻿<Window x:Class="eStud.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eStud"
+        mc:Ignorable="d"
+       Icon="Slike/HomeIcon.png" Height="1104" Width="1930" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <StackPanel x:Name="GlavniPanel" Height="1075"  Margin="328,0,4,0" VerticalAlignment="Top" Width="1591" Background="White"/>
+        <Grid x:Name="pnlLeft" HorizontalAlignment="Left" Height="1075" VerticalAlignment="Top" Width="328" Background="#FF1E262C" OpacityMask="#FF60685E">
+            <Button x:Name="btnOdjava" Background="#FFF56C2D" HorizontalAlignment="Right" BorderThickness="0" Click="btnOdjava_Click" Margin="0,769.75,32.5,189.25" Height="60" Width="260" BorderBrush="{x:Null}" Content="Odjavi se" FontSize="22" FontFamily="Century Gothic"/>
+            <Label x:Name="ime" FontSize="22" Foreground="White" Content="Administrator"   VerticalAlignment="Top" Height="42" HorizontalAlignment="Right" Width="162" Margin="0,1012,92,0" Background="{x:Null}" FontWeight="Bold" FontFamily="Century Gothic"/>
+            <RadioButton x:Name="btnPocetna" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="True" HorizontalAlignment="Left" Height="50" Margin="36,181,0,0" VerticalAlignment="Top" Width="238" Background="{x:Null}" BorderBrush="#FFF56C2D" FontSize="22" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" Content="Početna" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Click="btnPocetna_Click" Foreground="White"/>
+            <RadioButton x:Name="btnRef" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" HorizontalAlignment="Left" Margin="36,236,0,0" VerticalAlignment="Top" Width="238" Height="50" Background="{x:Null}" BorderBrush="#FFF56C2D" Click="btnRef_Click" Content="Referent" FontSize="22" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic" Foreground="White"/>
+            <RadioButton x:Name="btnStud" IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" HorizontalAlignment="Left" Margin="36,291,0,0" VerticalAlignment="Top" Width="238" Height="50" Background="{x:Null}" BorderBrush="#FFF56C2D" Click="btnStud_Click" Foreground="White" Content="Student" FontSize="22" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0.3" FontFamily="Century Gothic"/>
+            <Label Content="eSTUD" HorizontalAlignment="Left" Margin="89.008,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#DDFDF9F9" Width="147.07" FontFamily="Century Gothic"/>
+            <RadioButton x:Name="btnPromenaLozinke"  IsChecked="False" Style="{StaticResource MaterialDesignTabRadioButton}" Content="Promena lozinke" HorizontalAlignment="Left" Margin="36,719,0,0" VerticalAlignment="Top" Width="260" Height="60" Background="{x:Null}" FontSize="22" BorderBrush="#FFF56C2D" FontFamily="Century Gothic" Click="btnPromenaLozinke_Click" Foreground="White"/>
+
+        </Grid>
+        <Separator HorizontalAlignment="Left" Height="1" Margin="-4,998,0,0" Style="{DynamicResource SimpleSeparator}" VerticalAlignment="Top" Width="328"/>
+    </Grid>
+</Window>

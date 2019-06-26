@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="eStud.PocetnaAdmin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Width="1594" Height="1017">
+    <Grid x:Name="GlavniPanel">
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="454" Fill="White" VerticalAlignment="Bottom" Margin="100.5,0,888.5,341" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Height="454" Fill="White" VerticalAlignment="Bottom" Margin="868.5,0,120.5,341" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <ListView x:Name="listaStudenata" HorizontalAlignment="Left" Height="344.5" Margin="184.5,273,0,0" VerticalAlignment="Top" Width="425.5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Ime}"
+        Header="Ime" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Prezime}"
+        Header="Prezime" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding BrojIndeksa}"
+        Header="Broj indeksa" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listaReferenta" HorizontalAlignment="Left" Height="344.5" Margin="955.5,273,0,0" VerticalAlignment="Top" Width="431.5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Ime1}"
+        Header="Ime" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Prezime1}"
+        Header="Prezime" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Departman}"
+        Header="Departman" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnPrikaziStudente" Content="Prikazi vise" HorizontalAlignment="Left" Margin="286.5,646.703,0,0" VerticalAlignment="Top" Width="193.5" Height="47" FontSize="22" Click="btnPrikaziStudente_Click" Background="#FFF5804B" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnPrikaziReferente" Content="Prikazi vise" HorizontalAlignment="Left" Margin="1093.5,646.703,0,0" VerticalAlignment="Top" Width="193.5" Height="47" FontSize="22" Click="btnPrikaziReferente_Click" BorderBrush="{x:Null}" Background="#FFF5804B"/>
+
+    </Grid>
+</UserControl>

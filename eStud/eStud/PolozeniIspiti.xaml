@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="eStud.PolozeniIspiti"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017.5">
+    <Grid Background="#FFFDFDFD">
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="668" Fill="White" VerticalAlignment="Bottom" Margin="256,0,157,187.5" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaPolozeniIspiti" HorizontalAlignment="Left" Height="487" VerticalAlignment="Top" Width="998" SelectionChanged="tabelaPolozeniIspiti_SelectionChanged" Margin="359,261,0,0" Background="White"/>
+
+
+
+    </Grid>
+</UserControl>

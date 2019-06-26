@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="eStud.IzborniPredmeti"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eStud"
+             mc:Ignorable="d" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="450" d:DesignWidth="800" Width="1591" Height="1017.5">
+    <Grid Background="White" Width="1591" Height="1017.5">
+        <Rectangle Height="444" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56C2D"/>
+                    <GradientStop Color="#FFF56C2D" Offset="1"/>
+                    <GradientStop Color="#FFF5804B" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="668" Fill="White" VerticalAlignment="Bottom" Margin="256,0,157,187" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFB4B4B4" Direction="0" BlurRadius="15" RenderingBias="Quality"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <DataGrid x:Name="tabelaIzborniPredmeti" HorizontalAlignment="Left" Height="475" Margin="370,259,0,0" VerticalAlignment="Top" Width="956"  CanUserAddRows="False" SelectionChanged="tabelaIzborniPredmeti_SelectionChanged" Background="White">
+
+        </DataGrid>
+        <Button x:Name="Izaberi" Content="Izaberi" HorizontalAlignment="Left" Margin="743,800,0,0" VerticalAlignment="Top" Width="169" Click="Izaberi_Click" Height="52" FontSize="25" Background="#FF73B73A" BorderBrush="White"/>
+
+
+
+    </Grid>
+</UserControl>
