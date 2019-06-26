@@ -12,7 +12,7 @@ namespace eStud.Model
     class DBController
     {
         //Konekcija sa bazom
-        private static string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\eStud\eSTUD.accdb; Persist Security Info = False;";
+        private static string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=eSTUD.accdb; Persist Security Info = False;";
         private static OleDbConnection connect = new OleDbConnection(connectionString);
 
         //Dodavanje novih korisnika u bazu
@@ -811,6 +811,13 @@ namespace eStud.Model
            
             return dt;
         }
+        public static DataTable pretragaPrezime(string value)
+        {
+            DataTable dt = new DataTable();
+            dt = rezultatiUpita("Select Users.username,Users.ime, Users.prezime, Users.datum_rodjenja, Users.pol, Users.Grad,Users.Adresa,Referent.departman, Referent.studijski_program FROM Referent, Users WHERE Users.username=Referent.username and Users.prezime like '%" + value + "%'");
+            return dt;
+        
+    }
         public static DataTable pretragaReferenta(string value)
         {
             DataTable dt = new DataTable();

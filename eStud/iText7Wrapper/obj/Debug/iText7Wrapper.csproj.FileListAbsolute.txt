@@ -97,3 +97,36 @@ C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\iText7Wrapper\obj\Debug\iText7
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.csproj.CopyComplete
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.dll
 C:\Users\Melida\Documents\GitHub\Aplikacija\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.pdb
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\iText7Wrapper.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\iText7Wrapper.pdb
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.Core.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.barcodes.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.forms.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.io.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.kernel.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.layout.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.pdfa.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.sign.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.styledxmlparser.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.svg.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.pdb
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.Core.pdb
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\Common.Logging.Core.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.barcodes.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.forms.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.io.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.kernel.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.layout.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.pdfa.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.sign.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.styledxmlparser.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\bin\Debug\itext.svg.xml
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.csprojAssemblyReference.cache
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.csproj.CoreCompileInputs.cache
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.csproj.CopyComplete
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.dll
+C:\Users\Melida Radoncic\Desktop\Softversko projekat\Aplikacija-melidaUpdate\eStud\iText7Wrapper\obj\Debug\iText7Wrapper.pdb
